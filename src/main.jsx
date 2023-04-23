@@ -3,8 +3,13 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './assets/css/index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import { Provider } from "jotai";
+import globalStore from "./store";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <Provider store={globalStore}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
