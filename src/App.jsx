@@ -11,7 +11,7 @@ function App() {
   return (
     <div className={`${theme}`}>
       <Suspense fallback={<FullAppLoader />}>
-        <RouterProvider router={router} />;
+        <RouterProvider router={router} />
       </Suspense>
     </div>
   );

@@ -1,4 +1,4 @@
-import { atom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
 
 export const THEME_SELECTOR_OPTIONS = {
   user: "user",
@@ -15,7 +15,7 @@ const getSystemTheme = () => {
   }
 };
 
-const themeAtom = atom({
+const themeAtom = atomWithStorage("themeColor", {
   theme: getSystemTheme(),
   selection: THEME_SELECTOR_OPTIONS.default,
 });
