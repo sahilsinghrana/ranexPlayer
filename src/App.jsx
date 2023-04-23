@@ -1,15 +1,12 @@
-import { useState } from 'react'
+import { RouterProvider } from 'react-router-dom'
+import router from './router';
+import { Suspense } from 'react';
+import FullAppLoader from './components/Loaders/FullAppLoader';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div className='text-red-700' >
-        Hello World
-      </div>
-    </>
-  )
+  return <Suspense fallback={<FullAppLoader />} >
+    <RouterProvider router={router} />;
+  </Suspense>
 }
 
 export default App
