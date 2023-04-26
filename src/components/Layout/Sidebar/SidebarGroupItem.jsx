@@ -16,10 +16,10 @@ function SidebarGroupItem({name = '', Icon, active}) {
       </div>
       <div
         className={clsx(
-          ' w-full group-active:scale-95 self-stretch pl-2 rounded flex items-center space-x-2 transition-all duration-200 dark:group-hover:text-white dark:hover:text-white text-sm',
+          ' w-full group-active:scale-95 self-stretch pl-2 rounded flex items-center space-x-2 transition-all duration-200 dark:group-hover:text-white text-slate-300 dark:hover:text-white text-sm',
           {
             'group-hover:bg-white/10': !active,
-            'bg-white/10 text-white group-hover:bg-white/10': active,
+            'bg-white/10 text-white font-bold group-hover:bg-white/10': active,
           }
         )}
         href="#"

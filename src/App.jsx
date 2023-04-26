@@ -8,7 +8,7 @@ import {RouterProvider} from 'react-router-dom';
 
 function App() {
   useSystemThemeListener();
-  const theme = useTheme();
+  const [theme] = useTheme();
   return (
     <div className={`${theme}`}>
       <Suspense fallback={<FullAppLoader />}>
