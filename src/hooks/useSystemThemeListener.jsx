@@ -1,11 +1,12 @@
-import { useAtom } from "jotai";
-import { useLayoutEffect } from "react";
-import themeAtom, { THEME_SELECTOR_OPTIONS } from "../store/atoms/themeAtom";
+import themeAtom, {THEME_SELECTOR_OPTIONS} from '../store/atoms/themeAtom';
+
+import {useAtom} from 'jotai';
+import {useLayoutEffect} from 'react';
 
 const removeEventListener = () => {
   window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .removeEventListener("change", () => {});
+    .matchMedia('(prefers-color-scheme: dark)')
+    .removeEventListener('change', () => {});
 };
 
 const useSystemThemeListener = () => {
@@ -15,9 +16,9 @@ const useSystemThemeListener = () => {
       removeEventListener();
     } else {
       window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          const newColorScheme = event.matches ? "dark" : "light";
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', (event) => {
+          const newColorScheme = event.matches ? 'dark' : 'light';
           setTheme({
             theme: newColorScheme,
             selection: THEME_SELECTOR_OPTIONS.system,

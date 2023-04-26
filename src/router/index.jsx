@@ -1,18 +1,18 @@
-import { lazy } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import {lazy} from 'react';
+import {createBrowserRouter} from 'react-router-dom';
 
-const Home = lazy(() => import("../pages/Home"));
-const NotFound = lazy(() => import("../pages/NotFound"));
-const Layout = lazy(() => import("../components/Layout"));
+const Home = lazy(() => import('../pages/Home'));
+const NotFound = lazy(() => import('../pages/NotFound'));
+const Layout = lazy(() => import('../components/Layout'));
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     Component: Layout,
     errorElement: <NotFound />,
     children: [
       {
-        path: "/",
+        path: '/',
         Component: Home,
       },
     ],

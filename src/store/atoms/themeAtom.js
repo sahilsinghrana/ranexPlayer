@@ -1,21 +1,21 @@
-import { atomWithStorage } from "jotai/utils";
+import {atomWithStorage} from 'jotai/utils';
 
 export const THEME_SELECTOR_OPTIONS = {
-  user: "user",
-  default: "default",
-  system: "system",
+  user: 'user',
+  default: 'default',
+  system: 'system',
 };
 
 const getSystemTheme = () => {
-  let query = window.matchMedia("(prefers-color-scheme: dark)");
+  const query = window.matchMedia('(prefers-color-scheme: dark)');
   if (query.matches) {
-    return "dark";
+    return 'dark';
   } else {
-    return "light";
+    return 'light';
   }
 };
 
-const themeAtom = atomWithStorage("themeColor", {
+const themeAtom = atomWithStorage('themeColor', {
   theme: getSystemTheme(),
   selection: THEME_SELECTOR_OPTIONS.default,
 });

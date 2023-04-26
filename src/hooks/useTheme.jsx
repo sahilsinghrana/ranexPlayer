@@ -1,5 +1,6 @@
-import { useAtom } from "jotai";
-import themeAtom from "../store/atoms/themeAtom";
+import themeAtom from '../store/atoms/themeAtom';
+
+import {useAtom} from 'jotai';
 
 const useTheme = () => {
   const [theme] = useAtom(themeAtom);

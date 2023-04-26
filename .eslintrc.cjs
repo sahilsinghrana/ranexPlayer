@@ -20,7 +20,14 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
-  settings: {react: {version: 'detect'}},
+  settings: {
+    react: {version: 'detect'},
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
   plugins: ['react-refresh', 'react', 'prettier', 'react-hooks', 'import'],
   rules: {
     'react-refresh/only-export-components': 'warn',

@@ -1,9 +1,10 @@
-import { RouterProvider } from 'react-router-dom'
-import router from './router';
-import { Suspense } from 'react';
 import FullAppLoader from './components/Loaders/FullAppLoader';
-import useSystemThemeListener from "./hooks/useSystemThemeListener";
-import useTheme from "./hooks/useTheme";
+import useSystemThemeListener from './hooks/useSystemThemeListener';
+import useTheme from './hooks/useTheme';
+import router from './router';
+
+import {Suspense} from 'react';
+import {RouterProvider} from 'react-router-dom';
 
 function App() {
   useSystemThemeListener();
@@ -17,4 +18,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
