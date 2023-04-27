@@ -1,0 +1,1 @@
+import{j as t}from"./index-7939eb84.js";const e=()=>t.jsx("footer",{className:"dark:bg-black bg-slate-400  py-1 text-center font-mono ",children:"Made with ❣️ by Sahil Singh Rana"});e.displayName="Footer";export{e as default};
