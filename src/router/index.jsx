@@ -1,22 +1,27 @@
-import {lazy} from 'react';
-import {createBrowserRouter} from 'react-router-dom';
+import NotFound from '../pages/NotFound';
 
-const Home = lazy(() => import('../pages/Home'));
-const NotFound = lazy(() => import('../pages/NotFound'));
-const Layout = lazy(() => import('../components/Layout'));
+import {createBrowserRouter} from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    Component: Layout,
     errorElement: <NotFound />,
+    async lazy() {
+      const Component = await import('../components/Layout');
+      return {Component: Component.default};
+    },
     children: [
       {
         path: '/',
-        Component: Home,
+        async lazy() {
+          const Component = await import('../pages/Home/index.jsx');
+          return {Component: Component.default};
+        },
       },
     ],
   },
 ]);
+
+router.displayName = 'Router';
 
 export default router;
