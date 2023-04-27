@@ -19,6 +19,11 @@ jobs:
           node-version-file: '.nvmrc'
           # The node version can be hard-coded 
           # node-version: 14
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.3.1
           
       # Consider this as an add on to optimize the execution of actions
       - name: Cache node modules
