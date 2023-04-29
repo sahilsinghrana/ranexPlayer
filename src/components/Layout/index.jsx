@@ -10,14 +10,12 @@ const Sidebar = lazy(() => import('./Sidebar'));
 
 const Layout = () => {
   return (
-    <div className="flex flex-col w-screen h-screen bg-backgroundLight dark:bg-backgroundDark text-textLight dark:text-textDark ">
+    <div className="flex flex-col w-screen h-full  bg-backgroundLight dark:bg-backgroundDark text-textLight dark:text-textDark ">
       <Suspense fallback={<FullAppLoader />}>
         <Header />
-        <div className="flex flex-grow">
+        <div className="flex flex-grow items-stretch">
           <Sidebar />
-          <section className="flex-grow">
-            <Outlet />
-          </section>
+          <Outlet />
         </div>
         <Footer />
       </Suspense>

@@ -5,7 +5,7 @@ import {MoonIcon, SunIcon} from '@radix-ui/react-icons';
 const Header = () => {
   const [theme, toggle] = useTheme();
   return (
-    <header className="dark:bg-backgroundDarker bg-slate-400 py-3 border-b-backgroundDarker border-b-2 border-opacity-10 flex justify-between px-5 items-center">
+    <header className="top-0 dark:bg-backgroundDarker bg-slate-400 py-3 border-b-backgroundDarker border-b-2 border-opacity-10 flex justify-between px-5 items-center">
       <div></div>
       <div>
         <h1 className="text-center text-3xl ">Ranex Player</h1>
