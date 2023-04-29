@@ -11,7 +11,7 @@ import {
 
 const PlayerBar = () => {
   return (
-    <div className="flex justify-between items-center justify-self-end bg-slate-600 dark:bg-slate-950">
+    <div className=" fixed bottom-0 flex w-full justify-between items-center justify-self-end bg-slate-600 dark:bg-slate-950">
       <div className="flex items-center flex-1">
         <img className="h-14 w-14 bg-white" href="/" alt="cover art" />
         <div className="mx-2">
