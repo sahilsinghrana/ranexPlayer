@@ -1,4 +1,5 @@
-import themeAtom, {THEME_SELECTOR_OPTIONS} from '../store/atoms/themeAtom';
+import {THEME_SELECTOR_OPTIONS, updateThemeClassInDom} from '../lib/theme';
+import themeAtom from '../store/atoms/themeAtom';
 
 import {useAtom} from 'jotai';
 import {useLayoutEffect} from 'react';
@@ -14,6 +15,7 @@ const useSystemThemeListener = () => {
   useLayoutEffect(() => {
     if (theme.selection === THEME_SELECTOR_OPTIONS.user) {
       removeEventListener();
+      updateThemeClassInDom(theme.theme);
     } else {
       window
         .matchMedia('(prefers-color-scheme: dark)')
@@ -23,12 +25,13 @@ const useSystemThemeListener = () => {
             theme: newColorScheme,
             selection: THEME_SELECTOR_OPTIONS.system,
           });
+          updateThemeClassInDom(newColorScheme);
         });
     }
     return () => {
       removeEventListener();
     };
-  }, [setTheme, theme.selection]);
+  }, [setTheme, theme.selection, theme.theme]);
 
   return theme;
 };
