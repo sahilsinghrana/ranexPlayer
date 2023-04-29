@@ -1,22 +1,9 @@
+import {THEME_SELECTOR_OPTIONS, initializeDefaultTheme} from '../../lib/theme';
+
 import {atomWithStorage} from 'jotai/utils';
 
-export const THEME_SELECTOR_OPTIONS = {
-  user: 'user',
-  default: 'default',
-  system: 'system',
-};
-
-const getSystemTheme = () => {
-  const query = window.matchMedia('(prefers-color-scheme: dark)');
-  if (query.matches) {
-    return 'dark';
-  } else {
-    return 'light';
-  }
-};
-
 const themeAtom = atomWithStorage('themeColor', {
-  theme: getSystemTheme(),
+  theme: initializeDefaultTheme(),
   selection: THEME_SELECTOR_OPTIONS.default,
 });
 
