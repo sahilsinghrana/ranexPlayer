@@ -1,6 +1,6 @@
 const UserGreeting = () => {
   return (
-    <h1 className="text-1xl p-4 font-extrabold font-sans tracking-wide text-zinc-200">
+    <h1 className="text-1xl p-4 font-extrabold font-sans tracking-wide text-zinc-950  dark:text-zinc-200">
       Good Morning, User
     </h1>
   );
