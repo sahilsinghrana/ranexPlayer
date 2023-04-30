@@ -1,12 +1,27 @@
 import useTheme from '../../hooks/useTheme';
+import sidebarAtom from '../../store/atoms/layout/sidebar';
 
-import {MoonIcon, SunIcon} from '@radix-ui/react-icons';
+import {MoonIcon, SunIcon, HamburgerMenuIcon} from '@radix-ui/react-icons';
+import {useSetAtom} from 'jotai';
 
 const Header = () => {
   const [theme, toggle] = useTheme();
+  const setSidebar = useSetAtom(sidebarAtom);
+
   return (
-    <header className="top-0 dark:bg-backgroundDarker bg-slate-400 py-3 border-b-backgroundDarker border-b-2 border-opacity-10 flex justify-between px-5 items-center">
-      <div></div>
+    <header
+      style={{
+        height: '10vh',
+      }}
+      className={
+        ' dark:bg-backgroundDarker bg-slate-400 py-3 border-b-backgroundDarker border-b-2 border-opacity-10 flex justify-between px-5 items-center'
+      }
+    >
+      <div>
+        <button onClick={() => setSidebar((show) => !show)}>
+          <HamburgerMenuIcon />
+        </button>
+      </div>
       <div>
         <h1 className="text-center text-3xl ">Ranex Player</h1>
       </div>

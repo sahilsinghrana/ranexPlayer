@@ -13,7 +13,12 @@ const Layout = () => {
     <div className="flex flex-col w-screen h-full  bg-backgroundLight dark:bg-backgroundDark text-textLight dark:text-textDark ">
       <Suspense fallback={<FullAppLoader />}>
         <Header />
-        <div className="flex flex-grow items-stretch">
+        <div
+          style={{
+            height: '90vh',
+          }}
+          className="flex relative items-stretch w-screen "
+        >
           <Sidebar />
           <Outlet />
         </div>

@@ -1,21 +1,20 @@
+import PlayerControls from './PlayerControls';
+
 import {
   HeartIcon,
   SpeakerLoudIcon,
   ListBulletIcon,
-  TrackNextIcon,
-  PlayIcon,
-  TrackPreviousIcon,
   ShuffleIcon,
   LoopIcon,
 } from '@radix-ui/react-icons';
 
 const PlayerBar = () => {
   return (
-    <div className=" fixed bottom-0 flex w-full justify-between items-center justify-self-end bg-slate-600 dark:bg-slate-950">
+    <div className=" fixed bottom-0 py-3 flex w-full justify-between items-center justify-self-end bg-slate-600 dark:bg-slate-950">
       <div className="flex items-center flex-1">
         <img className="h-14 w-14 bg-white" href="/" alt="cover art" />
         <div className="mx-2">
-          <div>Song Name</div>
+          <div className="text-slate-300">Song Name</div>
           <div className="text-sm text-slate-300">Artist Name</div>
         </div>
         <div>
@@ -26,17 +25,7 @@ const PlayerBar = () => {
         <div className="px-3 py-2">
           <ShuffleIcon />
         </div>
-        <div className="flex  px-3 py-2">
-          <div className="p-2 mx-1 bg-zinc-950">
-            <TrackPreviousIcon />
-          </div>
-          <div className="p-2 mx-1 bg-zinc-950">
-            <PlayIcon />
-          </div>
-          <div className="p-2 mx-1 bg-zinc-950">
-            <TrackNextIcon />
-          </div>
-        </div>
+        <PlayerControls />
         <div className="px-3 py-2">
           <LoopIcon />
         </div>
