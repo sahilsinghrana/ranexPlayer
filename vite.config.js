@@ -3,7 +3,6 @@ import cssnano from 'cssnano';
 import imagemin from 'imagemin';
 import imageminPngquant from 'imagemin-pngquant';
 import {defineConfig} from 'vite';
-// import critical from 'vite-plugin-critical';
 import eslint from 'vite-plugin-eslint';
 import preloadPlugin from 'vite-plugin-preload';
 
@@ -47,13 +46,6 @@ export default defineConfig({
         };
       },
     },
-    // critical({
-    //   minify: true,
-    //   inline: true,
-    //   src: 'index.html',
-    //   target: 'index.html',
-    //   css: 'dist/**/*.css',
-    // }),
     preloadPlugin({
       include: 'asyncChunks',
     }),
@@ -62,17 +54,8 @@ export default defineConfig({
     chunkSizeWarningLimit: 2000,
     cssCodeSplit: true,
     assetsInlineLimit: 4096,
-    minify: isProd,
-    terser: isProd
-      ? {
-          compress: {
-            drop_console: true,
-            drop_debugger: true,
-          },
-          format: {
-            comments: false,
-          },
-        }
-      : undefined,
+    cssMinify: isProd,
+    minify: 'esbuild',
+    manifest: true,
   },
 });
