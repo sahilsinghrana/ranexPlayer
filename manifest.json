@@ -1,0 +1,79 @@
+{
+  "_react-icons.esm-4b8b0101.js": {
+    "file": "assets/react-icons.esm-4b8b0101.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_sidebar-b0a9a8fc.js": {
+    "file": "assets/sidebar-b0a9a8fc.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "index.css": {
+    "file": "assets/index-8901e416.css",
+    "src": "index.css"
+  },
+  "index.html": {
+    "css": [
+      "assets/index-8901e416.css"
+    ],
+    "dynamicImports": [
+      "src/components/Layout/index.jsx",
+      "src/pages/Home/index.jsx"
+    ],
+    "file": "assets/index-cc4a2cc9.js",
+    "isEntry": true,
+    "src": "index.html"
+  },
+  "src/components/Layout/Footer.jsx": {
+    "file": "assets/Footer-23ed5d2d.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/components/Layout/Footer.jsx"
+  },
+  "src/components/Layout/Header.jsx": {
+    "file": "assets/Header-79789720.js",
+    "imports": [
+      "index.html",
+      "_sidebar-b0a9a8fc.js",
+      "_react-icons.esm-4b8b0101.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/components/Layout/Header.jsx"
+  },
+  "src/components/Layout/Sidebar/index.jsx": {
+    "file": "assets/index-62579edc.js",
+    "imports": [
+      "index.html",
+      "_sidebar-b0a9a8fc.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/components/Layout/Sidebar/index.jsx"
+  },
+  "src/components/Layout/index.jsx": {
+    "dynamicImports": [
+      "src/components/Layout/Footer.jsx",
+      "src/components/Layout/Header.jsx",
+      "src/components/Layout/Sidebar/index.jsx"
+    ],
+    "file": "assets/index-e18914b6.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/components/Layout/index.jsx"
+  },
+  "src/pages/Home/index.jsx": {
+    "file": "assets/index-8dba0b1d.js",
+    "imports": [
+      "index.html",
+      "_react-icons.esm-4b8b0101.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/pages/Home/index.jsx"
+  }
+}
