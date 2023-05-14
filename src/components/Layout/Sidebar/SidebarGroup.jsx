@@ -2,7 +2,7 @@ import SidebarGroupTitle from './SidebarGroupTitle.jsx';
 
 function SidebarGroup({title = '', children}) {
   return (
-    <div className="w-full pr-3 flex flex-col gap-y-1 text-gray-500 fill-gray-500 text-sm">
+    <div className="flex flex-col w-full pr-3 text-sm gap-y-1 text-text dark:textDark fill-gray-5">
       <SidebarGroupTitle title={title} />
       {children}
     </div>

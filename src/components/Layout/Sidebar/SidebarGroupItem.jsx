@@ -3,10 +3,10 @@ import clsx from 'clsx';
 function SidebarGroupItem({name = '', Icon, active}) {
   return (
     <div className="w-full flex items-center gap-x-1.5 group select-none">
-      <div className="w-1 rounded-xl h-8 bg-transparent transition-colors duration-200 relative overflow-hidden">
+      <div className="relative w-1 h-8 overflow-hidden transition-colors duration-200 bg-transparent rounded-xl">
         <div
           className={clsx(
-            'absolute top-0 left-0 w-full h-[102%] bg-red-600 transition-all duration-300',
+            'absolute top-0 left-0 w-full h-[102%] bg-accent-6 dark:bg-accentDark-6 transition-all duration-300',
             {
               'translate-y-full group-hover:translate-y-0 ': !active,
               'group-hover:translate-y-0 translate-y-0': active,

@@ -14,7 +14,7 @@ const Header = () => {
         height: '10vh',
       }}
       className={
-        ' dark:bg-backgroundDarker bg-slate-400 py-3 border-b-backgroundDarker border-b-2 border-opacity-10 flex justify-between px-5 items-center'
+        ' dark:bg-subtleBackgroundDark bg-subtleBackground py-3 border-b-backgroundDarker border-b-2 border-opacity-10 flex justify-between px-5 items-center'
       }
     >
       <div>
@@ -23,12 +23,12 @@ const Header = () => {
         </button>
       </div>
       <div>
-        <h1 className="text-center text-3xl ">Ranex Player</h1>
+        <h1 className="text-3xl text-center ">Ranex Player</h1>
       </div>
       <div>
         <button
           onClick={toggle}
-          className="rounded-full mx-4 dark:bg-slate-700 bg-slate-200 p-2 hover:scale-110 "
+          className="p-2 mx-4 rounded-full dark:bg-elementBackgroundDark bg-elementBackground hover:scale-110 "
         >
           {theme === 'light' ? <SunIcon /> : <MoonIcon />}
         </button>

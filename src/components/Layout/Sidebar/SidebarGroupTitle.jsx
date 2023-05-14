@@ -1,6 +1,6 @@
 function SidebarGroupTitle({title = ''}) {
   return (
-    <div className="pl-4 text-gray-400/60 text-xs text-[11px] uppercase">
+    <div className="pl-4 text-text dark:textDark text-xs text-[11px] uppercase">
       {title}
     </div>
   );
