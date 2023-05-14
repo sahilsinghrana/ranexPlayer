@@ -4,7 +4,6 @@ import imagemin from 'imagemin';
 import imageminPngquant from 'imagemin-pngquant';
 import {defineConfig} from 'vite';
 import eslint from 'vite-plugin-eslint';
-import preloadPlugin from 'vite-plugin-preload';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -46,9 +45,6 @@ export default defineConfig({
         };
       },
     },
-    preloadPlugin({
-      include: 'asyncChunks',
-    }),
   ],
   build: {
     chunkSizeWarningLimit: 2000,
