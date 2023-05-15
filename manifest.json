@@ -1,34 +1,34 @@
 {
-  "_react-icons.esm-4b8b0101.js": {
-    "file": "assets/react-icons.esm-4b8b0101.js",
+  "_react-icons.esm-b12cd045.js": {
+    "file": "assets/react-icons.esm-b12cd045.js",
     "imports": [
       "index.html"
     ]
   },
-  "_sidebar-b0a9a8fc.js": {
-    "file": "assets/sidebar-b0a9a8fc.js",
+  "_sidebar-1f96a277.js": {
+    "file": "assets/sidebar-1f96a277.js",
     "imports": [
       "index.html"
     ]
   },
   "index.css": {
-    "file": "assets/index-8901e416.css",
+    "file": "assets/index-b69caa31.css",
     "src": "index.css"
   },
   "index.html": {
     "css": [
-      "assets/index-8901e416.css"
+      "assets/index-b69caa31.css"
     ],
     "dynamicImports": [
       "src/components/Layout/index.jsx",
       "src/pages/Home/index.jsx"
     ],
-    "file": "assets/index-cc4a2cc9.js",
+    "file": "assets/index-ee5b340c.js",
     "isEntry": true,
     "src": "index.html"
   },
   "src/components/Layout/Footer.jsx": {
-    "file": "assets/Footer-23ed5d2d.js",
+    "file": "assets/Footer-b6ef0d18.js",
     "imports": [
       "index.html"
     ],
@@ -36,20 +36,20 @@
     "src": "src/components/Layout/Footer.jsx"
   },
   "src/components/Layout/Header.jsx": {
-    "file": "assets/Header-79789720.js",
+    "file": "assets/Header-d48b3e64.js",
     "imports": [
       "index.html",
-      "_sidebar-b0a9a8fc.js",
-      "_react-icons.esm-4b8b0101.js"
+      "_sidebar-1f96a277.js",
+      "_react-icons.esm-b12cd045.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Layout/Header.jsx"
   },
   "src/components/Layout/Sidebar/index.jsx": {
-    "file": "assets/index-62579edc.js",
+    "file": "assets/index-b4a174c2.js",
     "imports": [
       "index.html",
-      "_sidebar-b0a9a8fc.js"
+      "_sidebar-1f96a277.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Layout/Sidebar/index.jsx"
@@ -60,7 +60,7 @@
       "src/components/Layout/Header.jsx",
       "src/components/Layout/Sidebar/index.jsx"
     ],
-    "file": "assets/index-e18914b6.js",
+    "file": "assets/index-3e7a39ec.js",
     "imports": [
       "index.html"
     ],
@@ -68,10 +68,10 @@
     "src": "src/components/Layout/index.jsx"
   },
   "src/pages/Home/index.jsx": {
-    "file": "assets/index-8dba0b1d.js",
+    "file": "assets/index-dfd2a70a.js",
     "imports": [
       "index.html",
-      "_react-icons.esm-4b8b0101.js"
+      "_react-icons.esm-b12cd045.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Home/index.jsx"
