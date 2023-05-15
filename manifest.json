@@ -1,12 +1,12 @@
 {
-  "_react-icons.esm-b12cd045.js": {
-    "file": "assets/react-icons.esm-b12cd045.js",
+  "_react-icons.esm-f3cca268.js": {
+    "file": "assets/react-icons.esm-f3cca268.js",
     "imports": [
       "index.html"
     ]
   },
-  "_sidebar-1f96a277.js": {
-    "file": "assets/sidebar-1f96a277.js",
+  "_sidebar-c5f7a0e6.js": {
+    "file": "assets/sidebar-c5f7a0e6.js",
     "imports": [
       "index.html"
     ]
@@ -23,12 +23,28 @@
       "src/components/Layout/index.jsx",
       "src/pages/Home/index.jsx"
     ],
-    "file": "assets/index-ee5b340c.js",
+    "file": "assets/index-dee8f07a.js",
     "isEntry": true,
     "src": "index.html"
   },
+  "src/components/Branding/Logo.jsx": {
+    "file": "assets/Logo-22c05046.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/components/Branding/Logo.jsx"
+  },
+  "src/components/Card/index.jsx": {
+    "file": "assets/index-e495dde7.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/components/Card/index.jsx"
+  },
   "src/components/Layout/Footer.jsx": {
-    "file": "assets/Footer-b6ef0d18.js",
+    "file": "assets/Footer-fb4ce7f7.js",
     "imports": [
       "index.html"
     ],
@@ -36,20 +52,23 @@
     "src": "src/components/Layout/Footer.jsx"
   },
   "src/components/Layout/Header.jsx": {
-    "file": "assets/Header-d48b3e64.js",
+    "dynamicImports": [
+      "src/components/Branding/Logo.jsx"
+    ],
+    "file": "assets/Header-82db9754.js",
     "imports": [
       "index.html",
-      "_sidebar-1f96a277.js",
-      "_react-icons.esm-b12cd045.js"
+      "_sidebar-c5f7a0e6.js",
+      "_react-icons.esm-f3cca268.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Layout/Header.jsx"
   },
   "src/components/Layout/Sidebar/index.jsx": {
-    "file": "assets/index-b4a174c2.js",
+    "file": "assets/index-e09a412e.js",
     "imports": [
       "index.html",
-      "_sidebar-1f96a277.js"
+      "_sidebar-c5f7a0e6.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Layout/Sidebar/index.jsx"
@@ -60,18 +79,88 @@
       "src/components/Layout/Header.jsx",
       "src/components/Layout/Sidebar/index.jsx"
     ],
-    "file": "assets/index-3e7a39ec.js",
+    "file": "assets/index-882a3872.js",
     "imports": [
       "index.html"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Layout/index.jsx"
   },
-  "src/pages/Home/index.jsx": {
-    "file": "assets/index-dfd2a70a.js",
+  "src/components/List/HorizontalList.jsx": {
+    "file": "assets/HorizontalList-13f44c77.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/components/List/HorizontalList.jsx"
+  },
+  "src/components/Player/PlayerBar/MediaOptions.jsx": {
+    "file": "assets/MediaOptions-24112ec9.js",
     "imports": [
       "index.html",
-      "_react-icons.esm-b12cd045.js"
+      "_react-icons.esm-f3cca268.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/components/Player/PlayerBar/MediaOptions.jsx"
+  },
+  "src/components/Player/PlayerBar/PlayerControls.jsx": {
+    "file": "assets/PlayerControls-a81adee1.js",
+    "imports": [
+      "index.html",
+      "_react-icons.esm-f3cca268.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/components/Player/PlayerBar/PlayerControls.jsx"
+  },
+  "src/components/Player/PlayerBar/SongInfo.jsx": {
+    "file": "assets/SongInfo-17b81427.js",
+    "imports": [
+      "index.html",
+      "_react-icons.esm-f3cca268.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/components/Player/PlayerBar/SongInfo.jsx"
+  },
+  "src/components/Player/PlayerBar/index.jsx": {
+    "dynamicImports": [
+      "src/components/Player/PlayerBar/SongInfo.jsx",
+      "src/components/Player/PlayerBar/PlayerControls.jsx",
+      "src/components/Player/PlayerBar/MediaOptions.jsx"
+    ],
+    "file": "assets/index-aa6f075a.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/components/Player/PlayerBar/index.jsx"
+  },
+  "src/pages/Home/HomeSection.jsx": {
+    "file": "assets/HomeSection-6c1b6241.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/pages/Home/HomeSection.jsx"
+  },
+  "src/pages/Home/UserGreeting.jsx": {
+    "file": "assets/UserGreeting-bb415c32.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/pages/Home/UserGreeting.jsx"
+  },
+  "src/pages/Home/index.jsx": {
+    "dynamicImports": [
+      "src/pages/Home/HomeSection.jsx",
+      "src/pages/Home/UserGreeting.jsx",
+      "src/components/Card/index.jsx",
+      "src/components/List/HorizontalList.jsx",
+      "src/components/Player/PlayerBar/index.jsx"
+    ],
+    "file": "assets/index-b1297163.js",
+    "imports": [
+      "index.html"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Home/index.jsx"
