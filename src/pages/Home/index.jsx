@@ -1,34 +1,38 @@
-import HomeSection from './HomeSection';
-import UserGreeting from './UserGreeting';
+import {Suspense} from 'react';
+import {lazy} from 'react';
 
-import Card from '../../components/Card';
-import HorizontalList from '../../components/List/HorizontalList';
-import PlayerBar from '../../components/Player/PlayerBar';
+const HomeSection = lazy(() => import('./HomeSection'));
+const UserGreeting = lazy(() => import('./UserGreeting'));
+const Card = lazy(() => import('../../components/Card'));
+const HorizontalList = lazy(() =>
+  import('../../components/List/HorizontalList')
+);
+const PlayerBar = lazy(() => import('../../components/Player/PlayerBar'));
 
 const Home = () => {
   return (
-    <div className="relative w-full">
-      <div className="h-full overflow-auto">
-        <UserGreeting />
-        <HomeSection title="Playlists">
-          <HorizontalList>
-            <li>
-              <Card>Playlist Card</Card>
-            </li>
-            <li>
-              <Card>Playlist Card2</Card>
-            </li>
-            <li>
-              <Card>Playlist Card3</Card>
-            </li>
-          </HorizontalList>
-        </HomeSection>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="relative w-full">
+        <div className="h-full overflow-auto">
+          <UserGreeting />
+          <HomeSection title="Playlists">
+            <HorizontalList>
+              <li>
+                <Card>Playlist Card</Card>
+              </li>
+              <li>
+                <Card>Playlist Card2</Card>
+              </li>
+              <li>
+                <Card>Playlist Card3</Card>
+              </li>
+            </HorizontalList>
+          </HomeSection>
+        </div>
+        <PlayerBar />
       </div>
-      <PlayerBar />
-    </div>
+    </Suspense>
   );
 };
-
-Home.displayName = 'Home';
 
 export default Home;
