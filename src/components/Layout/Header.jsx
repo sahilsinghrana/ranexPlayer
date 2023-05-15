@@ -3,6 +3,10 @@ import sidebarAtom from '../../store/atoms/layout/sidebar';
 
 import {MoonIcon, SunIcon, HamburgerMenuIcon} from '@radix-ui/react-icons';
 import {useSetAtom} from 'jotai';
+import {Suspense} from 'react';
+import {lazy} from 'react';
+
+const Logo = lazy(() => import('../Branding/Logo'));
 
 const Header = () => {
   const [theme, toggle] = useTheme();
@@ -26,9 +30,9 @@ const Header = () => {
         </button>
       </div>
       <div>
-        <h1 className="text-3xl text-center text-textPrimary dark:text-textPrimaryDark ">
-          Ranex Player
-        </h1>
+        <Suspense fallback={<div>Loader...</div>}>
+          <Logo />
+        </Suspense>
       </div>
       <div>
         <button
