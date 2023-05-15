@@ -1,6 +1,6 @@
 const FullAppLoader = () => {
   return (
-    <div className="flex bg-slate-600 text-white w-screen h-screen justify-center items-center text-5xl font-extrabold opacity-50 ">
+    <div className="flex items-center justify-center w-screen h-screen text-5xl font-extrabold text-white opacity-50 bg-appBackground ">
       Loading...
     </div>
   );

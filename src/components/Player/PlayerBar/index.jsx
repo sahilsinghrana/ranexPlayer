@@ -10,12 +10,18 @@ import {
 
 const PlayerBar = () => {
   return (
-    <div className=" fixed bottom-0 py-3 flex w-full justify-between items-center justify-self-end bg-slate-600 dark:bg-slate-950">
+    <div className="absolute bottom-0 flex items-center justify-between w-full px-4 py-3 justify-self-end bg-subtleBackground dark:bg-subtleBackgroundDark">
       <div className="flex items-center flex-1">
-        <img className="h-14 w-14 bg-white" href="/" alt="cover art" />
+        <img
+          className="bg-elementBackground dar:bg-elementBackgroundDark h-14 w-14"
+          href="/"
+          alt="cover art"
+        />
         <div className="mx-2">
-          <div className="text-slate-300">Song Name</div>
-          <div className="text-sm text-slate-300">Artist Name</div>
+          <div className="text-text dark:text-textDark">Song Name</div>
+          <div className="text-sm text-text dark:text-textDark">
+            Artist Name
+          </div>
         </div>
         <div>
           <HeartIcon />
@@ -30,11 +36,11 @@ const PlayerBar = () => {
           <LoopIcon />
         </div>
       </div>
-      <div className="flex-1 flex justify-end">
-        <div className="p-2 mx-1 bg-zinc-950">
+      <div className="flex justify-end">
+        <div className="p-2 mx-1 cursor-pointer bg-elementBackground dark:bg-elementBackgroundDark">
           <ListBulletIcon />
         </div>
-        <div className="p-2 mx-1 bg-zinc-950">
+        <div className="p-2 mx-1 cursor-pointer bg-elementBackground dark:bg-elementBackgroundDark">
           <SpeakerLoudIcon />
         </div>
       </div>

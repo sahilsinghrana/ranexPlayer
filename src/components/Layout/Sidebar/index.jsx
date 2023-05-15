@@ -15,14 +15,14 @@ const Sidebar = () => {
         'bg-black/30 w-full md:w-2/6 xl:w-2/12 h-full absolute z-10 md:relative ',
         {
           'flex ': showSidebar,
-          'hidden md:flex ': !showSidebar,
+          'hidden ': !showSidebar,
         }
       )}
       onClick={(e) => setShowSidebar((show) => !show)}
     >
       <aside
         className={clsx(
-          'z-20 w-2/4 md:w-full dark:bg-backgroundDarker bg-slate-500 h-full flex-col items-center pt-5 pb-2 space-y-7'
+          'z-20 w-2/4 md:w-full dark:bg-subtleBackgroundDark bg-subtleBackground  h-full flex-col items-center pt-5 pb-2 space-y-7'
         )}
         onClick={(e) => e.stopPropagation()}
       >
