@@ -7,8 +7,8 @@ import PlayerBar from '../../components/Player/PlayerBar';
 
 const Home = () => {
   return (
-    <div className="h-screen pb-36 w-full">
-      <div className="overflow-auto h-full max-h-full pb-10">
+    <div className="relative w-full">
+      <div className="h-full overflow-auto">
         <UserGreeting />
         <HomeSection title="Playlists">
           <HorizontalList>

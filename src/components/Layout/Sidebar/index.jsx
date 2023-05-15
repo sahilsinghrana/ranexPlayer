@@ -15,7 +15,7 @@ const Sidebar = () => {
         'bg-black/30 w-full md:w-2/6 xl:w-2/12 h-full absolute z-10 md:relative ',
         {
           'flex ': showSidebar,
-          'hidden md:flex ': !showSidebar,
+          'hidden ': !showSidebar,
         }
       )}
       onClick={(e) => setShowSidebar((show) => !show)}

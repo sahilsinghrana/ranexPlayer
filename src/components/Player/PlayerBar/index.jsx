@@ -10,7 +10,7 @@ import {
 
 const PlayerBar = () => {
   return (
-    <div className="fixed bottom-0 flex items-center justify-between w-full py-3 justify-self-end bg-subtleBackground dark:bg-subtleBackgroundDark">
+    <div className="absolute bottom-0 flex items-center justify-between w-full px-4 py-3 justify-self-end bg-subtleBackground dark:bg-subtleBackgroundDark">
       <div className="flex items-center flex-1">
         <img
           className="bg-elementBackground dar:bg-elementBackgroundDark h-14 w-14"
@@ -36,11 +36,11 @@ const PlayerBar = () => {
           <LoopIcon />
         </div>
       </div>
-      <div className="flex justify-end flex-1">
-        <div className="p-2 mx-1 bg-zinc-950">
+      <div className="flex justify-end">
+        <div className="p-2 mx-1 cursor-pointer bg-elementBackground dark:bg-elementBackgroundDark">
           <ListBulletIcon />
         </div>
-        <div className="p-2 mx-1 bg-zinc-950">
+        <div className="p-2 mx-1 cursor-pointer bg-elementBackground dark:bg-elementBackgroundDark">
           <SpeakerLoudIcon />
         </div>
       </div>

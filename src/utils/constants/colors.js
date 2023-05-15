@@ -28,36 +28,6 @@ const tomatoDark = {
   12: '#feefec',
 };
 
-const crimson = {
-  1: '#fffcfd',
-  2: '#fff7fb',
-  3: '#feeff6',
-  4: '#fce5f0',
-  5: '#f9d8e7',
-  6: '#f4c6db',
-  7: '#edadc8',
-  8: '#e58fb1',
-  9: '#e93d82',
-  10: '#e03177',
-  11: '#d31e66',
-  12: '#3d0d1d',
-};
-
-const crimsonDark = {
-  1: '#1d1418',
-  2: '#27141c',
-  3: '#3c1827',
-  4: '#481a2d',
-  5: '#541b33',
-  6: '#641d3b',
-  7: '#801d45',
-  8: '#ae1955',
-  9: '#e93d82',
-  10: '#f04f88',
-  11: '#f76190',
-  12: '#feecf4',
-};
-
 const violet = {
   1: '#fdfcfe',
   2: '#fbfaff',
@@ -122,8 +92,8 @@ const primary = violet;
 const primaryDark = violetDark;
 const secondary = tomato;
 const secondaryDark = tomatoDark;
-const accent = crimson;
-const accentDark = crimsonDark;
+const accent = primary;
+const accentDark = primaryDark;
 const gray = mauve;
 const grayDark = mauveDark;
 
@@ -136,12 +106,13 @@ const colorScale = {
   accentDark: accentDark,
   gray: gray,
   grayDark: grayDark,
+  // ----------------
   appBackground: gray[7],
   appBackgroundDark: grayDark[1],
   subtleBackground: primary[2],
   subtleBackgroundDark: primaryDark[2],
-  elementBackground: secondary[3],
-  elementBackgroundDark: secondaryDark[3],
+  elementBackground: primary[8],
+  elementBackgroundDark: primaryDark[8],
   hoverBackground: primary[4],
   hoverBackgroundDark: primaryDark[4],
   activeBackground: primary[5],
@@ -158,8 +129,8 @@ const colorScale = {
   hoverSolidBackgroundDark: primaryDark[10],
   textPrimary: primary[11],
   textPrimaryDark: primaryDark[11],
-  textSecondary: primary[12],
-  textSecondaryDark: primaryDark[12],
+  textSecondary: secondary[11],
+  textSecondaryDark: secondaryDark[11],
   text: gray[11],
   textDark: grayDark[11],
 };
