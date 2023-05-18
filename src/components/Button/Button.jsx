@@ -1,0 +1,45 @@
+import {cva} from 'class-variance-authority';
+import clsx from 'clsx';
+
+const button = cva('flex items-center p-2 transition-colors duration-300', {
+  variants: {
+    type: {
+      primary: [
+        'bg-elementBackground hover:bg-hoverElementBackgroundDark',
+        'dark:bg-elementBackgroundDark dark:hover:bg-hoverElementBackgroundDark',
+      ],
+      secondary: ['bg-gray-9'],
+      danger: ['bg-secondary-9'],
+    },
+    size: {
+      sm: ['h-9'],
+      md: ['h-10'],
+      lg: ['h-14'],
+    },
+    rounded: {
+      sm: ['rounded-sm'],
+      md: ['rounded'],
+      lg: ['rounded-lg'],
+      xl: ['rounded-xl'],
+      full: ['rounded-full'],
+    },
+  },
+  defaultVariants: {
+    type: 'primary',
+    size: 'md',
+    rounded: 'md',
+  },
+});
+
+const BaseButton = ({children, className, type, size, rounded, ...props}) => {
+  return (
+    <button
+      className={clsx(button({type, size, rounded}), className)}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
+
+export default BaseButton;

@@ -1,3 +1,5 @@
+import Button from '../../Button/Button';
+
 import {
   TrackNextIcon,
   PlayIcon,
@@ -12,16 +14,16 @@ const PlayerControls = () => {
       <div className="px-3 py-2">
         <ShuffleIcon />
       </div>
-      <div className="flex px-3 py-1 font-black text-white">
-        <button className="flex items-center p-2 mx-1 transition-colors duration-300 rounded-lg bg-elementBackgroundDark hover:bg-hoverBackgroundDark ">
+      <div className="flex items-center px-3 py-1 font-black text-white">
+        <Button size="sm" rounded="lg" className={'m-1'}>
           <TrackPreviousIcon />
-        </button>
-        <button className="flex items-center p-1 mx-1 text-4xl transition-colors duration-300 rounded-lg bg-elementBackgroundDark hover:bg-hoverBackgroundDark ">
+        </Button>
+        <Button size="lg" rounded="lg" className={'m-1 px-2'}>
           <PlayIcon scale={3} height={30} width={30} />
-        </button>
-        <button className="flex items-center p-2 mx-1 transition-colors duration-300 rounded-lg bg-elementBackgroundDark hover:bg-hoverBackgroundDark ">
+        </Button>
+        <Button size="sm" rounded="lg" className={'m-1'}>
           <TrackNextIcon />
-        </button>
+        </Button>
       </div>
       <div className="px-3 py-2">
         <LoopIcon />

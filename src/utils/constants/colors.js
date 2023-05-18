@@ -28,34 +28,19 @@ const tomatoDark = {
   12: '#feefec',
 };
 
-const violet = {
-  1: '#fdfcfe',
-  2: '#fbfaff',
-  3: '#f5f2ff',
-  4: '#ede9fe',
-  5: '#e4defc',
-  6: '#d7cff9',
-  7: '#c4b8f3',
-  8: '#aa99ec',
-  9: '#6e56cf',
-  10: '#644fc1',
-  11: '#5746af',
-  12: '#20134b',
-};
-
-const violetDark = {
-  1: '#17151f',
-  2: '#1c172b',
-  3: '#251e40',
-  4: '#2c2250',
-  5: '#32275f',
-  6: '#392c72',
-  7: '#443592',
-  8: '#5842c3',
-  9: '#6e56cf',
-  10: '#7c66dc',
-  11: '#9e8cfc',
-  12: '#f1eefe',
+const blueDark = {
+  1: '#0f1720',
+  2: '#0f1b2d',
+  3: '#10243e',
+  4: '#102a4c',
+  5: '#0f3058',
+  6: '#0d3868',
+  7: '#0a4481',
+  8: '#0954a5',
+  9: '#0091ff',
+  10: '#369eff',
+  11: '#52a9ff',
+  12: '#eaf6ff',
 };
 
 const mauve = {
@@ -88,8 +73,23 @@ const mauveDark = {
   12: '#ededef',
 };
 
-const primary = violet;
-const primaryDark = violetDark;
+const indigo = {
+  1: '#fdfdfe',
+  2: '#f8faff',
+  3: '#f0f4ff',
+  4: '#e6edfe',
+  5: '#d9e2fc',
+  6: '#c6d4f9',
+  7: '#aec0f5',
+  8: '#8da4ef',
+  9: '#3e63dd',
+  10: '#3a5ccc',
+  11: '#3451b2',
+  12: '#101d46',
+};
+
+const primary = indigo;
+const primaryDark = blueDark;
 const secondary = tomato;
 const secondaryDark = tomatoDark;
 const accent = primary;
@@ -111,8 +111,10 @@ const colorScale = {
   appBackgroundDark: grayDark[1],
   subtleBackground: primary[2],
   subtleBackgroundDark: primaryDark[2],
-  elementBackground: primary[8],
-  elementBackgroundDark: primaryDark[8],
+  elementBackground: primary[9],
+  elementBackgroundDark: primaryDark[10],
+  hoverElementBackground: primary[12],
+  hoverElementBackgroundDark: primaryDark[7],
   hoverBackground: primary[4],
   hoverBackgroundDark: primaryDark[4],
   activeBackground: primary[5],
@@ -124,7 +126,7 @@ const colorScale = {
   borderHover: primary[8],
   borderHoverDark: primaryDark[8],
   solidBackground: primary[9],
-  solidBackgroundDark: primaryDark[9],
+  solidBackgroundDark: primaryDark[8],
   hoverSolidBackground: primary[10],
   hoverSolidBackgroundDark: primaryDark[10],
   textPrimary: primary[11],

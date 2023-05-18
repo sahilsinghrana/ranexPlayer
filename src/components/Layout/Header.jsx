@@ -23,7 +23,7 @@ const Header = () => {
     >
       <div>
         <button
-          className="p-2 font-extrabold text-white rounded-lg bg-solidBackground/40 hover:bg-hoverSolidBackground dark:hover:bg-hoverSolidBackgroundDark"
+          className="p-2 font-extrabold text-white rounded-lg bg-solidBackground dark:bg-solidBackgroundDark hover:bg-hoverSolidBackground/80 dark:hover:bg-hoverSolidBackgroundDark/80"
           onClick={() => setSidebar((show) => !show)}
         >
           <HamburgerMenuIcon />
@@ -37,7 +37,7 @@ const Header = () => {
       <div>
         <button
           onClick={toggle}
-          className="p-2 mx-4 rounded-full text-gray-2 dark:text-gray-12 dark:bg-elementBackground bg-elementBackgroundDark hover:scale-110 "
+          className="p-2 mx-4 rounded-full text-gray-2 dark:text-gray-12 dark:bg-solidBackgroundDark bg-solidBackground hover:scale-110 "
         >
           {theme === 'light' ? <SunIcon /> : <MoonIcon />}
         </button>

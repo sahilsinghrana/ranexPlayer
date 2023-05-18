@@ -1,9 +1,7 @@
 const HorizontalList = ({children}) => {
   return (
-    <ul className="flex whitespace-nowrap overflow-x-auto ">{children}</ul>
+    <ul className="flex overflow-x-auto whitespace-nowrap ">{children}</ul>
   );
 };
-
-HorizontalList.displayName = 'HorizontalList';
 
 export default HorizontalList;
