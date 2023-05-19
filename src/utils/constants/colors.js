@@ -106,6 +106,7 @@ const colorScale = {
   accentDark: accentDark,
   gray: gray,
   grayDark: grayDark,
+  danger: tomato,
   // ----------------
   appBackground: gray[7],
   appBackgroundDark: grayDark[1],

@@ -5,11 +5,16 @@ const button = cva('flex items-center p-2 transition-colors duration-300', {
   variants: {
     type: {
       primary: [
+        'text-white',
         'bg-elementBackground hover:bg-hoverElementBackgroundDark',
         'dark:bg-elementBackgroundDark dark:hover:bg-hoverElementBackgroundDark',
       ],
-      secondary: ['bg-gray-9'],
-      danger: ['bg-secondary-9'],
+      secondary: ['text-gray-1', 'bg-gray-9 hover:bg-gray-10'],
+      danger: ['text-gray-1', 'bg-danger-10 hover:bg-danger-11'],
+      outline: [
+        'outline-1  outline-double',
+        'outline-current hover:outline-2 active:outline-4 focus:outline-4 ',
+      ],
     },
     size: {
       sm: ['h-9'],
