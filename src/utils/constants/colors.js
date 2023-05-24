@@ -1,3 +1,5 @@
+// TODO -- Refactor and avoid dark duplication of objects
+
 const tomato = {
   1: '#fffcfc',
   2: '#fff8f7',
@@ -92,7 +94,7 @@ const primary = indigo;
 const primaryDark = blueDark;
 const secondary = tomato;
 const secondaryDark = tomatoDark;
-const accent = primary;
+const accent = tomato;
 const accentDark = primaryDark;
 const gray = mauve;
 const grayDark = mauveDark;
@@ -127,7 +129,7 @@ const colorScale = {
   borderHover: primary[8],
   borderHoverDark: primaryDark[8],
   solidBackground: primary[9],
-  solidBackgroundDark: primaryDark[8],
+  solidBackgroundDark: primaryDark[7],
   hoverSolidBackground: primary[10],
   hoverSolidBackgroundDark: primaryDark[10],
   textPrimary: primary[11],

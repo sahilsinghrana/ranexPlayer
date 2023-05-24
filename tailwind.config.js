@@ -11,5 +11,7 @@ export default {
       colors: colorScale,
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    // require('@tailwindcss/forms')
+  ],
 };
