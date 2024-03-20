@@ -7,7 +7,6 @@ const Card = lazy(() => import('../../components/Card'));
 const HorizontalList = lazy(() =>
   import('../../components/List/HorizontalList')
 );
-const PlayerBar = lazy(() => import('../../components/Player/PlayerBar'));
 
 const Home = () => {
   return (
@@ -29,7 +28,6 @@ const Home = () => {
             </HorizontalList>
           </HomeSection>
         </div>
-        <PlayerBar />
       </div>
     </Suspense>
   );

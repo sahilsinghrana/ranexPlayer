@@ -7,6 +7,7 @@ import {Outlet} from 'react-router-dom';
 const Footer = lazy(() => import('./Footer'));
 const Header = lazy(() => import('./Header'));
 const Sidebar = lazy(() => import('./Sidebar'));
+const PlayerBar = lazy(() => import('../Player/PlayerBar'));
 
 const Layout = () => {
   return (
@@ -22,6 +23,7 @@ const Layout = () => {
           <Sidebar />
           <Outlet />
         </div>
+        <PlayerBar />
         <Footer />
       </Suspense>
     </div>
