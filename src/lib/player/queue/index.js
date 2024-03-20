@@ -1,5 +1,17 @@
+import {ulid} from 'ulid';
+
+const queues = {};
+
 class Queue {
   queue = [];
+
+  constructor() {
+    this.queueId = ulid();
+    queues[this.queueId] = {
+      name: 'Queue Name',
+      isUserPlaylist: false,
+    };
+  }
 
   add(item) {
     this.queue.push(item);

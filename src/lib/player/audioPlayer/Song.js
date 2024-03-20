@@ -5,6 +5,7 @@ class Song {
     this.song = {
       id: ulid(),
       file,
+      url: file ? URL.createObjectURL(file) : '',
       ...metadata,
     };
   }
