@@ -1,1 +1,0 @@
-import{j as t}from"./index-0beb2aa4.js";const e=()=>t.jsx("h1",{className:"p-4 font-sans font-extrabold tracking-wide text-1xl text-textPrimary dark:text-textPrimaryDark",children:"Good Morning, User"});e.displayName="UserGreeting";export{e as default};
