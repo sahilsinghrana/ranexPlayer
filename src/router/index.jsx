@@ -19,6 +19,13 @@ const router = createBrowserRouter(
             return {Component: Component.default};
           },
         },
+        {
+          path: '/now-playing',
+          async lazy() {
+            const Component = await import('../pages/NowPlaying/index.jsx');
+            return {Component: Component.default};
+          },
+        },
       ],
     },
   ],
