@@ -11,22 +11,19 @@ const PlayerBar = lazy(() => import('../Player/PlayerBar'));
 
 const Layout = () => {
   return (
-    <div className="flex flex-col w-screen h-full bg-appBackground dark:bg-appBackgroundDark text-textLight dark:text-textDark ">
-      <Suspense fallback={<FullAppLoader />}>
+    <Suspense fallback={<FullAppLoader />}>
+      <div className="flex flex-col justify-between w-screen h-screen bg-appBackground dark:bg-appBackgroundDark text-textLight dark:text-textDark ">
         <Header />
-        <div
-          style={{
-            height: '90vh',
-          }}
-          className="relative flex items-stretch w-screen "
-        >
+        <div className="flex flex-grow overflow-auto justify-self-start max-w-[99.8%]">
           <Sidebar />
           <Outlet />
         </div>
-        <PlayerBar />
-        <Footer />
-      </Suspense>
-    </div>
+        <div>
+          <PlayerBar />
+          <Footer />
+        </div>
+      </div>
+    </Suspense>
   );
 };
 

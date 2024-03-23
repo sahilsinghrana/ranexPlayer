@@ -7,7 +7,7 @@ const MediaOptions = lazy(() => import('./MediaOptions'));
 
 const PlayerBar = () => {
   return (
-    <div className="absolute bottom-0 flex items-center justify-between w-full px-4 py-3 justify-self-end bg-subtleBackground dark:bg-subtleBackgroundDark">
+    <div className="bottom-0 grid items-center w-full grid-cols-3 px-4 py-3 justify-self-end bg-subtleBackground dark:bg-subtleBackgroundDark">
       <Suspense fallback={<FallbackLoader />}>
         <SongInfo />
       </Suspense>

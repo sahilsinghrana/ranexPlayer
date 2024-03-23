@@ -5,6 +5,7 @@ import {MoonIcon, SunIcon, HamburgerMenuIcon} from '@radix-ui/react-icons';
 import {useSetAtom} from 'jotai';
 import {Suspense} from 'react';
 import {lazy} from 'react';
+import {Link} from 'react-router-dom';
 
 const Logo = lazy(() => import('../Branding/Logo'));
 
@@ -31,7 +32,9 @@ const Header = () => {
       </div>
       <div>
         <Suspense fallback={<div>Loader...</div>}>
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
         </Suspense>
       </div>
       <div>
