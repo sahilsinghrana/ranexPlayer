@@ -8,7 +8,7 @@ import {
 
 const PlayerControls = () => {
   return (
-    <div className="flex flex-1 items-center">
+    <div className="flex items-center justify-self-center">
       <div className="px-3 py-2">
         <ShuffleButton />
       </div>
