@@ -1,0 +1,36 @@
+{
+  "data": {
+    "music": [
+      {
+        "path": "/public/music/01 Clandestino.mp3",
+        "name": "Cladestino",
+        "albumId": 1,
+        "artists": [],
+        "artwork": [],
+        "album": {
+          "name": "Cladestino Album"
+        }
+      },
+      {
+        "path": "/public/music/01 Girls.mp3",
+        "name": "Girls",
+        "albumId": 1,
+        "artists": [],
+        "artwork": [],
+        "album": {
+          "name": "Girls Album"
+        }
+      },
+      {
+        "path": "/public/music/Bed.mp3",
+        "name": "Bed",
+        "albumId": 1,
+        "artists": [],
+        "artwork": [],
+        "album": {
+          "name": "Bed Album"
+        }
+      }
+    ]
+  }
+}
