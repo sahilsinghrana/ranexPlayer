@@ -5,7 +5,6 @@ import {Provider, useAtom} from "jotai";
 import {Suspense} from "react";
 import {lazy} from "react";
 
-
 const SongInfo = lazy(() => import("./SongInfo"));
 const PlayerControls = lazy(() => import("./PlayerControls"));
 const MediaOptions = lazy(() => import("./MediaOptions"));
@@ -49,6 +48,10 @@ const SeekBar = () => {
         className="w-full h-6 "
         onChange={(e) => player.seek(e.target.value)}
       />
+      <div className="flex w-full justify-between">
+        <p>{Number(meta?.currentTime).toFixed(0)}</p>
+        <p>{Number(meta?.duration).toFixed(0)}</p>
+      </div>
     </div>
   );
 };

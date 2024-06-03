@@ -35,7 +35,6 @@ player.attachListener("durationchange", () => {
 });
 
 player.attachListener("timeupdate", () => {
-  console.log("Duration changed");
   playerStore.set(currentSongAtom, (prev = {}) => {
     return {
       meta: {
