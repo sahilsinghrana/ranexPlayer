@@ -1,6 +1,6 @@
 import song from "../../../assets/music/yrym.mp3";
 import player from "../../../lib/player";
-import {playerStateAtom, playerStates} from "../../../store/atoms/playerAtom";
+import playerAtom, {playerStateAtom, playerStates} from "../../../store/atoms/playerAtom";
 import {
   LoopButton,
   NextButton,
@@ -16,6 +16,8 @@ import {useEffect} from "react";
 const PlayerControls = () => {
   const [playerState] = useAtom(playerStateAtom);
 
+  const [playerData] = useAtom(playerAtom)
+
   const handlePlay = () => {
     player.play();
   };
@@ -30,7 +32,7 @@ const PlayerControls = () => {
 
   return (
     <div className="flex items-center justify-self-center">
-      <button onClick={() => console.log(player)}>Meta</button>
+      <button onClick={() => console.log(playerData)}>Meta</button>
       <div className="px-3 py-2">
         <ShuffleButton />
       </div>

@@ -1,6 +1,7 @@
 import MusicPlayer from "./MusicPlayer";
 
 import {
+  currentSongAtom,
   playerStateAtom,
   playerStates,
   playerStore,
@@ -19,6 +20,30 @@ player.attachListener("pause", () => {
 
 player.attachListener("ended", () => {
   playerStore.set(playerStateAtom, () => playerStates.STOPPED);
+});
+
+player.attachListener("durationchange", () => {
+  playerStore.set(currentSongAtom, (prev = {}) => {
+    return {
+      ...prev,
+      meta: {
+        ...(prev.meta || {}),
+        duration: player.audioEl.duration,
+      },
+    };
+  });
+});
+
+player.attachListener("timeupdate", () => {
+  console.log("Duration changed");
+  playerStore.set(currentSongAtom, (prev = {}) => {
+    return {
+      meta: {
+        ...(prev.meta || {}),
+        currentTime: player.audioEl.currentTime,
+      },
+    };
+  });
 });
 
 export default player;
