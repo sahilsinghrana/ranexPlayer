@@ -11,6 +11,7 @@ export const playerStateAtom = atom(playerStates.INITIALIZED);
 export const currentSongAtom = atom();
 export const currentPlaylistAtom = atom({id: ""});
 export const queueAtom = atom([]);
+export const playerVolumeAtom = atom();
 
 const playerAtom = atom({
   playerState: playerStateAtom,
@@ -20,11 +21,5 @@ const playerAtom = atom({
 });
 
 export const playerStore = createStore();
-
-// playerStore.set(playerStateAtom);
-// playerStore.set(currentSongAtom);
-// playerStore.set(currentPlaylistAtom);
-// playerStore.set(queueAtom);
-// playerStore.set(playerAtom);
 
 export default playerAtom;

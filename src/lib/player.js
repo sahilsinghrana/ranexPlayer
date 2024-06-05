@@ -5,6 +5,7 @@ import {
   playerStateAtom,
   playerStates,
   playerStore,
+  playerVolumeAtom,
 } from "../store/atoms/playerAtom";
 
 const player = new MusicPlayer();
@@ -43,6 +44,11 @@ player.attachListener("timeupdate", () => {
       },
     };
   });
+});
+
+player.attachListener("onvolumechange", () => {
+  console.log("onvolumechange", player.audioEl.volume);
+  playerStore.set(playerVolumeAtom, () => player.audioEl.volume);
 });
 
 export default player;

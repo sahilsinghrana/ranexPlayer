@@ -49,6 +49,10 @@ class MusicPlayer {
   seek(newTime) {
     this.audioEl.currentTime = newTime;
   }
+
+  changeVolume(newVol = 0) {
+    this.audioEl.volume = newVol;
+  }
 }
 
 export default MusicPlayer;
