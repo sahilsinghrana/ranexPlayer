@@ -13,17 +13,19 @@ const MediaOptions = lazy(() => import("./MediaOptions"));
 const PlayerBar = () => {
   return (
     <Provider store={playerStore} min={0}>
-      <SeekBar />
-      <div className="bottom-0 grid items-center w-full grid-cols-3 px-4 py-3 justify-self-end bg-subtleBackground dark:bg-subtleBackgroundDark">
-        <Suspense fallback={<FallbackLoader />}>
-          <SongInfo />
-        </Suspense>
-        <Suspense fallback={<FallbackLoader />}>
-          <PlayerControls />
-        </Suspense>
-        <Suspense fallback={<FallbackLoader />}>
-          <MediaOptions />
-        </Suspense>
+      <div className="px-4 py-3  bg-subtleBackground dark:bg-subtleBackgroundDark">
+        <SeekBar />
+        <div className="grid items-center w-full grid-cols-3 ">
+          <Suspense fallback={<FallbackLoader />}>
+            <SongInfo />
+          </Suspense>
+          <Suspense fallback={<FallbackLoader />}>
+            <PlayerControls />
+          </Suspense>
+          <Suspense fallback={<FallbackLoader />}>
+            <MediaOptions />
+          </Suspense>
+        </div>
       </div>
     </Provider>
   );
@@ -46,7 +48,7 @@ const SeekBar = () => {
         min={0}
         value={meta?.currentTime}
         max={meta?.duration}
-        className="w-full mx-1 mr-3 py-0 my-0"
+        className="w-full mx-1 py-0 my-0"
         onChange={(e) => player.seek(e.target.value)}
       />
       <div className="flex w-full justify-between px-2 text-sm py-0">

@@ -4,7 +4,11 @@ import {LoopIcon} from "@radix-ui/react-icons";
 
 const LoopButton = () => {
   return (
-    <Button data-active={false} type="icon">
+    <Button
+      className="dark:text-white text-black"
+      data-active={false}
+      type="icon"
+    >
       <LoopIcon />
     </Button>
   );
