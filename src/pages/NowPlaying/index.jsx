@@ -1,4 +1,4 @@
-import AlbumArt from '../../components/AlbumArt';
+import AlbumArt from "../../components/AlbumArt";
 
 function NowPlaying() {
   return (

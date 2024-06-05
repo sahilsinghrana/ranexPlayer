@@ -1,28 +1,28 @@
-import NotFound from '../pages/NotFound';
+import NotFound from "../pages/NotFound";
 
-import {createBrowserRouter} from 'react-router-dom';
+import {createBrowserRouter} from "react-router-dom";
 
 const router = createBrowserRouter(
   [
     {
-      path: '/',
+      path: "/",
       errorElement: <NotFound />,
       async lazy() {
-        const Component = await import('../components/Layout');
+        const Component = await import("../components/Layout");
         return {Component: Component.default};
       },
       children: [
         {
-          path: '/',
+          path: "/",
           async lazy() {
-            const Component = await import('../pages/Home/index.jsx');
+            const Component = await import("../pages/Home/index.jsx");
             return {Component: Component.default};
           },
         },
         {
-          path: '/now-playing',
+          path: "/now-playing",
           async lazy() {
-            const Component = await import('../pages/NowPlaying/index.jsx');
+            const Component = await import("../pages/NowPlaying/index.jsx");
             return {Component: Component.default};
           },
         },
@@ -32,6 +32,6 @@ const router = createBrowserRouter(
   {basename: import.meta.env.BASE_URL}
 );
 
-router.displayName = 'Router';
+router.displayName = "Router";
 
 export default router;

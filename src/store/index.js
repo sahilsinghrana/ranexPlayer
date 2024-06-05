@@ -1,4 +1,4 @@
-import {createStore} from 'jotai';
+import {createStore} from "jotai";
 
 const globalStore = createStore();
 
