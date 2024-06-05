@@ -40,3 +40,26 @@
 .transition-width {
   transition: width 500ms linear;
 }
+
+.seekbar {
+  -webkit-appearance: none;
+  border: 1px solid #8d8d8d8f;
+  height: 5px;
+  vertical-align: middle;
+  border-radius: 20px;
+  background-color: #94949475;
+  outline: none;
+}
+
+.seekbar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ff924fac;
+  border-radius: 10px;
+  background: #ff7300;
+}
+
+.seekbar {
+  display: block;
+}

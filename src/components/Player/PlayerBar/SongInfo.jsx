@@ -1,10 +1,11 @@
 import AlbumArt from "../../AlbumArt";
 
 import {HeartIcon} from "@radix-ui/react-icons";
+import {memo} from "react";
 
 const SongInfo = () => {
   return (
-    <div className="flex items-center ">
+    <div className="inline-flex items-center place-self-start ">
       <AlbumArt />
       <div className="mx-2">
         <div className="text-text dark:text-textDark">Song Name</div>
@@ -17,4 +18,4 @@ const SongInfo = () => {
   );
 };
 
-export default SongInfo;
+export default memo(SongInfo);

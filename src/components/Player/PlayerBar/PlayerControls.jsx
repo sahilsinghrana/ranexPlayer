@@ -29,11 +29,11 @@ const PlayerControls = () => {
   }, []);
 
   return (
-    <div className="flex items-center">
+    <div className="inline-flex items-center place-self-center">
       <div className="px-3 py-2 ">
         <ShuffleButton />
       </div>
-      <div className="flex items-center px-1 py-1 font-black text-white">
+      <div className="inline-flex items-center px-1 py-1 font-black text-white">
         <PreviousButton />
         {playerStates.PLAYING === playerState ? (
           <PauseButton onClick={handlePause} />

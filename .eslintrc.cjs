@@ -30,7 +30,7 @@ module.exports = {
   },
   plugins: ["react-refresh", "react", "prettier", "react-hooks", "import"],
   rules: {
-    "react-refresh/only-export-components": "warn",
+    "react-refresh/only-export-components": 0,
     "require-jsdoc": 0,
     "prettier/prettier": "warn",
     "no-invalid-this": 0,
