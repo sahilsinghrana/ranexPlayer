@@ -1,6 +1,6 @@
-import Button from '../../Button/Button';
+import Button from "../../Button/Button";
 
-import {ShuffleIcon} from '@radix-ui/react-icons';
+import {ShuffleIcon} from "@radix-ui/react-icons";
 
 const ShuffleButton = () => {
   return (

@@ -1,19 +1,19 @@
 export const updateThemeClassInDom = (theme) => {
-  document.querySelector('body').classList.value = theme;
+  document.querySelector("body").classList.value = theme;
 };
 
 export const THEME_SELECTOR_OPTIONS = {
-  user: 'user',
-  default: 'default',
-  system: 'system',
+  user: "user",
+  default: "default",
+  system: "system",
 };
 
 export const getSystemTheme = () => {
-  const query = window.matchMedia('(prefers-color-scheme: dark)');
+  const query = window.matchMedia("(prefers-color-scheme: dark)");
   if (query.matches) {
-    return 'dark';
+    return "dark";
   } else {
-    return 'light';
+    return "light";
   }
 };
 

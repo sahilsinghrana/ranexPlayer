@@ -6,6 +6,6 @@ const Card = ({children}) => {
   );
 };
 
-Card.displayName = 'Card';
+Card.displayName = "Card";
 
 export default Card;

@@ -1,5 +1,6 @@
 import player from "../../../lib/player";
 import {currentSongAtom, playerStore} from "../../../store/atoms/playerAtom";
+import {formatTimeStampForSongDuration} from "../../../utils/helpers";
 
 import {Provider, useAtom} from "jotai";
 import {Suspense} from "react";
@@ -45,12 +46,12 @@ const SeekBar = () => {
         min={0}
         value={meta?.currentTime}
         max={meta?.duration}
-        className="w-full h-6 "
+        className="w-full mx-1 mr-3 py-0 my-0"
         onChange={(e) => player.seek(e.target.value)}
       />
-      <div className="flex w-full justify-between">
-        <p>{Number(meta?.currentTime).toFixed(0)}</p>
-        <p>{Number(meta?.duration).toFixed(0)}</p>
+      <div className="flex w-full justify-between px-2 text-sm py-0">
+        <p>{formatTimeStampForSongDuration(meta?.currentTime)}</p>
+        <p>{formatTimeStampForSongDuration(meta?.duration)}</p>
       </div>
     </div>
   );

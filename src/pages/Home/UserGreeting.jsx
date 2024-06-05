@@ -6,6 +6,6 @@ const UserGreeting = () => {
   );
 };
 
-UserGreeting.displayName = 'UserGreeting';
+UserGreeting.displayName = "UserGreeting";
 
 export default UserGreeting;

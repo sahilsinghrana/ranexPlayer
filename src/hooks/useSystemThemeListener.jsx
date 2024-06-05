@@ -1,19 +1,19 @@
-import {THEME_SELECTOR_OPTIONS, updateThemeClassInDom} from '../lib/theme';
-import themeAtom from '../store/atoms/themeAtom';
+import {THEME_SELECTOR_OPTIONS, updateThemeClassInDom} from "../lib/theme";
+import themeAtom from "../store/atoms/themeAtom";
 
-import {useAtom} from 'jotai';
-import {useCallback, useLayoutEffect} from 'react';
+import {useAtom} from "jotai";
+import {useCallback, useLayoutEffect} from "react";
 
 const removeThemeChangeListener = (listener) => {
   window
-    .matchMedia('(prefers-color-scheme: dark)')
-    .removeEventListener('change', listener);
+    .matchMedia("(prefers-color-scheme: dark)")
+    .removeEventListener("change", listener);
 };
 
 const addThemeChangeListener = (listener) => {
   window
-    .matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', listener);
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", listener);
 };
 
 const useSystemThemeListener = () => {
@@ -21,7 +21,7 @@ const useSystemThemeListener = () => {
 
   const handleThemeChange = useCallback(
     (event) => {
-      const newColorScheme = event.matches ? 'dark' : 'light';
+      const newColorScheme = event.matches ? "dark" : "light";
       setTheme({
         theme: newColorScheme,
         selection: THEME_SELECTOR_OPTIONS.system,

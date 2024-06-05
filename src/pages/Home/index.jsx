@@ -1,11 +1,11 @@
-import {Suspense} from 'react';
-import {lazy} from 'react';
+import {Suspense} from "react";
+import {lazy} from "react";
 
-const HomeSection = lazy(() => import('./HomeSection'));
-const UserGreeting = lazy(() => import('./UserGreeting'));
-const Card = lazy(() => import('../../components/Card'));
+const HomeSection = lazy(() => import("./HomeSection"));
+const UserGreeting = lazy(() => import("./UserGreeting"));
+const Card = lazy(() => import("../../components/Card"));
 const HorizontalList = lazy(() =>
-  import('../../components/List/HorizontalList')
+  import("../../components/List/HorizontalList")
 );
 
 const Home = () => {

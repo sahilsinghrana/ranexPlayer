@@ -7,6 +7,6 @@ const HomeSection = ({children, title}) => {
   );
 };
 
-HomeSection.displayName = 'HomeSection';
+HomeSection.displayName = "HomeSection";
 
 export default HomeSection;

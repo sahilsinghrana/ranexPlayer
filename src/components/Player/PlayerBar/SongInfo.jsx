@@ -1,6 +1,6 @@
-import AlbumArt from '../../AlbumArt';
+import AlbumArt from "../../AlbumArt";
 
-import {HeartIcon} from '@radix-ui/react-icons';
+import {HeartIcon} from "@radix-ui/react-icons";
 
 const SongInfo = () => {
   return (
