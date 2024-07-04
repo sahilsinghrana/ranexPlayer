@@ -1,5 +1,8 @@
+import fetcher from "../../helpers/fetcher";
+
 import {Suspense} from "react";
 import {lazy} from "react";
+import useSWR from "swr";
 
 const HomeSection = lazy(() => import("./HomeSection"));
 const UserGreeting = lazy(() => import("./UserGreeting"));
@@ -9,6 +12,8 @@ const HorizontalList = lazy(() =>
 );
 
 const Home = () => {
+  useSWR("/music/playlist", fetcher);
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className="relative w-full">

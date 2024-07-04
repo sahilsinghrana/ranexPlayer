@@ -1,8 +1,10 @@
+import supabase from "../../config/supabase";
 import useTheme from "../../hooks/useTheme";
+import {sessionAtom} from "../../store/atoms/authAtom";
 import sidebarAtom from "../../store/atoms/layout/sidebar";
 
 import {MoonIcon, SunIcon, HamburgerMenuIcon} from "@radix-ui/react-icons";
-import {useSetAtom} from "jotai";
+import {useAtom, useSetAtom} from "jotai";
 import {Suspense} from "react";
 import {lazy} from "react";
 import {Link} from "react-router-dom";
@@ -12,6 +14,8 @@ const Logo = lazy(() => import("../Branding/Logo"));
 const Header = () => {
   const [theme, toggle] = useTheme();
   const setSidebar = useSetAtom(sidebarAtom);
+
+  const [session, setSession] = useAtom(sessionAtom);
 
   return (
     <header
@@ -44,7 +48,26 @@ const Header = () => {
         >
           {theme === "light" ? <SunIcon /> : <MoonIcon />}
         </button>
-        <button>Login</button>
+        {session ? (
+          <button
+            onClick={() => {
+              supabase.auth
+                .signOut()
+                .then(() => {
+                  setSession();
+                })
+                .catch(() => {
+                  localStorage.clear();
+                  sessionStorage.clear();
+                  window.location.reload();
+                });
+            }}
+          >
+            Logout
+          </button>
+        ) : (
+          <a href="/login">Login</a>
+        )}
       </div>
     </header>
   );
