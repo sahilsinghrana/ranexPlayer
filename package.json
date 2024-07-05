@@ -6,7 +6,7 @@
   "homepage": "https://sahilsinghrana.github.io/ranexPlayer",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/ranexPlayer",
+    "build": "vite build ",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
     "prettier": "prettier 'src/**/*.{js,ts,mjs,cjs,json, jsx, tsx}' --write"
