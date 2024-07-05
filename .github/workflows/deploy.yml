@@ -17,6 +17,8 @@ jobs:
       VITE_SERVER_URL: ${{ vars.VITE_SERVER_URL }}
       VITE_SUPABASE_API_KEY: ${{ vars.VITE_SUPABASE_API_KEY }}
       VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+      BASE_URL: ${{ vars.BASE_URL }}
+      
     steps:
       - run: echo 'Hi ${{ env.VITE_SERVER_URL }}'
       - name: Checkout 🛎️
