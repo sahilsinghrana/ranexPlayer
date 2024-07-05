@@ -1,1 +1,0 @@
-import{j as a}from"./index-e6a9ebbe.js";const t=({children:e,title:s})=>a.jsxs("section",{className:"p-4 pr-0 my-2 bg-subtleBackground dark:bg-subtleBackgroundDark",children:[a.jsx("h1",{className:"pl-3 text-lg font-bold tracking-wide opacity-80",children:s}),a.jsx("div",{className:"aa",children:e})]});t.displayName="HomeSection";export{t as default};
