@@ -6,11 +6,10 @@ import {defineConfig} from "vite";
 import eslint from "vite-plugin-eslint";
 
 const isProd = process.env.NODE_ENV === "production";
-const BASE_URL = "/ranexPlayer";
 
 export default defineConfig({
   mode: isProd ? "production" : "development",
-  base: BASE_URL,
+  base: "/ranexPlayer/",
   plugins: [
     react(),
     eslint(),
