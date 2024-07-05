@@ -1,1 +1,0 @@
-import{j as t,L as r}from"./index-df71b8d8.js";const x=()=>t.jsx(r,{to:"/",children:t.jsx("h1",{className:"text-4xl text-center  font-extrabold tracking-[10px] text-textPrimary dark:text-textPrimaryDark ",children:"DiZi"})});export{x as default};
