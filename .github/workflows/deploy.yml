@@ -44,14 +44,14 @@ jobs:
       
 
       - name: Install and Build 🔧
+        run: |
+          npm install
+          npm run build --base=/ranexPlayer
         env:
           VITE_ACCESS_TOKEN: ${{ secrets.VITE_ACCESS_TOKEN }}
           VITE_SERVER_URL: ${{ secrets.VITE_SERVER_URL }}
           VITE_SUPABASE_API_KEY: ${{ secrets.VITE_SUPABASE_API_KEY }}
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-        run: |
-          npm install
-          npm run build --base=/ranexPlayer
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
