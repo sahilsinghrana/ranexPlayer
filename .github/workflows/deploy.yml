@@ -16,6 +16,8 @@ jobs:
       VITE_SERVER_URL: ${{ vars.VITE_SERVER_URL }}
       VITE_SUPABASE_API_KEY: ${{ vars.VITE_SUPABASE_API_KEY }}
       VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+      VITE_BASE_URL: ${{ vars.VITE_BASE_URL }}
+      BASE_URL: ${{ vars.BASE_URL }}
 
     steps:
       - name: Checkout 🛎️

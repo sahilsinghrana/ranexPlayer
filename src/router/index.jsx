@@ -1,8 +1,8 @@
 import NotFound from "../pages/NotFound";
 
-import {createHashRouter} from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 
-const router = createHashRouter(
+const router = createBrowserRouter(
   [
     {
       path: "/",
