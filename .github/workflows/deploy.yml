@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: github-pages
     env:
-      VITE_ACCESS_TOKEN: ${{ secrets.VITE_ACCESS_TOKEN }}
-      VITE_SERVER_URL: ${{ secrets.VITE_SERVER_URL }}
-      VITE_SUPABASE_API_KEY: ${{ secrets.VITE_SUPABASE_API_KEY }}
-      VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+      VITE_ACCESS_TOKEN: ${{ vars.VITE_ACCESS_TOKEN }}
+      VITE_SERVER_URL: ${{ vars.VITE_SERVER_URL }}
+      VITE_SUPABASE_API_KEY: ${{ vars.VITE_SUPABASE_API_KEY }}
+      VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
     steps:
       - run: echo 'Hi ${{ env.VITE_SERVER_URL }}'
       - name: Checkout 🛎️
