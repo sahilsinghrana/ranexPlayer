@@ -43,7 +43,7 @@ const router = createHashRouter(
       },
     },
   ],
-  {basename: import.meta.env.BASE_URL}
+  {basename: import.meta.env.VITE_BASE_URL}
 );
 
 router.displayName = "Router";

@@ -6,7 +6,6 @@ on:
 concurrency:
   group: ${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
-  
 
 jobs:
   build-and-deploy:
@@ -17,8 +16,8 @@ jobs:
       VITE_SERVER_URL: ${{ vars.VITE_SERVER_URL }}
       VITE_SUPABASE_API_KEY: ${{ vars.VITE_SUPABASE_API_KEY }}
       VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
-      BASE_URL: ${{ vars.BASE_URL }}
-      
+      VITE_BASE_URL: ${{ vars.VITE_BASE_URL }}
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -28,7 +27,7 @@ jobs:
       - name: Set up NodeJS environment
         uses: actions/setup-node@v2
         with:
-          node-version-file: '.nvmrc'
+          node-version-file: ".nvmrc"
 
       # - name: Setup pnpm
       #   uses: pnpm/action-setup@v2
@@ -49,13 +48,12 @@ jobs:
       #     key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
       #     restore-keys: |
       #       ${{ runner.os }}-pnpm-store-
-      
 
       - name: Install and Build 🔧
         run: |
           npm install
           npm run build --base=/ranexPlayer
-      
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
