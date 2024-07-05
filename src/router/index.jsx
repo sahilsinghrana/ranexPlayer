@@ -43,7 +43,8 @@ const router = createBrowserRouter(
       },
     },
   ],
-  {basename: import.meta.env.BASE_URL}
+  // {basename: import.meta.env.BASE_URL}
+  {basename: "/ranexPlayer"}
 );
 
 router.displayName = "Router";
