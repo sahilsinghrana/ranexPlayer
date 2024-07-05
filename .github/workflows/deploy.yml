@@ -20,7 +20,6 @@ jobs:
       BASE_URL: ${{ vars.BASE_URL }}
       
     steps:
-      - run: echo 'Hi ${{ env.VITE_SERVER_URL }}'
       - name: Checkout 🛎️
         uses: actions/checkout@v3
         with:
