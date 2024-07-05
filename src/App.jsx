@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="w-screen h-screen bg-appBackground dark:bg-appBackgroundDark text-textLight dark:text-textDark " >
       <Suspense fallback={<FullAppLoader />}>
-        <RouterProvider router={router} />
+        <RouterProvider router={router} basename={"https://sahilsinghrana.github.io/ranexPlayer"} />
       </Suspense>
     </div>
   );
