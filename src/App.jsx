@@ -34,11 +34,11 @@ function App() {
   }, [setSession]);
 
   return (
-    <>
+    <div className="w-screen h-screen bg-appBackground dark:bg-appBackgroundDark text-textLight dark:text-textDark " >
       <Suspense fallback={<FullAppLoader />}>
         <RouterProvider router={router} />
       </Suspense>
-    </>
+    </div>
   );
 }
 

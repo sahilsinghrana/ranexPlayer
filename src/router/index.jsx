@@ -26,21 +26,21 @@ const router = createBrowserRouter(
             return {Component: Component.default};
           },
         },
-        {
-          path: "/login",
-          async lazy() {
-            const Component = await import("../pages/Login/index.jsx");
-            return {Component: Component.default};
-          },
-        },
-        {
-          path: "/signup",
-          async lazy() {
-            const Component = await import("../pages/SignUp/index.jsx");
-            return {Component: Component.default};
-          },
-        },
       ],
+    },
+    {
+      path: "/login",
+      async lazy() {
+        const Component = await import("../pages/Login/index.jsx");
+        return {Component: Component.default};
+      },
+    },
+    {
+      path: "/signup",
+      async lazy() {
+        const Component = await import("../pages/SignUp/index.jsx");
+        return {Component: Component.default};
+      },
     },
   ],
   {basename: import.meta.env.BASE_URL}

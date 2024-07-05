@@ -1,8 +1,12 @@
+import {Link} from "react-router-dom";
+
 const Logo = () => {
   return (
-    <h1 className="text-3xl text-center text-textPrimary dark:text-textPrimaryDark ">
-      Ranex Player
-    </h1>
+    <Link to="/">
+      <h1 className="text-4xl text-center  font-extrabold tracking-[10px] text-textPrimary dark:text-textPrimaryDark ">
+        DiZi
+      </h1>
+    </Link>
   );
 };
 

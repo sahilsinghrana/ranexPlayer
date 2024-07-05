@@ -12,7 +12,7 @@ const PlayerBar = lazy(() => import("../Player/PlayerBar"));
 const Layout = () => {
   return (
     <Suspense fallback={<FullAppLoader />}>
-      <div className="flex flex-col justify-between w-screen h-screen bg-appBackground dark:bg-appBackgroundDark text-textLight dark:text-textDark ">
+      <div className="w-screen h-screen flex flex-col justify-between">
         <Header />
         <div className="flex flex-grow overflow-auto justify-self-start max-w-[99.8%]">
           <Sidebar />
