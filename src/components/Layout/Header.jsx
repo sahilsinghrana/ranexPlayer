@@ -66,7 +66,7 @@ const Header = () => {
             Logout
           </button>
         ) : (
-          <a href="/login">Login</a>
+          <Link to="/login">Login</Link>
         )}
       </div>
     </header>
