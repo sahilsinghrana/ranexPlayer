@@ -3,9 +3,7 @@ import axios from "axios";
 
 const baseServerUrl = import.meta.env.VITE_SERVER_URL;
 const accessToken = `Basic ${import.meta.env.VITE_ACCESS_TOKEN}`;
-console.log({
-  baseServerUrl,
-});
+
 const fetcher = axios.create({
   baseURL: baseServerUrl,
   timeout: 1000,
@@ -15,3 +13,8 @@ const fetcher = axios.create({
 });
 
 export default fetcher;
+
+export function addAccessTokenToFetchHeader(accessToken) {
+  if (typeof accessToken !== "string") return;
+  fetcher.defaults.headers["X-Auth-Token"] = `Bearer ${accessToken}`;
+}

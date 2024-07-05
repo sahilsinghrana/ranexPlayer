@@ -47,6 +47,7 @@
     "imagemin-pngquant": "^9.0.2",
     "lint-staged": "^13.2.2",
     "postcss": "^8.4.31",
+    "postcss-preset-env": "^9.5.15",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.3.1",
     "vite": "^4.5.3",

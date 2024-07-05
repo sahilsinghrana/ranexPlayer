@@ -9,7 +9,7 @@ import {useState, memo} from "react";
 const VolumeButton = () => {
   const [showInput, setShowInput] = useState(false);
   const [currentVol] = useAtom(playerVolumeAtom);
-  console.log("currentVol", currentVol);
+
   return (
     <div className="relative mx-1">
       {showInput && (
@@ -34,9 +34,7 @@ const VolumeButton = () => {
       )}
       <BaseButton
         onClick={() => setShowInput((prev) => !prev)}
-        className={
-          "p-2 bg-elementBackground dark:bg-elementBackgroundDark text-white"
-        }
+        className={"p-2 bg-black dark:bg-white text-white dark:text-black "}
       >
         <SpeakerLoudIcon />
       </BaseButton>

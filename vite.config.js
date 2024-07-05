@@ -1,58 +1,60 @@
-import react from '@vitejs/plugin-react-swc';
-import cssnano from 'cssnano';
-import imagemin from 'imagemin';
-import imageminPngquant from 'imagemin-pngquant';
-import {defineConfig} from 'vite';
-import eslint from 'vite-plugin-eslint';
+import react from "@vitejs/plugin-react-swc";
+import cssnano from "cssnano";
+// import imagemin from "imagemin";
+// import imageminPngquant from "imagemin-pngquant";
+import {defineConfig} from "vite";
+import eslint from "vite-plugin-eslint";
 
-const isProd = process.env.NODE_ENV === 'production';
+const isProd = process.env.NODE_ENV === "production";
+const BASE_URL = import.meta.VITE_BASE_URL;
 
 export default defineConfig({
-  mode: isProd ? 'production' : 'development',
-  base : "/ranexPlayer/",
+  mode: isProd ? "production" : "development",
+  base: BASE_URL,
   plugins: [
     react(),
     eslint(),
     cssnano({
       preset: [
-        'default',
+        "default",
         {
           discardComments: {
             removeAll: true,
           },
         },
       ],
+      plugins: [["autoprefixer", {}]],
     }),
-    {
-      name: 'image-minimizer',
-      async transform(_, id) {
-        if (!/\.(png|jpe?g|gif|svg)$/i.test(id)) {
-          return null;
-        }
+    // {
+    //   name: "image-minimizer",
+    //   async transform(_, id) {
+    //     if (!/\.(png|jpe?g|gif|svg)$/i.test(id)) {
+    //       return null;
+    //     }
 
-        const data = await this.load(id);
-        const result = await imagemin.buffer(data, {
-          plugins: [
-            imageminPngquant({
-              quality: [0.6, 0.8],
-            }),
-          ],
-        });
+    //     const data = await this.load(id);
+    //     const result = await imagemin.buffer(data, {
+    //       plugins: [
+    //         imageminPngquant({
+    //           quality: [0.6, 0.8],
+    //         }),
+    //       ],
+    //     });
 
-        return {
-          code: `export default URL.createObjectURL(new Blob([${JSON.stringify(
-            result
-          )}], { type: 'image/${id.split('.').pop()}' }))`,
-        };
-      },
-    },
+    //     return {
+    //       code: `export default URL.createObjectURL(new Blob([${JSON.stringify(
+    //         result
+    //       )}], { type: 'image/${id.split(".").pop()}' }))`,
+    //     };
+    //   },
+    // },
   ],
   build: {
     chunkSizeWarningLimit: 2000,
     cssCodeSplit: true,
     assetsInlineLimit: 4096,
-    cssMinify: isProd,
-    minify: 'esbuild',
+    minify: "esbuild",
     manifest: true,
+    cssMinify: isProd,
   },
 });

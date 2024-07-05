@@ -7,11 +7,11 @@ import {Link} from "react-router-dom";
 const MediaOptions = () => {
   return (
     <div className="inline-flex items-center place-self-end">
-      <div className="p-2 mx-1 text-white cursor-pointer bg-elementBackground dark:bg-elementBackgroundDark">
-        <Link to="/now-playing">
+      <Link to="/now-playing">
+        <div className="p-2 mx-1 text-white bg-black cursor-pointer dark:text-black dark:bg-white">
           <ListBulletIcon />
-        </Link>
-      </div>
+        </div>
+      </Link>
       <VolumeButton />
     </div>
   );

@@ -5,7 +5,7 @@ import {lazy} from "react";
 import useSWR from "swr";
 
 const HomeSection = lazy(() => import("./HomeSection"));
-const UserGreeting = lazy(() => import("./UserGreeting"));
+// const UserGreeting = lazy(() => import("./UserGreeting"));
 const Card = lazy(() => import("../../components/Card"));
 const HorizontalList = lazy(() =>
   import("../../components/List/HorizontalList")
@@ -18,7 +18,8 @@ const Home = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <div className="relative w-full">
         <div className="h-full overflow-auto">
-          <UserGreeting />
+          {/* <UserGreeting /> */}
+
           <HomeSection title="Playlists">
             <HorizontalList>
               <li>
