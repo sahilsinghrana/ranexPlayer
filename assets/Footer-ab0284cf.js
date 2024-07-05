@@ -1,1 +1,0 @@
-import{j as r}from"./index-da865064.js";const e=()=>r.jsx("footer",{className:"py-1 font-mono text-center border-t-2 border-borderHover/10 dark:bg-subtleBackgroundDark bg-subtleBackground ",children:"Made with ❣️ by Sahil Singh Rana"});e.displayName="Footer";export{e as default};
