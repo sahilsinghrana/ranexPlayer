@@ -1,13 +1,22 @@
 {
-  "_Button-182c077f.js": {
-    "file": "assets/Button-182c077f.js",
+  "_Button-8434db12.js": {
+    "file": "assets/Button-8434db12.js",
     "imports": [
       "index.html",
       "_clsx.m-1229b3e0.js"
     ]
   },
-  "_browser-eab05a98.js": {
-    "file": "assets/browser-eab05a98.js",
+  "_Input-7352805f.js": {
+    "file": "assets/Input-7352805f.js",
+    "imports": [
+      "index.html",
+      "_logo_red-4cea6e6e.js",
+      "_Button-8434db12.js",
+      "_clsx.m-1229b3e0.js"
+    ]
+  },
+  "_browser-7278b5c2.js": {
+    "file": "assets/browser-7278b5c2.js",
     "imports": [
       "index.html"
     ],
@@ -16,53 +25,53 @@
   "_clsx.m-1229b3e0.js": {
     "file": "assets/clsx.m-1229b3e0.js"
   },
-  "_index-b5ed4bea.js": {
+  "_index-a3edd264.js": {
     "dynamicImports": [
       "src/components/Player/PlayerBar/SongInfo.jsx",
       "src/components/Player/PlayerBar/PlayerControls.jsx",
       "src/components/Player/PlayerBar/MediaOptions.jsx"
     ],
-    "file": "assets/index-b5ed4bea.js",
+    "file": "assets/index-a3edd264.js",
     "imports": [
       "index.html"
     ],
     "isDynamicEntry": true
   },
-  "_index-c1d40587.js": {
-    "file": "assets/index-c1d40587.js",
+  "_index-ec1d1275.js": {
+    "file": "assets/index-ec1d1275.js",
     "imports": [
       "index.html"
     ]
   },
-  "_logo_red-54b98162.js": {
+  "_logo_red-4cea6e6e.js": {
     "assets": [
       "assets/logo_red-c5f89074.png"
     ],
-    "file": "assets/logo_red-54b98162.js"
+    "file": "assets/logo_red-4cea6e6e.js"
   },
-  "_react-icons.esm-e46ca9e9.js": {
-    "file": "assets/react-icons.esm-e46ca9e9.js",
+  "_react-icons.esm-8768f397.js": {
+    "file": "assets/react-icons.esm-8768f397.js",
     "imports": [
       "index.html"
     ]
   },
   "index.css": {
-    "file": "assets/index-00e65167.css",
+    "file": "assets/index-25194eae.css",
     "src": "index.css"
   },
   "index.html": {
     "css": [
-      "assets/index-00e65167.css"
+      "assets/index-25194eae.css"
     ],
     "dynamicImports": [
-      "_browser-eab05a98.js",
+      "_browser-7278b5c2.js",
       "src/components/Layout/index.jsx",
       "src/pages/Home/index.jsx",
       "src/pages/NowPlaying/index.jsx",
       "src/pages/Login/index.jsx",
       "src/pages/SignUp/index.jsx"
     ],
-    "file": "assets/index-56e91718.js",
+    "file": "assets/index-ee679bec.js",
     "isEntry": true,
     "src": "index.html"
   },
@@ -75,17 +84,17 @@
     "src": "src/assets/music/yrym.mp3"
   },
   "src/components/Branding/Logo.jsx": {
-    "file": "assets/Logo-7130a428.js",
+    "file": "assets/Logo-63bc0e49.js",
     "imports": [
       "index.html",
-      "_logo_red-54b98162.js",
+      "_logo_red-4cea6e6e.js",
       "_clsx.m-1229b3e0.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Branding/Logo.jsx"
   },
   "src/components/Card/index.jsx": {
-    "file": "assets/index-8c2f2ab0.js",
+    "file": "assets/index-11e9fef5.js",
     "imports": [
       "index.html"
     ],
@@ -93,7 +102,7 @@
     "src": "src/components/Card/index.jsx"
   },
   "src/components/Layout/Footer.jsx": {
-    "file": "assets/Footer-b4ed8716.js",
+    "file": "assets/Footer-b0929a9f.js",
     "imports": [
       "index.html"
     ],
@@ -104,16 +113,16 @@
     "dynamicImports": [
       "src/components/Branding/Logo.jsx"
     ],
-    "file": "assets/Header-1b8caacd.js",
+    "file": "assets/Header-cf907480.js",
     "imports": [
       "index.html",
-      "_react-icons.esm-e46ca9e9.js"
+      "_react-icons.esm-8768f397.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Layout/Header.jsx"
   },
   "src/components/Layout/Sidebar/index.jsx": {
-    "file": "assets/index-ddc5c0da.js",
+    "file": "assets/index-81841cde.js",
     "imports": [
       "index.html",
       "_clsx.m-1229b3e0.js"
@@ -126,9 +135,9 @@
       "src/components/Layout/Footer.jsx",
       "src/components/Layout/Header.jsx",
       "src/components/Layout/Sidebar/index.jsx",
-      "_index-b5ed4bea.js"
+      "_index-a3edd264.js"
     ],
-    "file": "assets/index-8ed7ddb6.js",
+    "file": "assets/index-c20d1f23.js",
     "imports": [
       "index.html"
     ],
@@ -136,7 +145,7 @@
     "src": "src/components/Layout/index.jsx"
   },
   "src/components/List/HorizontalList.jsx": {
-    "file": "assets/HorizontalList-6952960c.js",
+    "file": "assets/HorizontalList-ac3a4292.js",
     "imports": [
       "index.html"
     ],
@@ -144,12 +153,12 @@
     "src": "src/components/List/HorizontalList.jsx"
   },
   "src/components/Player/PlayerBar/MediaOptions.jsx": {
-    "file": "assets/MediaOptions-f1898e68.js",
+    "file": "assets/MediaOptions-c685bc89.js",
     "imports": [
       "index.html",
-      "_index-b5ed4bea.js",
-      "_Button-182c077f.js",
-      "_react-icons.esm-e46ca9e9.js",
+      "_index-a3edd264.js",
+      "_Button-8434db12.js",
+      "_react-icons.esm-8768f397.js",
       "_clsx.m-1229b3e0.js"
     ],
     "isDynamicEntry": true,
@@ -159,42 +168,51 @@
     "assets": [
       "assets/yrym-98de3516.mp3"
     ],
-    "file": "assets/PlayerControls-0be019ae.js",
+    "file": "assets/PlayerControls-a16f5ba2.js",
     "imports": [
       "index.html",
-      "_index-b5ed4bea.js",
-      "_Button-182c077f.js",
-      "_react-icons.esm-e46ca9e9.js",
+      "_index-a3edd264.js",
+      "_Button-8434db12.js",
+      "_react-icons.esm-8768f397.js",
       "_clsx.m-1229b3e0.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Player/PlayerBar/PlayerControls.jsx"
   },
   "src/components/Player/PlayerBar/SongInfo.jsx": {
-    "file": "assets/SongInfo-500393c4.js",
+    "file": "assets/SongInfo-7b25c0fd.js",
     "imports": [
       "index.html",
-      "_index-c1d40587.js",
-      "_react-icons.esm-e46ca9e9.js"
+      "_index-ec1d1275.js",
+      "_react-icons.esm-8768f397.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Player/PlayerBar/SongInfo.jsx"
   },
   "src/pages/Home/HomeSection.jsx": {
-    "file": "assets/HomeSection-264f5e31.js",
+    "file": "assets/HomeSection-5e790139.js",
     "imports": [
       "index.html"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Home/HomeSection.jsx"
   },
+  "src/pages/Home/UserGreeting.jsx": {
+    "file": "assets/UserGreeting-9090e24c.js",
+    "imports": [
+      "index.html"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/pages/Home/UserGreeting.jsx"
+  },
   "src/pages/Home/index.jsx": {
     "dynamicImports": [
       "src/pages/Home/HomeSection.jsx",
+      "src/pages/Home/UserGreeting.jsx",
       "src/components/Card/index.jsx",
       "src/components/List/HorizontalList.jsx"
     ],
-    "file": "assets/index-c8111be0.js",
+    "file": "assets/index-3155db4d.js",
     "imports": [
       "index.html"
     ],
@@ -202,29 +220,34 @@
     "src": "src/pages/Home/index.jsx"
   },
   "src/pages/Login/index.jsx": {
-    "file": "assets/index-a58bcf05.js",
+    "file": "assets/index-96bd5b77.js",
     "imports": [
       "index.html",
-      "_logo_red-54b98162.js",
-      "_Button-182c077f.js",
+      "_Input-7352805f.js",
+      "_Button-8434db12.js",
+      "_logo_red-4cea6e6e.js",
       "_clsx.m-1229b3e0.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Login/index.jsx"
   },
   "src/pages/NowPlaying/index.jsx": {
-    "file": "assets/index-91c592d9.js",
+    "file": "assets/index-94064cef.js",
     "imports": [
       "index.html",
-      "_index-c1d40587.js"
+      "_index-ec1d1275.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/NowPlaying/index.jsx"
   },
   "src/pages/SignUp/index.jsx": {
-    "file": "assets/index-283d0e00.js",
+    "file": "assets/index-368da529.js",
     "imports": [
-      "index.html"
+      "index.html",
+      "_Input-7352805f.js",
+      "_Button-8434db12.js",
+      "_logo_red-4cea6e6e.js",
+      "_clsx.m-1229b3e0.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/SignUp/index.jsx"
