@@ -1,13 +1,7 @@
 import song from "../../../assets/music/yrym.mp3";
 import player from "../../../lib/player";
 import {playerStateAtom, playerStates} from "../../../store/atoms/playerAtom";
-import {
-  LoopButton,
-  NextButton,
-  PlayButton,
-  PreviousButton,
-  ShuffleButton,
-} from "../../Button/music";
+import {NextButton, PlayButton, PreviousButton} from "../../Button/music";
 import PauseButton from "../../Button/music/PauseButton";
 
 import {useAtom} from "jotai";
@@ -30,9 +24,9 @@ const PlayerControls = () => {
 
   return (
     <div className="inline-flex items-center place-self-center">
-      <div className="px-3 py-2 ">
+      {/* <div className="px-3 py-2 ">
         <ShuffleButton />
-      </div>
+      </div> */}
       <div className="inline-flex items-center px-1 py-1 font-black text-white">
         <PreviousButton />
         {playerStates.PLAYING === playerState ? (
@@ -42,9 +36,9 @@ const PlayerControls = () => {
         )}
         <NextButton />
       </div>
-      <div className="px-3 py-2">
+      {/* <div className="px-3 py-2">
         <LoopButton />
-      </div>
+      </div> */}
     </div>
   );
 };

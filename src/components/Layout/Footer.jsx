@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="py-1 font-mono text-center border-t-2 border-borderHover/10 dark:bg-subtleBackgroundDark bg-subtleBackground ">
-      Made with ❣️ by Sahil Singh Rana
+    <footer className="flex items-center justify-center w-full grid-cols-3 py-2 font-mono text-center border-t-2 text border-borderHover/10 bg-neutral-300 dark:bg-neutral-900 ">
+      With ❣️ by Sahil Rana{" "}
     </footer>
   );
 };

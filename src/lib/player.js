@@ -47,7 +47,6 @@ player.attachListener("timeupdate", () => {
 });
 
 player.attachListener("onvolumechange", () => {
-  console.log("onvolumechange", player.audioEl.volume);
   playerStore.set(playerVolumeAtom, () => player.audioEl.volume);
 });
 
