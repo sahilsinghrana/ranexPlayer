@@ -9,7 +9,6 @@ const isProd = process.env.NODE_ENV === "production";
 
 export default defineConfig({
   mode: isProd ? "production" : "development",
-  base: "/ranexPlayer/",
   plugins: [
     react(),
     eslint(),

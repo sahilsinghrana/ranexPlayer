@@ -1,7 +1,9 @@
 const UserGreeting = () => {
   return (
-    <h1 className="p-4 font-sans font-extrabold tracking-wide text-1xl text-textPrimary dark:text-textPrimaryDark">
-      Good Morning, User
+    <h1 className="py-2 mx-0 font-sans text-sm italic font-light text-center text-white ytracking-wide bg-neutral-800">
+      Through the <span className="font-normal">EARS</span>, into the{" "}
+      <span className="font-normal">HEAD</span>, reminiscing the{" "}
+      <span className="font-normal">SOUL</span>
     </h1>
   );
 };

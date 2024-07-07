@@ -1,8 +1,17 @@
 import BaseButton from "../Button";
 
-function SignInWithProviderBaseButton({children, onClick}) {
+import clsx from "clsx";
+
+function SignInWithProviderBaseButton({children, onClick, className}) {
   return (
-    <BaseButton type="secondary" onClick={onClick}>
+    <BaseButton
+      type="primary"
+      onClick={onClick}
+      className={clsx(
+        "p-6 px-7 bg-white text-black hover:bg-white ",
+        className
+      )}
+    >
       {children}
     </BaseButton>
   );

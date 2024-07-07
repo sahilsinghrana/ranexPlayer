@@ -1,5 +1,6 @@
 import {cva} from "class-variance-authority";
 import clsx from "clsx";
+import {twMerge} from "tailwind-merge";
 
 const button = cva(
   "flex items-center justify-center p-2 transition-colors duration-300",
@@ -47,7 +48,7 @@ const button = cva(
 const BaseButton = ({children, className, type, size, rounded, ...props}) => {
   return (
     <button
-      className={clsx(button({type, size, rounded}), className)}
+      className={twMerge(clsx(button({type, size, rounded}), className))}
       {...props}
     >
       {children}

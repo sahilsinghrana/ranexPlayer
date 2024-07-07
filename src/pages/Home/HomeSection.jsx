@@ -1,6 +1,6 @@
 const HomeSection = ({children, title}) => {
   return (
-    <section className="p-4 pr-0 my-2 bg-subtleBackground dark:bg-subtleBackgroundDark">
+    <section className="p-4 pr-0 bg-neutral-300 dark:bg-black dark:border-gray-12">
       <h1 className="pl-3 text-lg font-bold tracking-wide opacity-80">
         {title}
       </h1>
@@ -8,7 +8,5 @@ const HomeSection = ({children, title}) => {
     </section>
   );
 };
-
-HomeSection.displayName = "HomeSection";
 
 export default HomeSection;

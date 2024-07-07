@@ -1,6 +1,6 @@
 function MessageLogin() {
   return (
-    <h2 className="text-3xl font-light tracking-wide text-right uppercase opacity-80">
+    <h2 className="text-2xl font-light tracking-wide text-right uppercase sm:text-3xl opacity-80 text-slate-100 ">
       Let us get <span className="font-bold">Lost</span>
       <br />
       Across the <span className="font-bold">Universe</span>

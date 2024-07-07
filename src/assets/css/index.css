@@ -43,6 +43,7 @@
 
 .seekbar {
   -webkit-appearance: none;
+  appearance: none;
   border: 1px solid #8d8d8d8f;
   height: 5px;
   vertical-align: middle;

@@ -3,6 +3,7 @@ import {currentSongAtom} from "../../../store/atoms/playerAtom";
 import {debounce, formatTimeStampForSongDuration} from "../../../utils/helpers";
 
 import {useAtom} from "jotai";
+import {memo} from "react";
 
 const SeekBar = () => {
   return (
@@ -13,7 +14,7 @@ const SeekBar = () => {
   );
 };
 
-const SeekInput = () => {
+const SeekInput = memo(() => {
   const [currentSong] = useAtom(currentSongAtom);
   const meta = currentSong?.meta || {};
   return (
@@ -26,7 +27,7 @@ const SeekInput = () => {
       onChange={(e) => debounce(player.seek, 150)(e.target.value)}
     />
   );
-};
+});
 
 const SeekTimeLabels = () => {
   const [currentSong] = useAtom(currentSongAtom);
@@ -39,4 +40,4 @@ const SeekTimeLabels = () => {
   );
 };
 
-export default SeekBar;
+export default memo(SeekBar);

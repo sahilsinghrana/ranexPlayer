@@ -43,6 +43,7 @@ module.exports = {
     "import/named": 2,
     "import/default": 2,
     "import/export": 2,
+    "react/display-name": 0,
     "import/order": [
       2,
       {

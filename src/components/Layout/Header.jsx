@@ -17,11 +17,8 @@ const Header = () => {
 
   return (
     <header
-      // style={{
-      //   height: "10vh",
-      // }}
       className={
-        "md:flex-row  flex-col dark:bg-subtleBackgroundDark bg-subtleBackground/80 py-3 border-borderHover/20 border-b-2 border-opacity-5 flex flex-wrap justify-center sm:justify-between pr-5 pl-1 items-center"
+        "md:flex-row  flex-col bg-grayDark-1 py-3 border-borderHover/20 border-b-2 border-opacity-5 flex flex-wrap justify-center sm:justify-between pr-5 pl-1 items-center"
       }
     >
       <div className="flex flex-col flex-wrap items-center justify-center mt-0 md:flex-row">
@@ -31,7 +28,7 @@ const Header = () => {
           </Link>
         </Suspense>
         <div>
-          <h2 className="pl-3 text-lg font-light tracking-wide text-center uppercase md:text-3xl lg:text-4xl sm:text-left sm:pl-6 sm:text-2xl opacity-60">
+          <h2 className="py-1 pl-3 text-sm font-light tracking-wide text-center text-white uppercase md:text-2xl lg:text-3xl sm:text-left sm:pl-6 sm:text-xl opacity-60">
             Get <span className="font-normal">Dwelved</span> in the soul of{" "}
             <span className="font-bold">Sound</span>
             <br />
@@ -63,7 +60,9 @@ const Header = () => {
             Logout
           </button>
         ) : (
-          <Link to="/login">Login</Link>
+          <Link to="/login" className="text-white">
+            Login
+          </Link>
         )}
       </div>
     </header>

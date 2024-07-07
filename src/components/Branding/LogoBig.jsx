@@ -9,7 +9,11 @@ const LogoBig = () => {
       {/* <h1 className="text-8xl font-extrabold tracking-[10px] text-textPrimary dark:text-textPrimaryDark ">
         DiZi
       </h1> */}
-      <img className="h-[130px]" src={logoRed} alt="Ranex Player Logo" />
+      <img
+        className=" h-[80px] sm:h-[130px]"
+        src={logoRed}
+        alt="Ranex Player Logo"
+      />
     </Link>
   );
 };
