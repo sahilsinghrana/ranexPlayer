@@ -12,6 +12,7 @@ export const currentSongAtom = atom();
 export const currentPlaylistAtom = atom({id: ""});
 export const queueAtom = atom([]);
 export const playerVolumeAtom = atom();
+export const playerFullViewAtom = atom(false);
 
 const playerAtom = atom({
   playerState: playerStateAtom,

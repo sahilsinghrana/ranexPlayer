@@ -24,12 +24,12 @@ const Header = () => {
       <div className="flex flex-col flex-wrap items-center justify-center mt-0 md:flex-row">
         <Suspense fallback={<div>Loader...</div>}>
           <Link to="/">
-            <Logo className={"h-[50px] sm:h-[80px] "} />
+            <Logo className={"h-[50px] sm:h-[60px] md:h-[70px] "} />
           </Link>
         </Suspense>
         <div>
-          <h2 className="py-1 pl-3 text-sm font-light tracking-wide text-center text-white uppercase md:text-2xl lg:text-3xl sm:text-left sm:pl-6 sm:text-xl opacity-60">
-            Get <span className="font-normal">Dwelved</span> in the soul of{" "}
+          <h2 className="py-1 pl-3 text-xs font-light tracking-wide text-center text-white uppercase md:text-xl lg:text-2xl sm:text-left sm:pl-6 sm:text-sm opacity-60">
+            Get <span className="font-normal">Dwelved</span> in the soul of the{" "}
             <span className="font-bold">Sound</span>
             <br />
           </h2>

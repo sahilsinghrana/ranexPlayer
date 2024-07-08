@@ -1,7 +1,9 @@
+import song from "./assets/music/yrym.mp3";
 import FullAppLoader from "./components/Loaders/FullAppLoader";
 import supabase from "./config/supabase";
 import {addAccessTokenToFetchHeader} from "./helpers/fetcher";
 import useSystemThemeListener from "./hooks/useSystemThemeListener";
+import player from "./lib/player";
 import router from "./router";
 import {sessionAtom} from "./store/atoms/authAtom";
 
@@ -12,6 +14,10 @@ import {RouterProvider} from "react-router-dom";
 function App() {
   useSystemThemeListener();
   const setSession = useSetAtom(sessionAtom);
+
+  useEffect(() => {
+    player.load(song);
+  }, []);
 
   useEffect(() => {
     supabase.auth.getSession().then(({data: {session}}) => {
