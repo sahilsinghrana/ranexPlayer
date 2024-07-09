@@ -99,21 +99,24 @@ function ProfileDropdown() {
         />
       </button>
       {open && (
-        <ul className="bg-white text-black absolute z-10 top-[80%]">
-          <li>
-            <Link to={"/profile"}>Profile</Link>
-          </li>
-          <li>
-            <Link to={"/profile"}>Profile</Link>
-          </li>
-          <li>
-            <Link to={"/profile"}>Profile</Link>
-          </li>
-          <li>
-            <Link to={"/profile"}>Profile</Link>
-          </li>
+        <ul className="w-[160px] py-2 flex flex-col text-sm border border-neutral-400/30  bg-neutral-900/70 rounded-lg absolute z-10 top-[80%] left-0">
+          <DropDownLink to={"/profile"}>Profile</DropDownLink>
+          <DropDownLink to={"/settings"}>Settings</DropDownLink>
         </ul>
       )}
     </div>
+  );
+}
+
+function DropDownLink({to, children}) {
+  return (
+    <li className="mb-1 w-[160px]">
+      <Link
+        to={to}
+        className="h-[30px] transition duration-75 flex items-center w-full hover:bg-neutral-600/90 py-3 px-2 text-white  text-center"
+      >
+        {children}
+      </Link>
+    </li>
   );
 }
