@@ -8,10 +8,9 @@
   -ms-transition: background-color 1000ms ease-in-out;
 }
 
-#root {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+:root {
+  box-sizing: border-box;
+  background-color: #262626;
 }
 
 * {

@@ -36,7 +36,7 @@ function App() {
   }, [setSession]);
 
   return (
-    <div className="w-screen h-screen bg-neutral-500 dark:bg-neutral-800 text-textLight dark:text-textDark ">
+    <div className=" bg-neutral-500 dark:bg-neutral-800 text-textLight dark:text-textDark">
       <Suspense fallback={<FullAppLoader />}>
         <RouterProvider router={router} />
       </Suspense>

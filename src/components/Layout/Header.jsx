@@ -60,12 +60,12 @@ const Header = () => {
             Logout
           </button>
         ) : (
-          <>
+          <div className="flex items-center h-full">
             <Link to="/login" className="text-white">
               Login
             </Link>
             <ProfileDropdown />
-          </>
+          </div>
         )}
       </div>
     </header>
@@ -90,16 +90,19 @@ function ProfileDropdown() {
   }, [ddRef]);
 
   return (
-    <div ref={ddRef} className="relative mx-2 m-0 p-0">
+    <div
+      ref={ddRef}
+      className="relative p-0 m-0 mx-2 w-[25px] flex items-center h-full"
+    >
       <button onClick={() => setOpen((t) => !t)}>
         <img
           src=""
-          className="h-[25px] w-[25px] rounded-full bg-white  "
+          className="h-[35px] w-[35px] rounded-full bg-white  "
           alt="profile"
         />
       </button>
       {open && (
-        <ul className="w-[160px] py-2 flex flex-col text-sm border border-neutral-400/30  bg-neutral-900/70 rounded-lg absolute z-10 top-[80%] left-0">
+        <ul className="w-[160px] py-2 flex flex-col text-sm border border-neutral-400/30  bg-neutral-900/70 rounded-lg absolute z-10 top-full left-auto md:right-0">
           <DropDownLink to={"/profile"}>Profile</DropDownLink>
           <DropDownLink to={"/settings"}>Settings</DropDownLink>
         </ul>

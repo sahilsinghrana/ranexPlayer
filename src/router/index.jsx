@@ -61,7 +61,9 @@ const router = createBrowserRouter(
           path: "profile",
           errorElement: <NotFound />,
           async lazy() {
-            const Component = await import("../pages/Settings/Profile.jsx");
+            const Component = await import(
+              "../pages/Settings/ProfileSettings.jsx"
+            );
             return {Component: Component.default};
           },
         },
@@ -89,7 +91,9 @@ const router = createBrowserRouter(
           path: "",
           errorElement: <NotFound />,
           async lazy() {
-            const Component = await import("../pages/Settings/Profile.jsx");
+            const Component = await import(
+              "../pages/Settings/ProfileSettings.jsx"
+            );
             return {Component: Component.default};
           },
         },
