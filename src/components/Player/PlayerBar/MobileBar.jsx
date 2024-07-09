@@ -1,8 +1,13 @@
 import SeekBar from "./SeekBar";
 
-import {ChevronDownIcon} from "@radix-ui/react-icons";
+import {ChevronDownIcon, ListBulletIcon} from "@radix-ui/react-icons";
 import {lazy, Suspense} from "react";
-import {useLocation, useNavigate, useSearchParams} from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 
 const SongInfo = lazy(() => import("./SongInfo"));
 const PlayerControls = lazy(() => import("./PlayerControls"));
@@ -59,9 +64,6 @@ function PlayerFull() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  console.log({
-    location,
-  });
   return (
     <div className="absolute top-0 grid w-full h-full grid-cols-1 bg-neutral-600">
       <div className="h-[10vh] p-6">
@@ -86,7 +88,17 @@ function PlayerFull() {
           </div>
         </div>
         <SeekBar />
-        <PlayerControls />
+        <div className="grid w-full grid-cols-[minmax(30px,_1fr)_5fr_minmax(30px,_1fr)] justify-center items-center">
+          <div></div>
+          <PlayerControls />
+          <div className="flex justify-end w-full">
+            <Link to={"/now-playing"}>
+              <div className="p-2 mx-1 text-white cursor-pointer ">
+                <ListBulletIcon className="w-[22px] h-[22px]" />
+              </div>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

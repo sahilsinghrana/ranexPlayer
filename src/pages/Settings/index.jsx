@@ -1,13 +1,13 @@
 import Header from "../../components/Layout/Header";
 
 import {GearIcon} from "@radix-ui/react-icons";
-import {Link, Outlet} from "react-router-dom";
+import {NavLink, Outlet} from "react-router-dom";
 
 function SettingsPage() {
   return (
     <>
       <Header />
-      <div className="p-4 ">
+      <div className="p-2 sm:p-4 ">
         <div>
           <h1 className="flex items-center gap-1 text-lg font-bold tracking-widest uppercase text-neutral-300">
             <GearIcon /> Settings
@@ -29,22 +29,29 @@ export default SettingsPage;
 function SettingsSidebar() {
   return (
     <div
-      className="h-full min-h-[400px] "
+      className="h-full min-h-[400px] py-1 md:px-2 text-sm"
       style={{
         borderRight: "1px solid #ffffff50",
       }}
     >
       <ul>
-        <li>
-          <Link to="/settings/profile">Profile</Link>
-        </li>
-        <li>
-          <Link to="/settings/account">Account</Link>
-        </li>
-        <li>
-          <Link to="/settings/cloudIntegrations">Integrations</Link>
-        </li>
+        <SidebarLink to="/settings/profile">Profile</SidebarLink>
+        <SidebarLink to="/settings/account">Account</SidebarLink>
+        <SidebarLink to="/settings/cloudIntegrations">Integrations</SidebarLink>
       </ul>
     </div>
+  );
+}
+
+function SidebarLink({children, to}) {
+  return (
+    <li className="mb-3 hover:text-white">
+      <NavLink
+        className={({isActive}) => (isActive ? "text-white" : "")}
+        to={to}
+      >
+        {children}
+      </NavLink>
+    </li>
   );
 }
