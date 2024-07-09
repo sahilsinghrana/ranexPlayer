@@ -4,14 +4,28 @@ import BaseButton from "../../Button/Button";
 
 import {SpeakerLoudIcon} from "@radix-ui/react-icons";
 import {useAtom} from "jotai";
-import {useState, memo} from "react";
+import {useState, memo, useEffect, useRef} from "react";
 
+let outerClick;
 const VolumeButton = () => {
   const [showInput, setShowInput] = useState(false);
   const [currentVol] = useAtom(playerVolumeAtom);
 
+  const buttonRef = useRef();
+
+  useEffect(() => {
+    outerClick = function () {
+      document.addEventListener("mousedown", (e) => {
+        if (buttonRef.current && !buttonRef.current.contains(e.target))
+          setShowInput(false);
+      });
+    };
+    outerClick();
+    return () => document.removeEventListener("mousedown", outerClick);
+  }, [buttonRef]);
+
   return (
-    <div className="relative mx-1">
+    <div ref={buttonRef} className="relative mx-1">
       {showInput && (
         <input
           type="range"
@@ -27,8 +41,9 @@ const VolumeButton = () => {
             width: "16px",
             verticalAlign: "bottom",
           }}
-          onChange={(e) => player.changeVolume(e.target.value)}
-          onBlur={() => setShowInput(false)}
+          onChange={(e) => {
+            player.changeVolume(e.target.value);
+          }}
           autoFocus
         />
       )}

@@ -4,7 +4,7 @@ import {sessionAtom} from "../../store/atoms/authAtom";
 
 import {MoonIcon, SunIcon} from "@radix-ui/react-icons";
 import {useAtom} from "jotai";
-import {Suspense} from "react";
+import {Suspense, useEffect, useRef, useState} from "react";
 import {lazy} from "react";
 import {Link} from "react-router-dom";
 
@@ -60,15 +60,60 @@ const Header = () => {
             Logout
           </button>
         ) : (
-          <Link to="/login" className="text-white">
-            Login
-          </Link>
+          <>
+            <Link to="/login" className="text-white">
+              Login
+            </Link>
+            <ProfileDropdown />
+          </>
         )}
       </div>
     </header>
   );
 };
 
-Header.displayName = "Header";
-
 export default Header;
+
+let outerClick;
+function ProfileDropdown() {
+  const [open, setOpen] = useState(false);
+  const ddRef = useRef();
+
+  useEffect(() => {
+    outerClick = function () {
+      document.addEventListener("mousedown", (e) => {
+        if (ddRef.current && !ddRef.current.contains(e.target)) setOpen(false);
+      });
+    };
+    outerClick();
+    return () => document.removeEventListener("mousedown", outerClick);
+  }, [ddRef]);
+
+  return (
+    <div ref={ddRef} className="relative mx-2 m-0 p-0">
+      <button onClick={() => setOpen((t) => !t)}>
+        <img
+          src=""
+          className="h-[25px] w-[25px] rounded-full bg-white  "
+          alt="profile"
+        />
+      </button>
+      {open && (
+        <ul className="bg-white text-black absolute z-10 top-[80%]">
+          <li>
+            <Link to={"/profile"}>Profile</Link>
+          </li>
+          <li>
+            <Link to={"/profile"}>Profile</Link>
+          </li>
+          <li>
+            <Link to={"/profile"}>Profile</Link>
+          </li>
+          <li>
+            <Link to={"/profile"}>Profile</Link>
+          </li>
+        </ul>
+      )}
+    </div>
+  );
+}
