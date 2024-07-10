@@ -4,7 +4,11 @@ import {TrackPreviousIcon} from "@radix-ui/react-icons";
 
 const PreviousButton = () => {
   return (
-    <Button size="sm" rounded="full" className={"m-1 w-9 h-9"}>
+    <Button
+      size="sm"
+      rounded="full"
+      className={"m-1 w-9 h-9 bg-neutral-200 text-red-950"}
+    >
       <TrackPreviousIcon />
     </Button>
   );

@@ -40,9 +40,9 @@ function LoginPage() {
       </div>
 
       <div className="flex flex-col items-center justify-center flex-grow h-full ">
-        <div className="flex flex-col items-center justify-center py-8 border-2 rounded-lg border-gray-11/20 max-w-[460px] min-w-[320px] w-[80%]">
+        <div className="flex flex-col items-center justify-center py-8 pt-4 border-2 rounded-lg border-red-600/20 max-w-[460px] min-w-[320px] w-[80%]">
           <div className="mb-3">
-            <h1 className="mb-4 text-3xl font-bold text-textSecondaryDark/80">
+            <h1 className="mb-4 text-3xl font-bold text-orange-600/80">
               Log In
             </h1>
           </div>
@@ -75,7 +75,7 @@ function LoginPage() {
 
           <div className="text-white">
             New to the space ?{" "}
-            <Link to={"/signup"} className="text-secondary-7">
+            <Link to={"/signup"} className="text-red-500">
               Sign up
             </Link>
           </div>

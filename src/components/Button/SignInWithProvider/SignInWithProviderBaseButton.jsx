@@ -8,7 +8,7 @@ function SignInWithProviderBaseButton({children, onClick, className}) {
       type="primary"
       onClick={onClick}
       className={clsx(
-        "p-6 px-7 bg-white text-black hover:bg-white ",
+        "p-6 px-7 bg-neutral-200 text-neutral-800 hover:text-neutral-950 hover:bg-neutral-300 ",
         className
       )}
     >

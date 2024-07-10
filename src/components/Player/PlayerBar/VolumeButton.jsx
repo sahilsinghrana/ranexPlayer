@@ -49,7 +49,7 @@ const VolumeButton = () => {
       )}
       <BaseButton
         onClick={() => setShowInput((prev) => !prev)}
-        className={"p-2 bg-black dark:bg-white text-white dark:text-black "}
+        className={"p-2 bg-white text-black "}
       >
         <SpeakerLoudIcon />
       </BaseButton>

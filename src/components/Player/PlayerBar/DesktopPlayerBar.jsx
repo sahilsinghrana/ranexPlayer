@@ -9,7 +9,7 @@ const MediaOptions = lazy(() => import("./MediaOptions"));
 
 function DesktopPlayerBar() {
   return (
-    <div className="px-4 py-3 place-content-center bg-subtleBackground dark:bg-subtleBackgroundDark">
+    <div className="px-4 py-3 place-content-center bg-neutral-950">
       <SeekBar />
       <div className="grid w-full grid-cols-3 ">
         <Suspense fallback={<FallbackLoader />}>

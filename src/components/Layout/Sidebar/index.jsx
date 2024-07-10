@@ -22,7 +22,7 @@ const Sidebar = () => {
     >
       <aside
         className={clsx(
-          "z-20 w-2/4 md:w-full dark:bg-subtleBackgroundDark bg-subtleBackground  h-full flex-col items-center pt-5 pb-2 space-y-7"
+          "z-20 w-2/4 md:w-full bg-subtleBackgroundDark   h-full flex-col items-center pt-5 pb-2 space-y-7"
         )}
         onClick={(e) => e.stopPropagation()}
       >

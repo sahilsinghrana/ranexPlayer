@@ -1,11 +1,27 @@
 import AlbumArt from "../../components/AlbumArt";
 
+import {Cross1Icon} from "@radix-ui/react-icons";
+import {useNavigate} from "react-router-dom";
+
 function NowPlaying() {
+  const navigate = useNavigate();
+
   return (
     <div className="block w-full overflow-hidden sm:pr-4 ">
-      <h1 className="m-2 text-xl tracking-widest uppercase sm:text-2xl sm:m-3 text-neutral-300/80">
-        Now Playing
-      </h1>
+      <div className="flex justify-between">
+        <h1 className="m-2 text-xl tracking-widest uppercase sm:text-2xl sm:m-3 text-neutral-300/80">
+          Now Playing
+        </h1>
+
+        <button
+          className="mr-4"
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
+          <Cross1Icon />
+        </button>
+      </div>
       <NowPlayingList />
     </div>
   );
@@ -25,7 +41,7 @@ function NowPlayingList() {
 
 function NowPlayingItem({name}) {
   return (
-    <li className="p-2 m-2 text-sm rounded-lg sm:pl-4 bg-neutral-900 hover:bg-neutral-950 hover:outline-1 outline-neutral-400/50 hover:outline">
+    <li className="p-1 m-1 text-sm duration-75 rounded-lg bg-neutral-900/50 hover:bg-neutral-950/60 hover:outline-1 outline-neutral-400/50 hover:outline">
       <button className="flex items-center w-full">
         <AlbumArt />
         <div className="flex items-center justify-between w-full">

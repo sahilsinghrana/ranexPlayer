@@ -1,14 +1,14 @@
-import colorScale from './src/utils/constants/colors';
+import theme from "./src/utils/constants/theme";
 
 // const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
-      colors: colorScale,
+      colors: theme,
     },
   },
   plugins: [

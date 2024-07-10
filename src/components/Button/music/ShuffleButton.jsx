@@ -4,7 +4,7 @@ import {ShuffleIcon} from "@radix-ui/react-icons";
 
 const ShuffleButton = () => {
   return (
-    <Button className="dark:text-white text-black" type="icon">
+    <Button className="text-white" type="icon">
       <ShuffleIcon />
     </Button>
   );

@@ -40,9 +40,9 @@ function SignUPPage() {
       </div>
 
       <div className="flex flex-col items-center justify-center flex-grow h-full ">
-        <div className="flex flex-col items-center justify-center py-8 border-2 rounded-lg border-gray-11/20 max-w-[460px] min-w-[320px] w-[80%]">
+        <div className="flex flex-col items-center justify-center py-8 pt-4 border-2 rounded-lg border-red-600/20 max-w-[460px] min-w-[320px] w-[80%]">
           <div className="mb-3">
-            <h1 className="mb-4 text-3xl font-bold text-textSecondaryDark/80">
+            <h1 className="mb-4 text-3xl font-bold text-orange-600/80">
               Sign Up
             </h1>
           </div>
@@ -75,7 +75,7 @@ function SignUPPage() {
 
           <div className="text-white">
             Already been to the moon ?{" "}
-            <Link to={"/login"} className="text-secondary-7">
+            <Link to={"/login"} className="text-red-500">
               Log In
             </Link>
           </div>

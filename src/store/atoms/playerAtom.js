@@ -14,6 +14,9 @@ export const queueAtom = atom([]);
 export const playerVolumeAtom = atom();
 export const playerFullViewAtom = atom(false);
 
+export const currentPlayingAlbumArtColorsAtom = atom({});
+export const currentPlayingAlbumArtImage = atom();
+
 const playerAtom = atom({
   playerState: playerStateAtom,
   currentSong: currentSongAtom,

@@ -1,8 +1,7 @@
+import musicalSkull from "../../assets/images/musicalSkull.webp";
 import supabase from "../../config/supabase";
-import useTheme from "../../hooks/useTheme";
 import {sessionAtom} from "../../store/atoms/authAtom";
 
-import {MoonIcon, SunIcon} from "@radix-ui/react-icons";
 import {useAtom} from "jotai";
 import {Suspense, useEffect, useRef, useState} from "react";
 import {lazy} from "react";
@@ -11,14 +10,12 @@ import {Link} from "react-router-dom";
 const Logo = lazy(() => import("../Branding/Logo"));
 
 const Header = () => {
-  const [theme, toggle] = useTheme();
-
   const [session, setSession] = useAtom(sessionAtom);
 
   return (
     <header
       className={
-        "md:flex-row  flex-col bg-grayDark-1 py-3 border-borderHover/20 border-b-2 border-opacity-5 flex flex-wrap justify-center sm:justify-between pr-5 pl-1 items-center"
+        "md:flex-row  flex-col bg-neutral-950 py-3 border-neutral-800/20 border-b-2 border-opacity-5 flex flex-wrap justify-center sm:justify-between pr-5 pl-1 items-center"
       }
     >
       <div className="flex flex-col flex-wrap items-center justify-center mt-0 md:flex-row">
@@ -36,12 +33,6 @@ const Header = () => {
         </div>
       </div>
       <div className="flex items-center justify-center mt-4 sm:mt-0 ">
-        <button
-          onClick={toggle}
-          className="p-2 mx-4 bg-black rounded-full text-gray-2 dark:text-gray-12 dark:bg-white hover:scale-110 "
-        >
-          {theme === "light" ? <SunIcon /> : <MoonIcon />}
-        </button>
         {session ? (
           <button
             onClick={() => {
@@ -92,12 +83,12 @@ function ProfileDropdown() {
   return (
     <div
       ref={ddRef}
-      className="relative p-0 m-0 mx-2 w-[25px] flex items-center h-full"
+      className="relative p-0 m-0 mx-2 w-[35px] flex items-center h-full"
     >
       <button onClick={() => setOpen((t) => !t)}>
         <img
-          src=""
-          className="h-[35px] w-[35px] rounded-full bg-white  "
+          src={musicalSkull}
+          className="h-[35px] w-[35px] object-cover rounded-full bg-neutral-400 hue-rotate-30  "
           alt="profile"
         />
       </button>

@@ -1,6 +1,17 @@
 import SeekBar from "./SeekBar";
 
+import {currentPlayingAlbumArtColorsAtom} from "../../../store/atoms/playerAtom";
+import {
+  generateHslString,
+  generateRgbCssString,
+  getDarkerHslFromRgb,
+  leftToRightGradientCssGenerator,
+  topToBottomGradientCssGenerator,
+} from "../../../utils/imageHelpers";
+import NowPlayingAlbumArt from "../../AlbumArt/NowPlayingAlbumArt";
+
 import {ChevronDownIcon, ListBulletIcon} from "@radix-ui/react-icons";
+import {useAtomValue} from "jotai";
 import {lazy, Suspense} from "react";
 import {
   Link,
@@ -30,12 +41,24 @@ const FallbackLoader = () => {
 function MobileBarSmall() {
   const location = useLocation();
   const navigate = useNavigate();
-  console.log({
-    location,
-    navigate,
-  });
+  const imageColors = useAtomValue(currentPlayingAlbumArtColorsAtom);
+
   return (
     <div
+      style={{
+        backgroundColor: generateRgbCssString(
+          imageColors.r,
+          imageColors.g,
+          imageColors.b
+        ),
+        background: leftToRightGradientCssGenerator(
+          generateHslString(
+            ...getDarkerHslFromRgb(imageColors.r, imageColors.g, imageColors.b)
+          ),
+          generateRgbCssString(imageColors.r, imageColors.g, imageColors.b),
+          "1%"
+        ),
+      }}
       onClick={() => {
         if (!location.search.includes("playerView=full"))
           navigate(
@@ -46,7 +69,7 @@ function MobileBarSmall() {
               "playerView=full"
           );
       }}
-      className="py-3 pt-5 pl-3 border border-b-neutral-600 border-neutral-950 bg-neutral-300 dark:bg-neutral-900"
+      className="py-2 pt-4 pl-3 bg-neutral-900"
     >
       <div className="grid w-full grid-cols-2 ">
         <Suspense fallback={<FallbackLoader />}>
@@ -63,9 +86,22 @@ function MobileBarSmall() {
 function PlayerFull() {
   const location = useLocation();
   const navigate = useNavigate();
-
+  const imageColors = useAtomValue(currentPlayingAlbumArtColorsAtom);
+  const [h, s, l] = getDarkerHslFromRgb(
+    imageColors.r,
+    imageColors.g,
+    imageColors.b
+  );
   return (
-    <div className="absolute top-0 grid w-full h-full grid-cols-1 bg-neutral-600">
+    <div
+      style={{
+        background: topToBottomGradientCssGenerator(
+          generateRgbCssString(imageColors.r, imageColors.g, imageColors.b)
+        ),
+        backgroundColor: generateHslString(h, s, l),
+      }}
+      className="absolute top-0 grid w-full h-screen grid-cols-1 bg-neutral-600"
+    >
       <div className="h-[10vh] p-6">
         <ChevronDownIcon
           height={"30px"}
@@ -78,7 +114,8 @@ function PlayerFull() {
         />
       </div>
       <div className="h-[40vh] flex justify-center items-center">
-        <img src="" alt="artwork" className="w-[40vh] h-[40vh] bg-black" />
+        {/* <img src="" alt="artwork" className="w-[40vh] h-[40vh] bg-black" /> */}
+        <NowPlayingAlbumArt className="w-[40vh] h-[40vh] bg-black" />
       </div>
       <div className="flex flex-col items-center self-end w-full gap-6 p-4">
         <div className="flex justify-between w-full">

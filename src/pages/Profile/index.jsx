@@ -1,11 +1,13 @@
+import musicalSkull from "../../assets/images/musicalSkull.webp";
+
 function ProfilePage() {
   return (
     <div className="w-full p-4">
       <div className="flex flex-col items-center justify-center w-full gap-3 text-center">
         <img
-          src=""
+          src={musicalSkull}
           alt="profilepic"
-          className="bg-neutral-400 w-[130px] h-[130px]  rounded-full"
+          className="bg-neutral-400 object-cover w-[130px] h-[130px]  rounded-full border-neutral-900 border-2"
         />
         <div>
           <h2 className="text-xl font-bold tracking-widest uppercase text-neutral-50">
