@@ -8,18 +8,22 @@
 import {generateRandomInteger} from "../../../utils/helpers";
 
 const moonAndMusicImagesPaths = [
-  "/images/moonAndMusic/moonAndMusic1.webp",
-  "/images/moonAndMusic/moonAndMusic2.webp",
-  "/images/moonAndMusic/moonAndMusic3.webp",
-  "/images/moonAndMusic/moonAndMusic4.webp",
-  "/images/moonAndMusic/moonAndMusic5.webp",
-  "/images/moonAndMusic/moonAndMusic6.webp",
+  "images/moonAndMusic/moonAndMusic1.webp",
+  "images/moonAndMusic/moonAndMusic2.webp",
+  "images/moonAndMusic/moonAndMusic3.webp",
+  "images/moonAndMusic/moonAndMusic4.webp",
+  "images/moonAndMusic/moonAndMusic5.webp",
+  "images/moonAndMusic/moonAndMusic6.webp",
 ];
 
 export async function getRandomMoonAndMusicImage() {
-  return moonAndMusicImagesPaths[
-    generateRandomInteger(0, moonAndMusicImagesPaths.length - 1)
-  ];
+  return (
+    (import.meta.env.VITE_BASE_URL || "") +
+    "/" +
+    moonAndMusicImagesPaths[
+      generateRandomInteger(0, moonAndMusicImagesPaths.length - 1)
+    ]
+  );
   // const path =
   //   moonAndMusicImagesPaths[
   //     generateRandomInteger(0, moonAndMusicImagesPaths.length - 1)
