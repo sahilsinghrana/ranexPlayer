@@ -9,11 +9,11 @@ import {generateRandomInteger} from "../../../utils/helpers";
 
 const moonAndMusicImagesPaths = [
   "/images/moonAndMusic/moonAndMusic1.webp",
-  "/images/moonAndMusic2.webp",
-  "/images/moonAndMusic3.webp",
-  "/images/moonAndMusic4.webp",
-  "/images/moonAndMusic5.webp",
-  "/images/moonAndMusic6.webp",
+  "/images/moonAndMusic/moonAndMusic2.webp",
+  "/images/moonAndMusic/moonAndMusic3.webp",
+  "/images/moonAndMusic/moonAndMusic4.webp",
+  "/images/moonAndMusic/moonAndMusic5.webp",
+  "/images/moonAndMusic/moonAndMusic6.webp",
 ];
 
 export async function getRandomMoonAndMusicImage() {
