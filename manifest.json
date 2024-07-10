@@ -1,42 +1,58 @@
 {
-  "_Button-b2f51f67.js": {
-    "file": "assets/Button-b2f51f67.js",
+  "_Button-03391216.js": {
+    "file": "assets/Button-03391216.js",
+    "imports": [
+      "index.html",
+      "_clsx.m-1229b3e0.js",
+      "_bundle-mjs-642c57ff.js"
+    ]
+  },
+  "_Input-01ec8cbc.js": {
+    "file": "assets/Input-01ec8cbc.js",
     "imports": [
       "index.html",
       "_clsx.m-1229b3e0.js"
     ]
   },
-  "_Input-aa2d3525.js": {
-    "file": "assets/Input-aa2d3525.js",
-    "imports": [
-      "index.html",
-      "_clsx.m-1229b3e0.js"
-    ]
-  },
-  "_SignInWithGoogle-7e403212.js": {
-    "file": "assets/SignInWithGoogle-7e403212.js",
+  "_SignInWithGoogle-e13fb151.js": {
+    "file": "assets/SignInWithGoogle-e13fb151.js",
     "imports": [
       "index.html",
       "_logo_red-54b98162.js",
-      "_Button-b2f51f67.js",
+      "_Button-03391216.js",
       "_clsx.m-1229b3e0.js"
     ]
   },
-  "_browser-68010e7a.js": {
-    "file": "assets/browser-68010e7a.js",
+  "_browser-4330458a.js": {
+    "file": "assets/browser-4330458a.js",
     "imports": [
       "index.html"
     ],
     "isDynamicEntry": true
   },
+  "_bundle-mjs-642c57ff.js": {
+    "file": "assets/bundle-mjs-642c57ff.js"
+  },
   "_clsx.m-1229b3e0.js": {
     "file": "assets/clsx.m-1229b3e0.js"
   },
-  "_index-aee20a0a.js": {
-    "file": "assets/index-aee20a0a.js",
+  "_index-1a99c199.js": {
+    "dynamicImports": [
+      "src/components/Player/PlayerBar/SongInfo.jsx",
+      "src/components/Player/PlayerBar/PlayerControls.jsx",
+      "src/components/Player/PlayerBar/MediaOptions.jsx",
+      "src/components/Player/PlayerBar/SongInfo.jsx",
+      "src/components/Player/PlayerBar/PlayerControls.jsx"
+    ],
+    "file": "assets/index-1a99c199.js",
     "imports": [
-      "index.html"
-    ]
+      "index.html",
+      "_moonAndMusicImages-13d81755.js",
+      "_clsx.m-1229b3e0.js",
+      "_bundle-mjs-642c57ff.js",
+      "_react-icons.esm-da67b506.js"
+    ],
+    "isDynamicEntry": true
   },
   "_logo_red-54b98162.js": {
     "assets": [
@@ -44,14 +60,26 @@
     ],
     "file": "assets/logo_red-54b98162.js"
   },
-  "_react-icons.esm-f05c2072.js": {
-    "file": "assets/react-icons.esm-f05c2072.js",
+  "_moonAndMusicImages-13d81755.js": {
+    "file": "assets/moonAndMusicImages-13d81755.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_musicalSkull-a25fbc56.js": {
+    "assets": [
+      "assets/musicalSkull-823a3f35.webp"
+    ],
+    "file": "assets/musicalSkull-a25fbc56.js"
+  },
+  "_react-icons.esm-da67b506.js": {
+    "file": "assets/react-icons.esm-da67b506.js",
     "imports": [
       "index.html"
     ]
   },
   "index.css": {
-    "file": "assets/index-8045198f.css",
+    "file": "assets/index-6d3c1545.css",
     "src": "index.css"
   },
   "index.html": {
@@ -59,10 +87,10 @@
       "assets/yrym-98de3516.mp3"
     ],
     "css": [
-      "assets/index-8045198f.css"
+      "assets/index-6d3c1545.css"
     ],
     "dynamicImports": [
-      "_browser-68010e7a.js",
+      "_browser-4330458a.js",
       "src/components/Layout/index.jsx",
       "src/pages/Home/index.jsx",
       "src/pages/NowPlaying/index.jsx",
@@ -75,7 +103,7 @@
       "src/pages/Settings/AccountSettings.jsx",
       "src/pages/Settings/ProfileSettings.jsx"
     ],
-    "file": "assets/index-957c7e64.js",
+    "file": "assets/index-1126a3c5.js",
     "isEntry": true,
     "src": "index.html"
   },
@@ -83,12 +111,16 @@
     "file": "assets/logo_red-c5f89074.png",
     "src": "src/assets/images/logo_red.png"
   },
+  "src/assets/images/musicalSkull.webp": {
+    "file": "assets/musicalSkull-823a3f35.webp",
+    "src": "src/assets/images/musicalSkull.webp"
+  },
   "src/assets/music/yrym.mp3": {
     "file": "assets/yrym-98de3516.mp3",
     "src": "src/assets/music/yrym.mp3"
   },
   "src/components/Branding/Logo.jsx": {
-    "file": "assets/Logo-efc6cb68.js",
+    "file": "assets/Logo-586bdc65.js",
     "imports": [
       "index.html",
       "_logo_red-54b98162.js",
@@ -98,7 +130,7 @@
     "src": "src/components/Branding/Logo.jsx"
   },
   "src/components/Card/index.jsx": {
-    "file": "assets/index-0c3d5c55.js",
+    "file": "assets/index-4d504da7.js",
     "imports": [
       "index.html"
     ],
@@ -106,7 +138,7 @@
     "src": "src/components/Card/index.jsx"
   },
   "src/components/Layout/Footer.jsx": {
-    "file": "assets/Footer-61d526ee.js",
+    "file": "assets/Footer-0623607e.js",
     "imports": [
       "index.html"
     ],
@@ -117,16 +149,16 @@
     "dynamicImports": [
       "src/components/Branding/Logo.jsx"
     ],
-    "file": "assets/Header-59e10c85.js",
+    "file": "assets/Header-d2ad471d.js",
     "imports": [
       "index.html",
-      "_react-icons.esm-f05c2072.js"
+      "_musicalSkull-a25fbc56.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Layout/Header.jsx"
   },
   "src/components/Layout/Sidebar/index.jsx": {
-    "file": "assets/index-e4857252.js",
+    "file": "assets/index-1de1b4d9.js",
     "imports": [
       "index.html",
       "_clsx.m-1229b3e0.js"
@@ -139,9 +171,9 @@
       "src/components/Layout/Footer.jsx",
       "src/components/Layout/Header.jsx",
       "src/components/Layout/Sidebar/index.jsx",
-      "src/components/Player/PlayerBar/index.jsx"
+      "_index-1a99c199.js"
     ],
-    "file": "assets/index-8f7724d8.js",
+    "file": "assets/index-3e7ea659.js",
     "imports": [
       "index.html"
     ],
@@ -149,7 +181,7 @@
     "src": "src/components/Layout/index.jsx"
   },
   "src/components/List/HorizontalList.jsx": {
-    "file": "assets/HorizontalList-8ef94202.js",
+    "file": "assets/HorizontalList-6ccdf790.js",
     "imports": [
       "index.html"
     ],
@@ -157,54 +189,44 @@
     "src": "src/components/List/HorizontalList.jsx"
   },
   "src/components/Player/PlayerBar/MediaOptions.jsx": {
-    "file": "assets/MediaOptions-c0bee8eb.js",
+    "file": "assets/MediaOptions-90831f2b.js",
     "imports": [
       "index.html",
-      "_react-icons.esm-f05c2072.js",
-      "_Button-b2f51f67.js",
-      "_clsx.m-1229b3e0.js"
+      "_react-icons.esm-da67b506.js",
+      "_Button-03391216.js",
+      "_clsx.m-1229b3e0.js",
+      "_bundle-mjs-642c57ff.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Player/PlayerBar/MediaOptions.jsx"
   },
   "src/components/Player/PlayerBar/PlayerControls.jsx": {
-    "file": "assets/PlayerControls-bc82a0e8.js",
+    "file": "assets/PlayerControls-213e5ba8.js",
     "imports": [
       "index.html",
-      "_Button-b2f51f67.js",
-      "_react-icons.esm-f05c2072.js",
-      "_clsx.m-1229b3e0.js"
+      "_Button-03391216.js",
+      "_react-icons.esm-da67b506.js",
+      "_clsx.m-1229b3e0.js",
+      "_bundle-mjs-642c57ff.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Player/PlayerBar/PlayerControls.jsx"
   },
   "src/components/Player/PlayerBar/SongInfo.jsx": {
-    "file": "assets/SongInfo-4f3d620b.js",
+    "file": "assets/SongInfo-524df45c.js",
     "imports": [
       "index.html",
-      "_index-aee20a0a.js"
+      "_index-1a99c199.js",
+      "_moonAndMusicImages-13d81755.js",
+      "_clsx.m-1229b3e0.js",
+      "_bundle-mjs-642c57ff.js",
+      "_react-icons.esm-da67b506.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Player/PlayerBar/SongInfo.jsx"
   },
-  "src/components/Player/PlayerBar/index.jsx": {
-    "dynamicImports": [
-      "src/components/Player/PlayerBar/SongInfo.jsx",
-      "src/components/Player/PlayerBar/PlayerControls.jsx",
-      "src/components/Player/PlayerBar/MediaOptions.jsx",
-      "src/components/Player/PlayerBar/SongInfo.jsx",
-      "src/components/Player/PlayerBar/PlayerControls.jsx"
-    ],
-    "file": "assets/index-4c775c6b.js",
-    "imports": [
-      "index.html",
-      "_react-icons.esm-f05c2072.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "src/components/Player/PlayerBar/index.jsx"
-  },
   "src/pages/Home/HomeSection.jsx": {
-    "file": "assets/HomeSection-7bb47d61.js",
+    "file": "assets/HomeSection-2ec96a61.js",
     "imports": [
       "index.html"
     ],
@@ -212,7 +234,7 @@
     "src": "src/pages/Home/HomeSection.jsx"
   },
   "src/pages/Home/UserGreeting.jsx": {
-    "file": "assets/UserGreeting-bb54258d.js",
+    "file": "assets/UserGreeting-1234538b.js",
     "imports": [
       "index.html"
     ],
@@ -226,7 +248,7 @@
       "src/components/Card/index.jsx",
       "src/components/List/HorizontalList.jsx"
     ],
-    "file": "assets/index-44fb2f40.js",
+    "file": "assets/index-03ed7b67.js",
     "imports": [
       "index.html"
     ],
@@ -234,37 +256,42 @@
     "src": "src/pages/Home/index.jsx"
   },
   "src/pages/Login/index.jsx": {
-    "file": "assets/index-c79c1dab.js",
+    "file": "assets/index-a6440b49.js",
     "imports": [
       "index.html",
-      "_SignInWithGoogle-7e403212.js",
-      "_Button-b2f51f67.js",
-      "_Input-aa2d3525.js",
+      "_SignInWithGoogle-e13fb151.js",
+      "_Button-03391216.js",
+      "_Input-01ec8cbc.js",
       "_logo_red-54b98162.js",
-      "_clsx.m-1229b3e0.js"
+      "_clsx.m-1229b3e0.js",
+      "_bundle-mjs-642c57ff.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Login/index.jsx"
   },
   "src/pages/NowPlaying/index.jsx": {
-    "file": "assets/index-bcd7c340.js",
+    "file": "assets/index-cc286a31.js",
     "imports": [
       "index.html",
-      "_index-aee20a0a.js"
+      "_moonAndMusicImages-13d81755.js",
+      "_clsx.m-1229b3e0.js",
+      "_bundle-mjs-642c57ff.js",
+      "_react-icons.esm-da67b506.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/NowPlaying/index.jsx"
   },
   "src/pages/Profile/index.jsx": {
-    "file": "assets/index-d59b8f01.js",
+    "file": "assets/index-504a22ac.js",
     "imports": [
-      "index.html"
+      "index.html",
+      "_musicalSkull-a25fbc56.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Profile/index.jsx"
   },
   "src/pages/Settings/AccountSettings.jsx": {
-    "file": "assets/AccountSettings-96679715.js",
+    "file": "assets/AccountSettings-5cb78d96.js",
     "imports": [
       "index.html"
     ],
@@ -272,7 +299,7 @@
     "src": "src/pages/Settings/AccountSettings.jsx"
   },
   "src/pages/Settings/CloudIntegrations.jsx": {
-    "file": "assets/CloudIntegrations-1df22ea6.js",
+    "file": "assets/CloudIntegrations-d278d0e6.js",
     "imports": [
       "index.html"
     ],
@@ -280,35 +307,39 @@
     "src": "src/pages/Settings/CloudIntegrations.jsx"
   },
   "src/pages/Settings/ProfileSettings.jsx": {
-    "file": "assets/ProfileSettings-94c9a380.js",
+    "file": "assets/ProfileSettings-86f55f6d.js",
     "imports": [
       "index.html",
-      "_Button-b2f51f67.js",
+      "_musicalSkull-a25fbc56.js",
+      "_Button-03391216.js",
       "_clsx.m-1229b3e0.js",
-      "_Input-aa2d3525.js"
+      "_bundle-mjs-642c57ff.js",
+      "_Input-01ec8cbc.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Settings/ProfileSettings.jsx"
   },
   "src/pages/Settings/index.jsx": {
-    "file": "assets/index-40302e29.js",
+    "file": "assets/index-a2a35c66.js",
     "imports": [
       "index.html",
       "src/components/Layout/Header.jsx",
-      "_react-icons.esm-f05c2072.js"
+      "_react-icons.esm-da67b506.js",
+      "_musicalSkull-a25fbc56.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Settings/index.jsx"
   },
   "src/pages/SignUp/index.jsx": {
-    "file": "assets/index-4253d30a.js",
+    "file": "assets/index-cd296a46.js",
     "imports": [
       "index.html",
-      "_SignInWithGoogle-7e403212.js",
-      "_Button-b2f51f67.js",
-      "_Input-aa2d3525.js",
+      "_SignInWithGoogle-e13fb151.js",
+      "_Button-03391216.js",
+      "_Input-01ec8cbc.js",
       "_logo_red-54b98162.js",
-      "_clsx.m-1229b3e0.js"
+      "_clsx.m-1229b3e0.js",
+      "_bundle-mjs-642c57ff.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/SignUp/index.jsx"
