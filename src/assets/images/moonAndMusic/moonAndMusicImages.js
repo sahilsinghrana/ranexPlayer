@@ -8,24 +8,27 @@
 import {generateRandomInteger} from "../../../utils/helpers";
 
 const moonAndMusicImagesPaths = [
-  "./moonAndMusic1.webp",
-  "./moonAndMusic2.webp",
-  "./moonAndMusic3.webp",
-  "./moonAndMusic4.webp",
-  "./moonAndMusic5.webp",
-  "./moonAndMusic6.webp",
+  "/images/moonAndMusic/moonAndMusic1.webp",
+  "/images/moonAndMusic2.webp",
+  "/images/moonAndMusic3.webp",
+  "/images/moonAndMusic4.webp",
+  "/images/moonAndMusic5.webp",
+  "/images/moonAndMusic6.webp",
 ];
 
 export async function getRandomMoonAndMusicImage() {
-  const path =
-    moonAndMusicImagesPaths[
-      generateRandomInteger(0, moonAndMusicImagesPaths.length - 1)
-    ];
-  const image = await import(
-    /* @vite-ignore */
-    path
-  );
-  return image.default;
+  return moonAndMusicImagesPaths[
+    generateRandomInteger(0, moonAndMusicImagesPaths.length - 1)
+  ];
+  // const path =
+  //   moonAndMusicImagesPaths[
+  //     generateRandomInteger(0, moonAndMusicImagesPaths.length - 1)
+  //   ];
+  // const image = await import(
+  //   /* @vite-ignore */
+  //   path
+  // );
+  // return image.default;
 }
 
 export default moonAndMusicImagesPaths;
