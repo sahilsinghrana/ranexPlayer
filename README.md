@@ -1,4 +1,4 @@
 # ranexPlayer
 
 
-https://sahilsinghrana.github.io/ranexPlayer/
+[Deployment](https://diziplayer.netlify.app/)
