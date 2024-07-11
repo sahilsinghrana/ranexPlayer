@@ -1,6 +1,7 @@
 import musicalSkull from "../../assets/images/musicalSkull.webp";
 import supabase from "../../config/supabase";
 import {sessionAtom} from "../../store/atoms/authAtom";
+import MoonLoader from "../Loaders/MoonLoader";
 
 import {useAtom} from "jotai";
 import {Suspense, useEffect, useRef, useState} from "react";
@@ -19,7 +20,7 @@ const Header = () => {
       }
     >
       <div className="flex flex-col flex-wrap items-center justify-center mt-0 md:flex-row">
-        <Suspense fallback={<div>Loader...</div>}>
+        <Suspense fallback={<MoonLoader />}>
           <Link to="/">
             <Logo className={"h-[50px] sm:h-[60px] md:h-[70px] "} />
           </Link>

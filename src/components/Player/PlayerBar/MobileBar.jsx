@@ -10,6 +10,7 @@ import {
   topToBottomGradientCssGenerator,
 } from "../../../utils/imageHelpers";
 import NowPlayingAlbumArt from "../../AlbumArt/NowPlayingAlbumArt";
+import MoonLoader from "../../Loaders/MoonLoader";
 
 import {ChevronDownIcon, ListBulletIcon} from "@radix-ui/react-icons";
 import {useAtomValue} from "jotai";
@@ -36,7 +37,11 @@ function MobilePlayerBar() {
 export default MobilePlayerBar;
 
 const FallbackLoader = () => {
-  return <div>...</div>;
+  return (
+    <div>
+      <MoonLoader />
+    </div>
+  );
 };
 
 function MobileBarSmall() {
