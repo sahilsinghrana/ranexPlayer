@@ -7,15 +7,15 @@ import {
   getDarkerHslFromRgb,
   topToBottomGradientCssGenerator,
 } from "../../../utils/imageHelpers";
+import {lazyWithRetry} from "../../../utils/ReactLazy";
 import MoonLoader from "../../Loaders/MoonLoader";
 
 import {useAtomValue} from "jotai";
 import {Suspense} from "react";
-import {lazy} from "react";
 
-const SongInfo = lazy(() => import("./SongInfo"));
-const PlayerControls = lazy(() => import("./PlayerControls"));
-const MediaOptions = lazy(() => import("./MediaOptions"));
+const SongInfo = lazyWithRetry(() => import("./SongInfo"));
+const PlayerControls = lazyWithRetry(() => import("./PlayerControls"));
+const MediaOptions = lazyWithRetry(() => import("./MediaOptions"));
 
 function DesktopPlayerBar() {
   const imageColors = useAtomValue(currentPlayingAlbumArtColorsAtom);
