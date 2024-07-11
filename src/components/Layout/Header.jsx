@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header
       className={
-        "md:flex-row  flex-col bg-neutral-950 py-3 border-neutral-800/20 border-b-2 border-opacity-5 flex flex-wrap justify-center sm:justify-between pr-5 pl-1 items-center"
+        "md:flex-row  flex-col bg-neutral-950 py-2 pt-1 border-neutral-800/20 border-b-2 border-opacity-5 flex flex-wrap justify-center sm:justify-between pr-5 pl-1 items-center"
       }
     >
       <div className="flex flex-col flex-wrap items-center justify-center mt-0 md:flex-row">

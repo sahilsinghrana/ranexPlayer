@@ -1,3 +1,4 @@
+import PlayerControlsSmall from "./PlayerControlsSmall";
 import SeekBar from "./SeekBar";
 
 import {currentPlayingAlbumArtColorsAtom} from "../../../store/atoms/playerAtom";
@@ -69,14 +70,14 @@ function MobileBarSmall() {
               "playerView=full"
           );
       }}
-      className="py-2 pt-4 pl-3 bg-neutral-900"
+      className="px-3 py-2 bg-neutral-900"
     >
-      <div className="grid w-full grid-cols-2 ">
+      <div className="flex justify-between w-full ">
         <Suspense fallback={<FallbackLoader />}>
           <SongInfo />
         </Suspense>
         <Suspense fallback={<FallbackLoader />}>
-          <PlayerControls />
+          <PlayerControlsSmall />
         </Suspense>
       </div>
     </div>
@@ -84,7 +85,6 @@ function MobileBarSmall() {
 }
 
 function PlayerFull() {
-  const location = useLocation();
   const navigate = useNavigate();
   const imageColors = useAtomValue(currentPlayingAlbumArtColorsAtom);
   const [h, s, l] = getDarkerHslFromRgb(
@@ -107,9 +107,10 @@ function PlayerFull() {
           height={"30px"}
           width={"30px"}
           onClick={() => {
-            const searchParams = new URLSearchParams(location.search);
-            searchParams.delete("playerView");
-            navigate(location.pathname + searchParams.toString());
+            // const searchParams = new URLSearchParams(location.search);
+            // searchParams.delete("playerView");
+            // navigate(location.pathname + searchParams.toString());
+            navigate(-1);
           }}
         />
       </div>

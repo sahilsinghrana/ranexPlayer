@@ -1,15 +1,24 @@
+import player from "../../../lib/player";
+import {clsxWithMerge} from "../../../utils/utils";
 import Button from "../../Button/Button";
 
 import {PlayIcon} from "@radix-ui/react-icons";
 
-const PlayButton = ({onClick}) => {
+const handlePlay = (e) => {
+  e.stopPropagation();
+  player.play();
+};
+const PlayButton = ({className}) => {
   return (
     <Button
       type="primary"
       size="lg"
       rounded="full"
-      className={" px-2 m-1 w-14 h-14 bg-neutral-200 text-red-950"}
-      onClick={onClick}
+      className={clsxWithMerge(
+        "m-1 w-14 h-14 bg-neutral-200 hover:bg-neutral-100 text-red-950 hover:text-red-800",
+        className
+      )}
+      onClick={handlePlay}
     >
       <PlayIcon scale={3} height={30} width={30} />
     </Button>

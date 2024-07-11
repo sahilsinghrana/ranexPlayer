@@ -36,7 +36,12 @@ function NowPlayingAlbumArt({className}) {
 
   return (
     <img
-      className={twMerge(clsx("bg-black h-14 w-14", className))}
+      className={twMerge(
+        clsx(
+          "bg-black object-cover h-14 w-14 shadow-lg shadow-black/70",
+          className
+        )
+      )}
       src={albumArtImage}
       alt="cover art"
     />

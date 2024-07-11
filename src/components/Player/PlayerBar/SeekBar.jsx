@@ -7,7 +7,7 @@ import {memo} from "react";
 
 const SeekBar = () => {
   return (
-    <div className="w-full">
+    <div className="w-full p-0 m-0">
       <SeekInput />
       <SeekTimeLabels />
     </div>
@@ -33,7 +33,7 @@ const SeekTimeLabels = () => {
   const [currentSong] = useAtom(currentSongAtom);
   const meta = currentSong?.meta || {};
   return (
-    <div className="flex justify-between w-full px-2 py-0 text-sm">
+    <div className="flex justify-between w-full px-2 py-1 my-1 text-xs text-neutral-100/70">
       <p>{formatTimeStampForSongDuration(meta?.currentTime)}</p>
       <p>{formatTimeStampForSongDuration(meta?.duration)}</p>
     </div>

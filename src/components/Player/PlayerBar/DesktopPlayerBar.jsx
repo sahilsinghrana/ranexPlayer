@@ -1,5 +1,14 @@
 import SeekBar from "./SeekBar";
 
+import {currentPlayingAlbumArtColorsAtom} from "../../../store/atoms/playerAtom";
+import {
+  generateHslString,
+  generateRgbCssString,
+  getDarkerHslFromRgb,
+  topToBottomGradientCssGenerator,
+} from "../../../utils/imageHelpers";
+
+import {useAtomValue} from "jotai";
 import {Suspense} from "react";
 import {lazy} from "react";
 
@@ -8,8 +17,27 @@ const PlayerControls = lazy(() => import("./PlayerControls"));
 const MediaOptions = lazy(() => import("./MediaOptions"));
 
 function DesktopPlayerBar() {
+  const imageColors = useAtomValue(currentPlayingAlbumArtColorsAtom);
+  const hslString = getDarkerHslFromRgb(
+    imageColors.r,
+    imageColors.g,
+    imageColors.b
+  );
   return (
-    <div className="px-4 py-3 place-content-center bg-neutral-950">
+    <div
+      style={{
+        backgroundColor: generateRgbCssString(
+          imageColors.r,
+          imageColors.g,
+          imageColors.b
+        ),
+        background: topToBottomGradientCssGenerator(
+          generateHslString(hslString[0], hslString[1], 12),
+          generateHslString(hslString[0], hslString[1], 18)
+        ),
+      }}
+      className="px-1 pb-3 place-content-center bg-neutral-950"
+    >
       <SeekBar />
       <div className="grid w-full grid-cols-3 ">
         <Suspense fallback={<FallbackLoader />}>

@@ -23,7 +23,7 @@
 }
 *::-webkit-scrollbar-track {
   background-clip: content-box;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 }
 *::-webkit-scrollbar-thumb {
   background-color: #ff7f00;
@@ -37,14 +37,14 @@
 }
 
 .transition-width {
-  transition: width 500ms linear;
+  transition: width 200ms linear;
 }
 
 .seekbar {
   -webkit-appearance: none;
   appearance: none;
   border: 1px solid #8d8d8d8f;
-  height: 5px;
+  height: 3px;
   vertical-align: middle;
   border-radius: 20px;
   background-color: #94949475;
@@ -53,11 +53,18 @@
 
 .seekbar::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border: 1px solid #ff924fac;
   border-radius: 10px;
   background: #ff7300;
+}
+
+.seekbar::-webkit-slider-thumb:hover,
+.seekbar::-webkit-slider-thumb:active,
+.seekbar::-webkit-slider-thumb:focus {
+  width: 20px;
+  height: 20px;
 }
 
 .seekbar {
