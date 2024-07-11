@@ -5,7 +5,7 @@ import {
   getDarkerHslFromRgb,
   topToBottomGradientCssGenerator,
 } from "../../../../utils/imageHelpers";
-import {lazyWithRetry} from "../../../../utils/ReactLazy";
+import {lazyWithRetry} from "../../../../utils/reactLazy";
 import NowPlayingAlbumArt from "../../../AlbumArt/NowPlayingAlbumArt";
 import MoonLoader from "../../../Loaders/MoonLoader";
 import SeekBar from "../SeekBar";

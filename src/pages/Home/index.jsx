@@ -1,7 +1,7 @@
 import {getRandomMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
 import MoonLoader from "../../components/Loaders/MoonLoader";
 import fetcher from "../../helpers/fetcher";
-import {lazyWithRetry} from "../../utils/ReactLazy";
+import {lazyWithRetry} from "../../utils/reactLazy";
 
 import {Suspense} from "react";
 import useSWR from "swr";
