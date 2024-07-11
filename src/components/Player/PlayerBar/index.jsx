@@ -1,6 +1,6 @@
 import {useIsMobile} from "../../../hooks/useMediaQuery";
 import {playerStore} from "../../../store/atoms/playerAtom";
-import {lazyWithRetry} from "../../../utils/ReactLazy";
+import {lazyWithRetry} from "../../../utils/reactLazy";
 import MoonLoader from "../../Loaders/MoonLoader";
 
 import {Provider} from "jotai";

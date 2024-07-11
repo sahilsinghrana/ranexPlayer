@@ -1,4 +1,4 @@
-import {lazyWithRetry} from "../../../../utils/ReactLazy";
+import {lazyWithRetry} from "../../../../utils/reactLazy";
 import MoonLoader from "../../../Loaders/MoonLoader";
 
 import {Suspense} from "react";

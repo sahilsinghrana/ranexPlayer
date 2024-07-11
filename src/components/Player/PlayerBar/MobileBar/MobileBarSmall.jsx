@@ -5,7 +5,7 @@ import {
   getDarkerHslFromRgb,
   leftToRightGradientCssGenerator,
 } from "../../../../utils/imageHelpers";
-import {lazyWithRetry} from "../../../../utils/ReactLazy";
+import {lazyWithRetry} from "../../../../utils/reactLazy";
 import MoonLoader from "../../../Loaders/MoonLoader";
 
 import {useAtomValue} from "jotai";

@@ -1,4 +1,4 @@
-import {lazyWithRetry} from "../../utils/ReactLazy";
+import {lazyWithRetry} from "../../utils/reactLazy";
 import FullAppLoader from "../Loaders/FullAppLoader";
 
 import {Suspense} from "react";

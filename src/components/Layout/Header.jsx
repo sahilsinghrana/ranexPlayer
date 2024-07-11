@@ -1,7 +1,7 @@
 import musicalSkull from "../../assets/images/musicalSkull.webp";
 import supabase from "../../config/supabase";
 import {sessionAtom} from "../../store/atoms/authAtom";
-import {lazyWithRetry} from "../../utils/ReactLazy";
+import {lazyWithRetry} from "../../utils/reactLazy";
 import MoonLoader from "../Loaders/MoonLoader";
 
 import {useAtom} from "jotai";
