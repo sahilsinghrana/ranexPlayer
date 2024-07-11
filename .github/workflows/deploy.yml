@@ -2,23 +2,23 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main
+      - dev
 concurrency:
   group: ${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
+
+env:
+  VITE_ACCESS_TOKEN: ${{ vars.VITE_ACCESS_TOKEN }}
+  VITE_SERVER_URL: ${{ vars.VITE_SERVER_URL }}
+  VITE_SUPABASE_API_KEY: ${{ vars.VITE_SUPABASE_API_KEY }}
+  VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+  VITE_BASE_URL: ${{ vars.VITE_BASE_URL }}
+  BASE_URL: ${{ vars.BASE_URL }}
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     environment: github-pages
-    env:
-      VITE_ACCESS_TOKEN: ${{ vars.VITE_ACCESS_TOKEN }}
-      VITE_SERVER_URL: ${{ vars.VITE_SERVER_URL }}
-      VITE_SUPABASE_API_KEY: ${{ vars.VITE_SUPABASE_API_KEY }}
-      VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
-      VITE_BASE_URL: ${{ vars.VITE_BASE_URL }}
-      BASE_URL: ${{ vars.BASE_URL }}
-
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -29,26 +29,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version-file: ".nvmrc"
-
-      # - name: Setup pnpm
-      #   uses: pnpm/action-setup@v2
-      #   with:
-      #     version: 8.3.1
-      #     run_install: false
-      # # pnpm cache
-      # - name: Get pnpm store directory
-      #   id: pnpm-cache
-      #   shell: bash
-      #   run: |
-      #     echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      # - uses: actions/cache@v3
-      #   name: Setup pnpm cache
-      #   with:
-      #     path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-      #     key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-pnpm-store-
 
       - name: Install and Build 🔧
         run: |
