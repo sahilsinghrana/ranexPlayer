@@ -5,7 +5,7 @@ import {memo} from "react";
 
 const MediaOptions = () => {
   return (
-    <div className="inline-flex items-center place-self-end">
+    <div className="inline-flex items-center justify-self-end">
       <PlaylistLinkButton />
       <VolumeButton />
     </div>

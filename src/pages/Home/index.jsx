@@ -1,3 +1,4 @@
+import {getRandomMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
 import fetcher from "../../helpers/fetcher";
 
 import {Suspense} from "react";
@@ -23,13 +24,13 @@ const Home = () => {
           <HomeSection title="Playlists">
             <HorizontalList>
               <li>
-                <Card>Playlist Card</Card>
+                <PlaylistCard playlistName="Soothing" />
               </li>
               <li>
-                <Card>Playlist Card2</Card>
+                <PlaylistCard playlistName="Soulful" />
               </li>
               <li>
-                <Card>Playlist Card3</Card>
+                <PlaylistCard playlistName="Gold & Silver" />
               </li>
             </HorizontalList>
           </HomeSection>
@@ -40,3 +41,18 @@ const Home = () => {
 };
 
 export default Home;
+
+function PlaylistCard({playlistName, backgroundImage}) {
+  return (
+    <Card backgroundImage={backgroundImage || getRandomMoonAndMusicImage()}>
+      <div className="flex items-end h-full bg-gradient-to-t from-neutral-900 via-neutral-500/50 to-neutral-300/0">
+        <h5
+          className="w-full m-3 text-xl font-bold uppercase  text-wrap text-neutral-50/80  drop-shadow-[0_1.2px_1.2px_#00000080]
+"
+        >
+          {playlistName}
+        </h5>
+      </div>
+    </Card>
+  );
+}

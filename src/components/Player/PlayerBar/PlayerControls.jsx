@@ -1,4 +1,3 @@
-import player from "../../../lib/player";
 import {playerStateAtom, playerStates} from "../../../store/atoms/playerAtom";
 import {NextButton, PlayButton, PreviousButton} from "../../Button/music";
 import PauseButton from "../../Button/music/PauseButton";
@@ -8,24 +7,14 @@ import {useAtom} from "jotai";
 const PlayerControls = () => {
   const [playerState] = useAtom(playerStateAtom);
 
-  const handlePlay = (e) => {
-    e.stopPropagation();
-    player.play();
-  };
-
-  const handlePause = (e) => {
-    e.stopPropagation();
-    player.pause();
-  };
-
   return (
-    <div className="inline-flex items-center place-self-center">
+    <div className="inline-flex items-center justify-self-center">
       <div className="inline-flex items-center px-1 py-1 font-black text-white">
         <PreviousButton />
         {playerStates.PLAYING === playerState ? (
-          <PauseButton onClick={handlePause} />
+          <PauseButton />
         ) : (
-          <PlayButton onClick={handlePlay} />
+          <PlayButton />
         )}
         <NextButton />
       </div>
