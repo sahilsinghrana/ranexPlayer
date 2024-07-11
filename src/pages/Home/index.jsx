@@ -1,4 +1,5 @@
 import {getRandomMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
+import MoonLoader from "../../components/Loaders/MoonLoader";
 import fetcher from "../../helpers/fetcher";
 
 import {Suspense} from "react";
@@ -16,7 +17,7 @@ const Home = () => {
   useSWR("/music/playlist", fetcher);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<MoonLoader />}>
       <div className="relative w-full">
         <div className="h-full overflow-auto">
           <UserGreeting />

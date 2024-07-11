@@ -7,6 +7,7 @@ import {
   getDarkerHslFromRgb,
   topToBottomGradientCssGenerator,
 } from "../../../utils/imageHelpers";
+import MoonLoader from "../../Loaders/MoonLoader";
 
 import {useAtomValue} from "jotai";
 import {Suspense} from "react";
@@ -57,5 +58,9 @@ function DesktopPlayerBar() {
 export default DesktopPlayerBar;
 
 const FallbackLoader = () => {
-  return <div>...</div>;
+  return (
+    <div>
+      <MoonLoader />
+    </div>
+  );
 };
