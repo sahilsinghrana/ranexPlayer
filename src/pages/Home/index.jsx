@@ -1,15 +1,15 @@
 import {getRandomMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
 import MoonLoader from "../../components/Loaders/MoonLoader";
 import fetcher from "../../helpers/fetcher";
+import {lazyWithRetry} from "../../utils/ReactLazy";
 
 import {Suspense} from "react";
-import {lazy} from "react";
 import useSWR from "swr";
 
-const HomeSection = lazy(() => import("./HomeSection"));
-const UserGreeting = lazy(() => import("./UserGreeting"));
-const Card = lazy(() => import("../../components/Card"));
-const HorizontalList = lazy(() =>
+const HomeSection = lazyWithRetry(() => import("./HomeSection"));
+const UserGreeting = lazyWithRetry(() => import("./UserGreeting"));
+const Card = lazyWithRetry(() => import("../../components/Card"));
+const HorizontalList = lazyWithRetry(() =>
   import("../../components/List/HorizontalList")
 );
 

@@ -1,14 +1,14 @@
 import musicalSkull from "../../assets/images/musicalSkull.webp";
 import supabase from "../../config/supabase";
 import {sessionAtom} from "../../store/atoms/authAtom";
+import {lazyWithRetry} from "../../utils/ReactLazy";
 import MoonLoader from "../Loaders/MoonLoader";
 
 import {useAtom} from "jotai";
 import {Suspense, useEffect, useRef, useState} from "react";
-import {lazy} from "react";
 import {Link} from "react-router-dom";
 
-const Logo = lazy(() => import("../Branding/Logo"));
+const Logo = lazyWithRetry(() => import("../Branding/Logo"));
 
 const Header = () => {
   const [session, setSession] = useAtom(sessionAtom);
