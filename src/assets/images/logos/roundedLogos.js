@@ -2,7 +2,7 @@ import {generateRandomInteger} from "../../../utils/helpers";
 
 const roundedLogosPaths = Array.from(
   {length: 9},
-  (_, idx) => `images/logos/logo (${idx + 1}).jpg`
+  (_, idx) => `images/logos/logo${idx + 1}.webp`
 );
 
 let lastGeneratedIdx;
