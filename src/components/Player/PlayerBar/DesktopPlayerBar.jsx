@@ -8,10 +8,8 @@ import {
   topToBottomGradientCssGenerator,
 } from "../../../utils/imageHelpers";
 import {lazyWithRetry} from "../../../utils/reactLazy";
-import MoonLoader from "../../Loaders/MoonLoader";
 
 import {useAtomValue} from "jotai";
-import {Suspense} from "react";
 
 const SongInfo = lazyWithRetry(() => import("./SongInfo"));
 const PlayerControls = lazyWithRetry(() => import("./PlayerControls"));
@@ -41,26 +39,12 @@ function DesktopPlayerBar() {
     >
       <SeekBar />
       <div className="grid w-full grid-cols-3 ">
-        <Suspense fallback={<FallbackLoader />}>
-          <SongInfo />
-        </Suspense>
-        <Suspense fallback={<FallbackLoader />}>
-          <PlayerControls />
-        </Suspense>
-        <Suspense fallback={<FallbackLoader />}>
-          <MediaOptions />
-        </Suspense>
+        <SongInfo />
+        <PlayerControls />
+        <MediaOptions />
       </div>
     </div>
   );
 }
 
 export default DesktopPlayerBar;
-
-const FallbackLoader = () => {
-  return (
-    <div>
-      <MoonLoader />
-    </div>
-  );
-};

@@ -1,7 +1,9 @@
-import PlaylistLinkButton from "./PlaylistLinkButton";
-import VolumeButton from "./VolumeButton";
+import {lazyWithRetry} from "../../../utils/reactLazy";
 
 import {memo} from "react";
+
+const PlaylistLinkButton = lazyWithRetry(() => import("./PlaylistLinkButton"));
+const VolumeButton = lazyWithRetry(() => import("./VolumeButton"));
 
 const MediaOptions = () => {
   return (

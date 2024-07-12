@@ -1,7 +1,9 @@
-import AlbumArt from "../../components/AlbumArt";
+import {lazyWithRetry} from "../../utils/reactLazy";
 
 import {Cross1Icon} from "@radix-ui/react-icons";
 import {useNavigate} from "react-router-dom";
+
+const AlbumArt = lazyWithRetry(() => import("../../components/AlbumArt"));
 
 function NowPlaying() {
   const navigate = useNavigate();

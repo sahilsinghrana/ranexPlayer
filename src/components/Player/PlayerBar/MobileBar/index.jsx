@@ -1,20 +1,17 @@
 import {lazyWithRetry} from "../../../../utils/reactLazy";
-import MoonLoader from "../../../Loaders/MoonLoader";
 
-import {Suspense} from "react";
-import {useSearchParams} from "react-router-dom";
+import {useState} from "react";
 
 const MobilePlayerFull = lazyWithRetry(() => import("./MobilePlayerFull"));
 const MobileBarSmall = lazyWithRetry(() => import("./MobileBarSmall"));
 
 function MobilePlayerBar() {
-  const [searchParams] = useSearchParams();
-  const playerView = searchParams.get("playerView");
+  const [isFull, setIsFull] = useState(false);
 
-  return (
-    <Suspense fallback={<MoonLoader />}>
-      {playerView === "full" ? <MobilePlayerFull /> : <MobileBarSmall />}
-    </Suspense>
+  return isFull ? (
+    <MobilePlayerFull setIsFull={setIsFull} />
+  ) : (
+    <MobileBarSmall setIsFull={setIsFull} />
   );
 }
 

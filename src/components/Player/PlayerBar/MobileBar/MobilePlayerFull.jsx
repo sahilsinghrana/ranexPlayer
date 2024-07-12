@@ -6,19 +6,19 @@ import {
   topToBottomGradientCssGenerator,
 } from "../../../../utils/imageHelpers";
 import {lazyWithRetry} from "../../../../utils/reactLazy";
-import NowPlayingAlbumArt from "../../../AlbumArt/NowPlayingAlbumArt";
-import MoonLoader from "../../../Loaders/MoonLoader";
-import SeekBar from "../SeekBar";
+import BaseButton from "../../../Button/Button";
 
 import {ChevronDownIcon, ListBulletIcon} from "@radix-ui/react-icons";
 import {useAtomValue} from "jotai";
-import {Suspense} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const PlayerControls = lazyWithRetry(() => import("../PlayerControls"));
+const SeekBar = lazyWithRetry(() => import("../SeekBar"));
+const NowPlayingAlbumArt = lazyWithRetry(() =>
+  import("../../../AlbumArt/NowPlayingAlbumArt")
+);
 
-function MobilePlayerFull() {
-  const navigate = useNavigate();
+function MobilePlayerFull({setIsFull}) {
   const imageColors = useAtomValue(currentPlayingAlbumArtColorsAtom);
   const [h, s, l] = getDarkerHslFromRgb(
     imageColors.r,
@@ -36,17 +36,12 @@ function MobilePlayerFull() {
       className="absolute top-0 grid w-full h-screen grid-cols-1 bg-neutral-600"
     >
       <div className="h-[10vh] p-6">
-        <ChevronDownIcon
-          height={"30px"}
-          width={"30px"}
-          onClick={() => {
-            navigate(-1);
-          }}
-        />
+        <BaseButton type="trasparent" onClick={() => setIsFull(false)}>
+          <ChevronDownIcon height={"30px"} width={"30px"} />
+        </BaseButton>
       </div>
-      <div className="h-[40vh] flex justify-center items-center">
-        {/* <img src="" alt="artwork" className="w-[40vh] h-[40vh] bg-black" /> */}
-        <NowPlayingAlbumArt className="w-[40vh] h-[40vh] bg-black" />
+      <div className="h-[45vh] flex justify-center items-center">
+        <NowPlayingAlbumArt className="w-[45vh] h-[45vh] bg-black" />
       </div>
       <div className="flex flex-col items-center self-end w-full gap-6 p-4">
         <div className="flex justify-between w-full">
@@ -55,20 +50,18 @@ function MobilePlayerFull() {
             <h3 className="pl-1 text-md font-base">Artist</h3>
           </div>
         </div>
-        <Suspense fallback={<MoonLoader />}>
-          <SeekBar />
-          <div className="grid w-full grid-cols-[minmax(30px,_1fr)_5fr_minmax(30px,_1fr)] justify-center items-center">
-            <div></div>
-            <PlayerControls />
-            <div className="flex justify-end w-full">
-              <Link to={"/now-playing"}>
-                <div className="p-2 mx-1 text-white cursor-pointer ">
-                  <ListBulletIcon className="w-[22px] h-[22px]" />
-                </div>
-              </Link>
-            </div>
+        <SeekBar />
+        <div className="grid w-full grid-cols-[minmax(30px,_1fr)_5fr_minmax(30px,_1fr)] justify-center items-center">
+          <div></div>
+          <PlayerControls />
+          <div className="flex justify-end w-full">
+            <Link to={"/now-playing"} onClick={() => setIsFull(false)}>
+              <div className="p-2 mx-1 text-white cursor-pointer ">
+                <ListBulletIcon className="w-[22px] h-[22px]" />
+              </div>
+            </Link>
           </div>
-        </Suspense>
+        </div>
       </div>
     </div>
   );
