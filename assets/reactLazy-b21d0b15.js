@@ -1,1 +1,0 @@
-import{R as c}from"./index-d56e3595.js";const n=t=>{const o=async()=>{try{return await t()}catch(a){for(let r=0;r<5;r++){await new Promise(e=>setTimeout(e,1e3));try{return await t()}catch{console.log("retrying import")}}throw a}};return c.lazy(o)};export{n as l};
