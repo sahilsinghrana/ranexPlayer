@@ -22,7 +22,7 @@ const Header = () => {
       <div className="flex flex-col flex-wrap items-center justify-center mt-0 md:flex-row">
         <Suspense fallback={<MoonLoader />}>
           <Link to="/">
-            <Logo className={"h-[50px] sm:h-[60px] md:h-[70px] "} />
+            <Logo className={"h-[40px] sm:h-[60px] md:h-[70px] "} />
           </Link>
         </Suspense>
         <div>

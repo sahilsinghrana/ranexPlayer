@@ -6,7 +6,6 @@ import {Outlet} from "react-router-dom";
 
 const Footer = lazyWithRetry(() => import("./Footer"));
 const Header = lazyWithRetry(() => import("./Header"));
-const Sidebar = lazyWithRetry(() => import("./Sidebar"));
 const PlayerBar = lazyWithRetry(() => import("../Player/PlayerBar"));
 
 const Layout = () => {
@@ -15,7 +14,6 @@ const Layout = () => {
       <div className="flex flex-col justify-between w-screen h-screen">
         <Header />
         <div className="flex flex-grow overflow-auto justify-self-start max-w-[99.8%]">
-          <Sidebar />
           <Outlet />
         </div>
         <div>

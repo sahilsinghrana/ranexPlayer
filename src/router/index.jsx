@@ -100,7 +100,13 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  {basename: import.meta.env.VITE_BASE_URL}
+  {
+    basename: import.meta.env.VITE_BASE_URL,
+    future: {
+      // Normalize `useNavigation()`/`useFetcher()` `formMethod` to uppercase
+      v7_normalizeFormMethod: true,
+    },
+  }
 );
 
 export default router;

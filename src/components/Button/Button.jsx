@@ -22,6 +22,7 @@ const button = cva(
           "hover:text-accent-6 scale-2",
           "data-[active=true]:text-accent-11 hover:data-[active=true]:text-accent-9 font-extrabold",
         ],
+        trasparent: ["bg-transparent"],
       },
       size: {
         sm: ["h-9"],

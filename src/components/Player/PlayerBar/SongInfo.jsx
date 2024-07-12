@@ -1,6 +1,10 @@
-import NowPlayingAlbumArt from "../../AlbumArt/NowPlayingAlbumArt";
+import {lazyWithRetry} from "../../../utils/reactLazy";
 
 import {memo} from "react";
+
+const NowPlayingAlbumArt = lazyWithRetry(() =>
+  import("../../AlbumArt/NowPlayingAlbumArt")
+);
 
 const SongInfo = () => {
   return (

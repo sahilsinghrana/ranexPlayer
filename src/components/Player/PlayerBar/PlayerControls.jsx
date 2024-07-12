@@ -1,8 +1,18 @@
 import {playerStateAtom, playerStates} from "../../../store/atoms/playerAtom";
-import {NextButton, PlayButton, PreviousButton} from "../../Button/music";
-import PauseButton from "../../Button/music/PauseButton";
+import {lazyWithRetry} from "../../../utils/reactLazy";
 
 import {useAtom} from "jotai";
+
+const NextButton = lazyWithRetry(() => import("../../Button/music/NextButton"));
+
+const PlayButton = lazyWithRetry(() => import("../../Button/music/PlayButton"));
+
+const PreviousButton = lazyWithRetry(() =>
+  import("../../Button/music/PreviousButton")
+);
+const PauseButton = lazyWithRetry(() =>
+  import("../../Button/music/PauseButton")
+);
 
 const PlayerControls = () => {
   const [playerState] = useAtom(playerStateAtom);
