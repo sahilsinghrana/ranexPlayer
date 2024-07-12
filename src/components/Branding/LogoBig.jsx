@@ -7,7 +7,7 @@ const LogoBig = () => {
   return (
     <Link to="/" className="flex items-center">
       <img
-        className=" h-[80px] sm:h-[130px] rounded-full object-cover"
+        className="min-h-[80px] h-[80px] sm:h-[130px] sm:min-h-[130px] rounded-full object-cover bg-red-950"
         src={getRandomRoundedLogoPath()}
         alt="Ranex Player Logo"
       />
