@@ -1,7 +1,7 @@
 import {generateRandomInteger} from "../../../utils/helpers";
 
 const moonAndMusicImagesPaths = Array.from(
-  {length: 12},
+  {length: 24},
   (_, idx) => `images/moonAndMusic/moonAndMusic${idx + 1}.webp`
 );
 
