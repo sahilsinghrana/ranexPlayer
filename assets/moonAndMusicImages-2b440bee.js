@@ -1,0 +1,1 @@
+import{g as o}from"./helpers-f505966d.js";const n=Array.from({length:24},(e,r)=>`images/moonAndMusic/moonAndMusic${r+1}.webp`);let a;function t(){const e=o(0,n.length-1);return e===a?t():e}function d(){return"/ranexPlayer/"+n[t()]}export{d as g};

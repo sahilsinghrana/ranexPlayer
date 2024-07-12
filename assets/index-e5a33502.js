@@ -1,1 +1,0 @@
-import{j as o}from"./index-ac84b794.js";const e=({children:r,backgroundImage:a})=>o.jsx("div",{style:{backgroundImage:`url("${a}")`,backgroundSize:"cover"},className:"w-32 h-32 m-2 transition-transform duration-200 rounded-sm shadow-md cursor-pointer hover:shadow-lg shadow-gray-600/30 bg-slate-600 hover:bg-slate-800 hover:-translate-y-1 ",children:r});export{e as default};
