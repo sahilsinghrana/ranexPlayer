@@ -18,19 +18,17 @@ function NowPlayingAlbumArt({className}) {
 
   useEffect(() => {
     if (!albumArtImage) {
-      (async () => {
-        const image = await getRandomMoonAndMusicImage();
-        setAlbumArtImage(image);
-        if (image) {
-          const newImage = document.createElement("img");
-          newImage.src = image;
-          newImage.onload = () => {
-            const imageColors = getAverageRGB(newImage);
-            console.log({imageColors});
-            setImageColors(imageColors);
-          };
-        }
-      })();
+      const image = getRandomMoonAndMusicImage();
+      setAlbumArtImage(image);
+      if (image) {
+        const newImage = document.createElement("img");
+        newImage.src = image;
+        newImage.onload = () => {
+          const imageColors = getAverageRGB(newImage);
+          console.log({imageColors});
+          setImageColors(imageColors);
+        };
+      }
     }
   }, [setAlbumArtImage, albumArtImage, setImageColors]);
 
