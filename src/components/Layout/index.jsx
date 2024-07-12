@@ -25,6 +25,4 @@ const Layout = () => {
   );
 };
 
-Layout.displayName = "Layout";
-
 export default Layout;
