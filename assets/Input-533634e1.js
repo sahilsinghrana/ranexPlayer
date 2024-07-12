@@ -1,0 +1,1 @@
+import{j as o}from"./index-be555193.js";import{c as p}from"./bundle-mjs-8113ea4f.js";function m({children:t,className:r,...s}){return o.jsx("input",{className:p("rounded-md p-3 bg-grayDark-5 py-4 text-white",r),...s,children:t})}export{m as I};
