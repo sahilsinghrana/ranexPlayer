@@ -1,13 +1,18 @@
-// import logoBlue from "../../assets/images/logo_blue.png";
 import logoRed from "../../assets/images/logo_red.png";
+import {getRandomRoundedLogoPath} from "../../assets/images/logos/roundedLogos";
 
 import {Link} from "react-router-dom";
 
 const LogoBig = () => {
   return (
-    <Link to="/">
+    <Link to="/" className="flex items-center">
       <img
-        className=" h-[80px] sm:h-[130px]"
+        className=" h-[80px] sm:h-[130px] rounded-full object-cover"
+        src={getRandomRoundedLogoPath()}
+        alt="Ranex Player Logo"
+      />
+      <img
+        className=" h-[70px] sm:h-[120px]"
         src={logoRed}
         alt="Ranex Player Logo"
       />
