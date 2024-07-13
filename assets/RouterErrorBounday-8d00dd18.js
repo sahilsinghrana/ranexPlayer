@@ -1,1 +1,0 @@
-import{u as s,j as e}from"./index-be555193.js";const t=()=>{const r=s();return console.error(r),e.jsx("div",{children:e.jsx("p",{children:e.jsx("i",{children:r.statusText||r.message})})})};export{t as default};
