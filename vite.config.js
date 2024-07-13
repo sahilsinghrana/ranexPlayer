@@ -3,7 +3,7 @@ import cssnano from "cssnano";
 import {defineConfig, loadEnv} from "vite";
 import viteCompression from "vite-plugin-compression";
 import eslint from "vite-plugin-eslint";
-import vsharp from "vite-plugin-vsharp";
+// import vsharp from "vite-plugin-vsharp";
 
 export default function ({mode}) {
   process.env = {...process.env, ...loadEnv(mode, process.cwd())};
@@ -16,7 +16,7 @@ export default function ({mode}) {
     plugins: [
       react(),
       eslint(),
-      vsharp(),
+      // vsharp(),
       cssnano({
         preset: [
           "default",
