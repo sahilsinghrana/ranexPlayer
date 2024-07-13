@@ -68,9 +68,12 @@ export default Home;
 
 function PlaylistCard({playlistName, backgroundImage}) {
   return (
-    <Card backgroundImage={backgroundImage || getRandomMoonAndMusicImage()}>
+    <Card
+      className="max-w-36  w-[40vw] max-h-36  h-[40vw]"
+      backgroundImage={backgroundImage || getRandomMoonAndMusicImage()}
+    >
       <div className="flex items-end h-full bg-gradient-to-t from-neutral-900 via-neutral-500/50 to-neutral-300/0">
-        <h5 className="w-full m-3 text-xl font-bold uppercase  text-wrap text-neutral-50/80  drop-shadow-[0_1.2px_1.2px_#00000080]">
+        <h5 className="w-full m-3 text-lg font-bold uppercase  text-wrap text-neutral-50/80  drop-shadow-[0_1.2px_1.2px_#00000080]">
           {playlistName}
         </h5>
       </div>

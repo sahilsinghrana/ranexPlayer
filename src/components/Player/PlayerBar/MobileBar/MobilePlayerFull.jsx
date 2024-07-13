@@ -1,8 +1,6 @@
 import {currentPlayingAlbumArtColorsAtom} from "../../../../store/atoms/playerAtom";
 import {
-  generateHslString,
   generateRgbCssString,
-  getDarkerHslFromRgb,
   topToBottomGradientCssGenerator,
 } from "../../../../utils/imageHelpers";
 import {lazyWithRetry} from "../../../../utils/reactLazy";
@@ -20,20 +18,14 @@ const NowPlayingAlbumArt = lazyWithRetry(() =>
 
 function MobilePlayerFull({setIsFull}) {
   const imageColors = useAtomValue(currentPlayingAlbumArtColorsAtom);
-  const [h, s, l] = getDarkerHslFromRgb(
-    imageColors.r,
-    imageColors.g,
-    imageColors.b
-  );
   return (
     <div
       style={{
         background: topToBottomGradientCssGenerator(
           generateRgbCssString(imageColors.r, imageColors.g, imageColors.b)
         ),
-        backgroundColor: generateHslString(h, s, l),
       }}
-      className="absolute top-0 grid w-full h-screen grid-cols-1 bg-neutral-600"
+      className="absolute top-0 grid w-full h-screen grid-cols-1 bg-neutral-800 "
     >
       <div className="h-[10vh] p-6">
         <BaseButton type="trasparent" onClick={() => setIsFull(false)}>

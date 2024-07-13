@@ -36,9 +36,8 @@ function App() {
   }, [setSession]);
 
   return (
-    <div className=" bg-neutral-800 text-neutral-100">
+    <div className=" bg-neutral-800 text-neutral-100 backgroundStars">
       <Suspense fallback={<FullAppLoader />}>
-        {/* <RouterProvider router={router} /> */}
         <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
           <AppRoutes />
         </BrowserRouter>
