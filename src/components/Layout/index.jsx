@@ -11,15 +11,15 @@ const PlayerBar = lazyWithRetry(() => import("../Player/PlayerBar"));
 const Layout = () => {
   return (
     <Suspense fallback={<FullAppLoader />}>
-      <div className="flex flex-col justify-between w-screen h-screen">
+      <div className="flex flex-col justify-between w-screen h-[100dvh]">
         <Header />
-        <div className="flex flex-grow overflow-auto justify-self-start max-w-[99.8%]">
+        <div className="flex flex-grow overflow-auto justify-self-start">
           <Outlet />
         </div>
         <div>
           <PlayerBar />
-          <Footer />
         </div>
+        <Footer />
       </div>
     </Suspense>
   );
