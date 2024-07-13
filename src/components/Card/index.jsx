@@ -5,7 +5,7 @@ const Card = ({children, backgroundImage}) => {
         backgroundImage: `url("${backgroundImage}")`,
         backgroundSize: "cover",
       }}
-      className="w-32 h-32 m-2 transition-transform duration-200 rounded-sm shadow-md cursor-pointer hover:shadow-lg shadow-gray-600/30 bg-slate-600 hover:bg-slate-800 hover:-translate-y-1 "
+      className="w-32 h-32 m-2 duration-100 rounded-md shadow-md cursor-pointer hover:shadow-lg shadow-gray-600/20 bg-slate-600 hover:-translate-y-1 "
     >
       {children}
     </div>
