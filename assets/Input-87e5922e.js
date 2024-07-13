@@ -1,1 +1,0 @@
-import{j as r,c as s}from"./index-5abadbbb.js";function a({children:n,className:t,...e}){return r.jsx("input",{className:s("rounded-md p-3 bg-neutral-800 active:bg-neutral-800 outline-none",t),...e,children:n})}export{a as I};

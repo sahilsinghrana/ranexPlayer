@@ -1,0 +1,1 @@
+import{j as s}from"./index-98083269.js";const o=({children:t,title:a})=>s.jsxs("section",{className:"p-4 px-1 bg-stone-900 backgroundStars",children:[s.jsx("h1",{className:"pl-3 text-lg font-bold tracking-wide opacity-80",children:a}),s.jsx("div",{className:"aa",children:t})]});export{o as default};
