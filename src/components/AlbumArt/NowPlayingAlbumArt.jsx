@@ -25,7 +25,6 @@ function NowPlayingAlbumArt({className}) {
         newImage.src = image;
         newImage.onload = () => {
           const imageColors = getAverageRGB(newImage);
-          console.log({imageColors});
           setImageColors(imageColors);
         };
       }

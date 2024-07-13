@@ -1,3 +1,4 @@
+import RouterErrorBoundary from "../pages/NotFound/RouterErrorBounday.jsx";
 import {lazyWithRetry} from "../utils/reactLazy";
 
 import {Routes, Route} from "react-router-dom";
@@ -6,9 +7,6 @@ const Layout = lazyWithRetry(() => import("../components/Layout"));
 const Home = lazyWithRetry(() => import("../pages/Home/index.jsx"));
 const LoginPage = lazyWithRetry(() => import("../pages/Login/index.jsx"));
 const NotFoundPage = lazyWithRetry(() => import("../pages/NotFound/index.jsx"));
-const RouterErrorBoundary = lazyWithRetry(() =>
-  import("../pages/NotFound/RouterErrorBounday.jsx")
-);
 const NowPlaying = lazyWithRetry(() => import("../pages/NowPlaying"));
 const ProfilePage = lazyWithRetry(() => import("../pages/Profile/index.jsx"));
 const AccountSettings = lazyWithRetry(() =>

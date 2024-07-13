@@ -70,3 +70,29 @@
 .seekbar {
   display: block;
 }
+
+.backgroundStars {
+  /* background-color:black; */
+  background-image: radial-gradient(
+      rgba(255, 255, 255, 0.691),
+      rgba(255, 255, 255, 0.05) 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      rgba(255, 255, 255, 0.698),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 8px
+    ),
+    radial-gradient(
+      rgba(255, 255, 255, 0.625),
+      rgba(255, 255, 255, 0.06) 2px,
+      transparent 5px
+    ),
+    radial-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 3px
+    );
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
