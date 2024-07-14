@@ -41,7 +41,7 @@ const SeekTimeLabels = () => {
   const [currentSong] = useAtom(currentSongAtom);
   const meta = currentSong?.meta || {};
   return (
-    <div className="flex justify-between w-full px-2 py-1 pb-0 my-1 text-xs text-neutral-100/70">
+    <div className="flex justify-between w-full px-2 pt-1 mt-1 text-xs text-neutral-100/70">
       <p>{formatTimeStampForSongDuration(meta?.currentTime)}</p>
       <p>{formatTimeStampForSongDuration(meta?.duration)}</p>
     </div>

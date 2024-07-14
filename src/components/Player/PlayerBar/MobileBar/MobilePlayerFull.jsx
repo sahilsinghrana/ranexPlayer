@@ -45,7 +45,11 @@ function MobilePlayerFull({setIsFull}) {
         <SeekBar />
         <div className="grid w-full grid-cols-[minmax(30px,_1fr)_5fr_minmax(30px,_1fr)] justify-center items-center">
           <div></div>
-          <PlayerControls />
+          <PlayerControls
+            playPauseClass="h-16 p-3 w-16"
+            prevNextClass="h-11 p-3 w-11"
+            className="gap-2"
+          />
           <div className="flex justify-end w-full">
             <Link to={"/now-playing"} onClick={() => setIsFull(false)}>
               <div className="p-2 mx-1 text-white cursor-pointer ">

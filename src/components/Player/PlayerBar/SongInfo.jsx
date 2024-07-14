@@ -8,11 +8,11 @@ const NowPlayingAlbumArt = lazyWithRetry(() =>
 
 const SongInfo = () => {
   return (
-    <div className="inline-flex items-center justify-self-start ">
+    <div className="inline-flex items-center py-1 h-14 justify-self-start">
       <NowPlayingAlbumArt />
-      <div className="ml-3 ">
-        <div className="font-bold text-neutral-200">Song Name</div>
-        <div className="text-xs text-neutral-200">Artist Name</div>
+      <div className="ml-2">
+        <div className="text-md text-neutral-100">Song Name</div>
+        <div className="text-[10px] text-neutral-300">Artist Name</div>
       </div>
     </div>
   );
