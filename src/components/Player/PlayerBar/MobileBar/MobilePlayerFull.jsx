@@ -25,7 +25,7 @@ function MobilePlayerFull({setIsFull}) {
           generateRgbCssString(imageColors.r, imageColors.g, imageColors.b)
         ),
       }}
-      className="absolute top-0 grid w-full h-screen grid-cols-1 bg-neutral-800 "
+      className="absolute top-0 grid w-full h-[100dvh] grid-cols-1 bg-neutral-800 "
     >
       <div className="h-[10vh] p-6">
         <BaseButton type="trasparent" onClick={() => setIsFull(false)}>

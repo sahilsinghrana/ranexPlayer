@@ -10,11 +10,15 @@ const Logo = ({className}) => {
   return (
     <Link to="/" className={clsxWithMerge("flex items-center ", className)}>
       <img
-        className="object-cover w-full h-full rounded-full bg-red-950"
+        className="object-cover w-full h-full rounded-full max-h-[80px] bg-red-950"
         src={randomLogoPath}
         alt="Ranex Player Logo"
       />
-      <img className={"h-[60%]"} src={logoRed} alt="Ranex Player Logo" />
+      <img
+        className={"h-[60%] max-h-[60px]"}
+        src={logoRed}
+        alt="Ranex Player Logo"
+      />
     </Link>
   );
 };

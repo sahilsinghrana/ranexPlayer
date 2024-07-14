@@ -35,7 +35,7 @@ function DesktopPlayerBar() {
           generateHslString(hslString[0], hslString[1], 18)
         ),
       }}
-      className="px-2 pb-3 sm:px-4 place-content-center bg-neutral-950"
+      className="px-2 pb-1 sm:px-4 place-content-center bg-neutral-950"
     >
       <SeekBar />
       <div className="grid w-full grid-cols-3 ">
