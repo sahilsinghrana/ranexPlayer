@@ -1,1 +1,0 @@
-import{r as t,j as m,t as o,c}from"./index-98083269.js";import{a as n}from"./moonAndMusicImages-f46da6a3.js";import"./helpers-f505966d.js";function l({className:a}){const[s,e]=t.useState(async()=>{});return t.useEffect(()=>{(async()=>{const r=await n();e(r)})()},[]),m.jsx("img",{className:o(c("bg-black h-14 w-14",a)),src:s,alt:"cover art"})}export{l as default};

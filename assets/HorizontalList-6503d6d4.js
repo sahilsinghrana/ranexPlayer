@@ -1,1 +1,0 @@
-import{j as s}from"./index-98083269.js";const r=({children:t})=>s.jsx("ul",{className:"flex flex-wrap items-center justify-center sm:justify-start whitespace-nowrap",children:t});export{r as default};

@@ -1,1 +1,0 @@
-const s=t=>{const o=Number(t).toFixed(0),e=Math.floor(o%3600/60),n=o%60,r=String(e).padStart(2,"0"),a=String(n).padStart(2,"0");return`${r}:${a}`};function c(t,o){let e;return function(...n){const r=this;clearTimeout(e),e=setTimeout(()=>{t.apply(r,n)},o)}}function i(t=0,o=10){return t=Math.ceil(t),o=Math.floor(o),Math.floor(Math.random()*(o-t+1))+t}export{c as d,s as f,i as g};
