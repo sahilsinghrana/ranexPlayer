@@ -25,7 +25,7 @@ function MobilePlayerFull({setIsFull}) {
           generateRgbCssString(imageColors.r, imageColors.g, imageColors.b)
         ),
       }}
-      className="absolute top-0 grid w-full h-screen grid-cols-1 bg-neutral-800 "
+      className="absolute top-0 grid w-full h-[100dvh] grid-cols-1 bg-neutral-800 "
     >
       <div className="h-[10vh] p-6">
         <BaseButton type="trasparent" onClick={() => setIsFull(false)}>
@@ -33,7 +33,7 @@ function MobilePlayerFull({setIsFull}) {
         </BaseButton>
       </div>
       <div className="h-[45vh] flex justify-center items-center">
-        <NowPlayingAlbumArt className="w-[45vh] h-[45vh] bg-black" />
+        <NowPlayingAlbumArt className="w-[42vh] h-[42vh] bg-black" />
       </div>
       <div className="flex flex-col items-center self-end w-full gap-6 p-4">
         <div className="flex justify-between w-full">
@@ -43,10 +43,14 @@ function MobilePlayerFull({setIsFull}) {
           </div>
         </div>
         <SeekBar />
-        <div className="grid w-full grid-cols-[minmax(30px,_1fr)_5fr_minmax(30px,_1fr)] justify-center items-center">
+        <div className=" mb-5 grid w-full grid-cols-[minmax(30px,_1fr)_5fr_minmax(30px,_1fr)] justify-center items-center">
           <div></div>
-          <PlayerControls />
-          <div className="flex justify-end w-full">
+          <PlayerControls
+            playPauseClass="h-16 p-3 w-16"
+            prevNextClass="h-11 p-3 w-11"
+            className="gap-2"
+          />
+          <div className="flex justify-end w-full ">
             <Link to={"/now-playing"} onClick={() => setIsFull(false)}>
               <div className="p-2 mx-1 text-white cursor-pointer ">
                 <ListBulletIcon className="w-[22px] h-[22px]" />

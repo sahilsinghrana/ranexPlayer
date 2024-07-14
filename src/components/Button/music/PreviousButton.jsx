@@ -9,11 +9,11 @@ const PreviousButton = ({className}) => {
       size="sm"
       rounded="full"
       className={clsxWithMerge(
-        "m-1 w-9 h-9  bg-neutral-200 hover:bg-neutral-100 text-red-950 hover:text-red-800",
+        "w-8 h-8 p-2 bg-neutral-200 hover:bg-neutral-100 text-red-950 hover:text-red-800",
         className
       )}
     >
-      <TrackPreviousIcon />
+      <TrackPreviousIcon className="w-full h-full" />
     </Button>
   );
 };

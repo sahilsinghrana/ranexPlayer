@@ -3,11 +3,11 @@ import {currentSongAtom} from "../../../store/atoms/playerAtom";
 import {debounce, formatTimeStampForSongDuration} from "../../../utils/helpers";
 
 import {useAtom} from "jotai";
-import {memo} from "react";
+import {memo, useTransition} from "react";
 
 const SeekBar = () => {
   return (
-    <div className="w-full p-0 m-0">
+    <div className="w-full p-0 pt-2 m-0 ">
       <SeekInput />
       <SeekTimeLabels />
     </div>
@@ -15,17 +15,25 @@ const SeekBar = () => {
 };
 
 const SeekInput = memo(() => {
+  const [, startTransition] = useTransition();
   const [currentSong] = useAtom(currentSongAtom);
   const meta = currentSong?.meta || {};
+  function onInputChange(e) {
+    startTransition(() => {
+      debounce(player.seek, 10)(e.target.value);
+    });
+  }
   return (
-    <input
-      type="range"
-      min={0}
-      value={meta?.currentTime}
-      max={meta?.duration}
-      className="w-full py-0 mx-1 my-0 cursor-grab active:cursor-grabbing accent-accent-8 seekbar"
-      onChange={(e) => debounce(player.seek, 150)(e.target.value)}
-    />
+    <>
+      <input
+        type="range"
+        min={0}
+        value={meta?.currentTime || 0}
+        max={meta?.duration}
+        className="w-full py-[1.4px] mx-1 my-0 cursor-grab active:cursor-grabbing accent-accent-8 seekbar bg-neutral-800"
+        onChange={onInputChange}
+      />
+    </>
   );
 });
 
@@ -33,7 +41,7 @@ const SeekTimeLabels = () => {
   const [currentSong] = useAtom(currentSongAtom);
   const meta = currentSong?.meta || {};
   return (
-    <div className="flex justify-between w-full px-2 py-1 my-1 text-xs text-neutral-100/70">
+    <div className="flex justify-between w-full px-2 pt-1 mt-1 text-xs text-neutral-100/70">
       <p>{formatTimeStampForSongDuration(meta?.currentTime)}</p>
       <p>{formatTimeStampForSongDuration(meta?.duration)}</p>
     </div>

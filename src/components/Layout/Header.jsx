@@ -16,17 +16,17 @@ const Header = () => {
   return (
     <header
       className={
-        "md:flex-row  flex-col bg-neutral-950 py-2 pt-1 border-neutral-800/20 border-b-2 border-opacity-5 flex flex-wrap justify-center sm:justify-between pr-5 pl-1 items-center backgroundStars"
+        "md:flex-row flex-col bg-neutral-950 py-1 border-neutral-800/20 border-b-2 border-opacity-5 flex flex-wrap justify-center sm:justify-between pr-5 pl-1 items-center backgroundStars"
       }
     >
-      <div className="flex flex-col flex-wrap items-center justify-center mt-0 md:flex-row">
+      <div className="flex flex-col flex-wrap items-center justify-center m-0 md:flex-row">
         <Suspense fallback={<MoonLoader />}>
           <Link to="/">
             <Logo className={"h-[60px] sm:h-[80px] md:h-[90px] "} />
           </Link>
         </Suspense>
         <div>
-          <h2 className="py-1 pl-3 text-xs font-light tracking-wide text-center text-white uppercase md:text-xl lg:text-2xl sm:text-left sm:pl-6 sm:text-sm opacity-60">
+          <h2 className="text-[10px] font-light tracking-wide text-center text-white uppercase md:text-lg lg:text-xl sm:text-left sm:pl-1 sm:text-xs opacity-60">
             Get <span className="font-normal">Dwelved</span> in the soul of the{" "}
             <span className="font-bold">Sound</span>
             <br />
@@ -89,24 +89,29 @@ function ProfileDropdown() {
       <button onClick={() => setOpen((t) => !t)}>
         <img
           src={musicalSkull}
-          className="h-[35px] w-[35px] object-cover rounded-full bg-neutral-400 hue-rotate-30  "
+          className="h-[35px] w-[35px] object-cover rounded-full bg-neutral-400 hue-rotate-30"
           alt="profile"
         />
       </button>
       {open && (
-        <ul className="w-[160px] py-2 flex flex-col text-sm border border-neutral-400/30  bg-neutral-900/70 rounded-lg absolute z-10 top-full left-auto md:right-0">
-          <DropDownLink to={"/profile"}>Profile</DropDownLink>
-          <DropDownLink to={"/settings"}>Settings</DropDownLink>
+        <ul className="w-[160px] py-2 flex flex-col text-sm border border-neutral-400/30 mt-2  bg-neutral-900/70 rounded-lg absolute z-10 top-full left-auto right-[-150%] md:right-0">
+          <DropDownLink onClick={() => setOpen(false)} to={"/profile"}>
+            Profile
+          </DropDownLink>
+          <DropDownLink onClick={() => setOpen(false)} to={"/settings"}>
+            Settings
+          </DropDownLink>
         </ul>
       )}
     </div>
   );
 }
 
-function DropDownLink({to, children}) {
+function DropDownLink({to, children, onClick}) {
   return (
     <li className="mb-1 w-[160px]">
       <Link
+        onClick={onClick}
         to={to}
         className="h-[30px] transition duration-75 flex items-center w-full hover:bg-neutral-600/90 py-3 px-2 text-white  text-center"
       >

@@ -16,12 +16,12 @@ const PauseButton = ({className}) => {
       size="lg"
       rounded="full"
       className={clsxWithMerge(
-        "m-1 w-14 h-14 bg-neutral-200 hover:bg-neutral-100 text-red-950 hover:text-red-800",
+        "w-12 h-12 p-2 bg-neutral-200 hover:bg-neutral-100 text-red-950 hover:text-red-800",
         className
       )}
       onClick={handlePause}
     >
-      <PauseIcon scale={3} height={30} width={30} />
+      <PauseIcon className="w-full h-full" />
     </Button>
   );
 };

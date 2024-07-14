@@ -1,4 +1,4 @@
-export const formatTimeStampForSongDuration = (sec) => {
+export const formatTimeStampForSongDuration = (sec = 0) => {
   const seconds = Number(sec).toFixed(0);
   const minutes = Math.floor((seconds % 3600) / 60);
   const remainingSeconds = seconds % 60;
