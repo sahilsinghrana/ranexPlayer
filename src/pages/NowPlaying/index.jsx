@@ -3,7 +3,9 @@ import {lazyWithRetry} from "../../utils/reactLazy";
 import {Cross1Icon} from "@radix-ui/react-icons";
 import {useNavigate} from "react-router-dom";
 
-const AlbumArt = lazyWithRetry(() => import("../../components/AlbumArt"));
+const RandomAlbumArt = lazyWithRetry(() =>
+  import("../../components/AlbumArt/RandomAlbumArt")
+);
 
 function NowPlaying() {
   const navigate = useNavigate();
@@ -15,12 +17,7 @@ function NowPlaying() {
           Now Playing
         </h1>
 
-        <button
-          className="mr-4"
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
+        <button className="mr-4" onClick={() => navigate(-1)}>
           <Cross1Icon />
         </button>
       </div>
@@ -45,7 +42,7 @@ function NowPlayingItem({name}) {
   return (
     <li className="p-1 m-1 text-sm duration-75 rounded-lg bg-neutral-900/50 hover:bg-neutral-950/60 hover:outline-1 outline-neutral-400/50 hover:outline">
       <button className="flex items-center w-full">
-        <AlbumArt />
+        <RandomAlbumArt />
         <div className="flex items-center justify-between w-full">
           <div className="ml-3 text-left ">
             <p className="text-base font-bold ">Song {name}</p>

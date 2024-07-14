@@ -33,7 +33,7 @@ function MobilePlayerFull({setIsFull}) {
         </BaseButton>
       </div>
       <div className="h-[45vh] flex justify-center items-center">
-        <NowPlayingAlbumArt className="w-[45vh] h-[45vh] bg-black" />
+        <NowPlayingAlbumArt className="w-[42vh] h-[42vh] bg-black" />
       </div>
       <div className="flex flex-col items-center self-end w-full gap-6 p-4">
         <div className="flex justify-between w-full">
@@ -43,14 +43,14 @@ function MobilePlayerFull({setIsFull}) {
           </div>
         </div>
         <SeekBar />
-        <div className="grid w-full grid-cols-[minmax(30px,_1fr)_5fr_minmax(30px,_1fr)] justify-center items-center">
+        <div className=" mb-5 grid w-full grid-cols-[minmax(30px,_1fr)_5fr_minmax(30px,_1fr)] justify-center items-center">
           <div></div>
           <PlayerControls
             playPauseClass="h-16 p-3 w-16"
             prevNextClass="h-11 p-3 w-11"
             className="gap-2"
           />
-          <div className="flex justify-end w-full">
+          <div className="flex justify-end w-full ">
             <Link to={"/now-playing"} onClick={() => setIsFull(false)}>
               <div className="p-2 mx-1 text-white cursor-pointer ">
                 <ListBulletIcon className="w-[22px] h-[22px]" />

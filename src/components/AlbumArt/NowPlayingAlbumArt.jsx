@@ -1,3 +1,5 @@
+import AlbumArt from "./index";
+
 import {getRandomMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
 import {
   currentPlayingAlbumArtColorsAtom,
@@ -7,7 +9,7 @@ import {getAverageRGB} from "../../utils/imageHelpers";
 
 import clsx from "clsx";
 import {useAtom, useSetAtom} from "jotai";
-import {useEffect} from "react";
+import {memo, useEffect} from "react";
 import {twMerge} from "tailwind-merge";
 
 function NowPlayingAlbumArt({className}) {
@@ -32,10 +34,10 @@ function NowPlayingAlbumArt({className}) {
   }, [setAlbumArtImage, albumArtImage, setImageColors]);
 
   return (
-    <img
+    <AlbumArt
       className={twMerge(
         clsx(
-          "bg-black object-cover h-full shadow-lg shadow-black/70",
+          "bg-black object-cover h-full shadow-lg rounded-lg shadow-black/70",
           className
         )
       )}
@@ -45,4 +47,4 @@ function NowPlayingAlbumArt({className}) {
   );
 }
 
-export default NowPlayingAlbumArt;
+export default memo(NowPlayingAlbumArt);
