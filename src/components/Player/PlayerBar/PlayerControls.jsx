@@ -1,12 +1,10 @@
 import {playerStateAtom, playerStates} from "../../../store/atoms/playerAtom";
 import {lazyWithRetry} from "../../../utils/reactLazy";
 import {clsxWithMerge} from "../../../utils/utils";
+import NextButton from "../../Button/music/NextButton";
+import PlayButton from "../../Button/music/PlayButton";
 
 import {useAtom} from "jotai";
-
-const NextButton = lazyWithRetry(() => import("../../Button/music/NextButton"));
-
-const PlayButton = lazyWithRetry(() => import("../../Button/music/PlayButton"));
 
 const PreviousButton = lazyWithRetry(() =>
   import("../../Button/music/PreviousButton")

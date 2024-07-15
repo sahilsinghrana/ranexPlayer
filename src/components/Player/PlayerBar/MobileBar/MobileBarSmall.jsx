@@ -14,7 +14,7 @@ const PlayerControlsSmall = lazyWithRetry(() =>
   import("../PlayerControlsSmall")
 );
 
-function MobileBarSmall({setIsFull}) {
+function MobileBarSmall({toggleFullView}) {
   const imageColors = useAtomValue(currentPlayingAlbumArtColorsAtom);
 
   return (
@@ -33,9 +33,7 @@ function MobileBarSmall({setIsFull}) {
           "1%"
         ),
       }}
-      onClick={() => {
-        setIsFull((prev) => !prev);
-      }}
+      onClick={toggleFullView}
       className="px-3 py-2 bg-neutral-900"
     >
       <div className="flex justify-between w-full ">

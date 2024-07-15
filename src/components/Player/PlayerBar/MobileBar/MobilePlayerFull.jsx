@@ -16,7 +16,7 @@ const NowPlayingAlbumArt = lazyWithRetry(() =>
   import("../../../AlbumArt/NowPlayingAlbumArt")
 );
 
-function MobilePlayerFull({setIsFull}) {
+function MobilePlayerFull({toggleFullView}) {
   const imageColors = useAtomValue(currentPlayingAlbumArtColorsAtom);
   return (
     <div
@@ -28,7 +28,7 @@ function MobilePlayerFull({setIsFull}) {
       className="absolute top-0 grid w-full h-[100dvh] grid-cols-1 bg-neutral-800 "
     >
       <div className="h-[10vh] p-6">
-        <BaseButton type="trasparent" onClick={() => setIsFull(false)}>
+        <BaseButton type="trasparent" onClick={toggleFullView}>
           <ChevronDownIcon height={"30px"} width={"30px"} />
         </BaseButton>
       </div>
@@ -51,7 +51,7 @@ function MobilePlayerFull({setIsFull}) {
             className="gap-2"
           />
           <div className="flex justify-end w-full ">
-            <Link to={"/now-playing"} onClick={() => setIsFull(false)}>
+            <Link to={"/now-playing"} onClick={toggleFullView}>
               <div className="p-2 mx-1 text-white cursor-pointer ">
                 <ListBulletIcon className="w-[22px] h-[22px]" />
               </div>

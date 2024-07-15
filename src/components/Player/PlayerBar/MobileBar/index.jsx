@@ -1,18 +1,18 @@
+import usePlayerFullView from "../../../../hooks/usePlayerFullVIew";
 import {lazyWithRetry} from "../../../../utils/reactLazy";
 
-import {useState} from "react";
+import {memo} from "react";
 
 const MobilePlayerFull = lazyWithRetry(() => import("./MobilePlayerFull"));
 const MobileBarSmall = lazyWithRetry(() => import("./MobileBarSmall"));
 
 function MobilePlayerBar() {
-  const [isFull, setIsFull] = useState(false);
-
+  const [isFull, toggleFullView] = usePlayerFullView();
   return isFull ? (
-    <MobilePlayerFull setIsFull={setIsFull} />
+    <MobilePlayerFull toggleFullView={toggleFullView} />
   ) : (
-    <MobileBarSmall setIsFull={setIsFull} />
+    <MobileBarSmall toggleFullView={toggleFullView} />
   );
 }
 
-export default MobilePlayerBar;
+export default memo(MobilePlayerBar);
