@@ -21,9 +21,7 @@ const Header = () => {
     >
       <div className="flex flex-col flex-wrap items-center justify-center m-0 md:flex-row">
         <Suspense fallback={<MoonLoader />}>
-          <Link to="/">
-            <Logo className={"h-[60px] sm:h-[80px] md:h-[90px] "} />
-          </Link>
+          <Logo className={"h-[60px] sm:h-[80px] md:h-[90px] "} />
         </Suspense>
         <div>
           <h2 className="text-[10px] font-light tracking-wide text-center text-white uppercase md:text-lg lg:text-xl sm:text-left sm:pl-1 sm:text-xs opacity-60">

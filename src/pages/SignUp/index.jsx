@@ -59,6 +59,7 @@ function SignUPPage() {
               onChange={handleChange}
               className={"m-3 w-full"}
               pattern="[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}"
+              autoComplete="email webauthn"
             />
             <Input
               required
@@ -69,6 +70,7 @@ function SignUPPage() {
               onChange={handleChange}
               className={"m-3  w-full"}
               minLength={6}
+              autoComplete="new-password webauthn"
             />
             <BaseButton className={" my-4 w-[200px]"}>Submit</BaseButton>
           </form>

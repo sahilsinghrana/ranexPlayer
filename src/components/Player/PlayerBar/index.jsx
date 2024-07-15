@@ -12,7 +12,11 @@ const PlayerBar = () => {
 
   return (
     <Provider store={playerStore} min={0}>
-      {isMobile ? <MobilePlayerBar /> : <DesktopPlayerBar />}
+      {isMobile ? (
+        <MobilePlayerBar key={isMobile} />
+      ) : (
+        <DesktopPlayerBar key={isMobile} />
+      )}
     </Provider>
   );
 };

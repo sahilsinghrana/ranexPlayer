@@ -41,7 +41,7 @@ function NowPlayingList() {
 function NowPlayingItem({name}) {
   return (
     <li className="p-1 m-1 text-sm duration-75 rounded-lg bg-neutral-900/50 hover:bg-neutral-950/60 hover:outline-1 outline-neutral-400/50 hover:outline">
-      <button className="flex items-center w-full">
+      <div className="flex items-center w-full">
         <RandomAlbumArt />
         <div className="flex items-center justify-between w-full">
           <div className="ml-3 text-left ">
@@ -54,7 +54,7 @@ function NowPlayingItem({name}) {
             <button className="p-3 mr-2 font-extrabold">X</button>
           </div>
         </div>
-      </button>
+      </div>
     </li>
   );
 }
