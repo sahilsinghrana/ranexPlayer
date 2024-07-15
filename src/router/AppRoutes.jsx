@@ -1,4 +1,6 @@
 import RouterErrorBoundary from "../pages/NotFound/RouterErrorBounday.jsx";
+import PlaylistsPage from "../pages/Playlists/index.jsx";
+import PlaylistPage from "../pages/Playlists/PlaylistPage.jsx";
 import {lazyWithRetry} from "../utils/reactLazy";
 
 import {Routes, Route} from "react-router-dom";
@@ -29,6 +31,10 @@ function AppRoutes() {
           <Route index={true} Component={Home} />
           <Route path="/now-playing" Component={NowPlaying} />
           <Route path="/profile" Component={ProfilePage} />
+          <Route path="/playlists">
+            <Route index Component={PlaylistsPage} />
+            <Route path=":id" Component={PlaylistPage} />
+          </Route>
         </Route>
         <Route path="/login" Component={LoginPage} />
         <Route path="/signup" Component={SignUPPage} />

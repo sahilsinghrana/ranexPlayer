@@ -3,11 +3,12 @@ import {
   getRandomMoonAndMusicImage,
 } from "../../assets/images/moonAndMusic/moonAndMusicImages";
 import MoonLoader from "../../components/Loaders/MoonLoader";
-import fetcher from "../../helpers/fetcher";
+// import fetcher from "../../helpers/fetcher";
 import {lazyWithRetry} from "../../utils/reactLazy";
 
 import {Suspense} from "react";
-import useSWR from "swr";
+import {Link} from "react-router-dom";
+// import useSWR from "swr";
 
 const HomeSection = lazyWithRetry(() => import("./HomeSection"));
 const UserGreeting = lazyWithRetry(() => import("./UserGreeting"));
@@ -17,7 +18,7 @@ const HorizontalList = lazyWithRetry(() =>
 );
 
 const Home = () => {
-  useSWR("/music/playlist", fetcher);
+  // useSWR("/music/playlist", fetcher);
 
   return (
     <Suspense fallback={<MoonLoader />}>
@@ -33,14 +34,18 @@ const Home = () => {
               <li>
                 <PlaylistCard playlistName="Soulful" />
               </li>
+              <Link to="/playlists/123">
+                <li>
+                  <PlaylistCard playlistName="Gold & Silver" />
+                </li>
+              </Link>
               <li>
-                <PlaylistCard playlistName="Gold & Silver" />
-              </li>
-              <li>
-                <PlaylistCard
-                  playlistName="View More"
-                  backgroundImage={getRandomBWMoonAndMusicImage()}
-                />
+                <Link to="/playlists">
+                  <PlaylistCard
+                    playlistName="View More"
+                    backgroundImage={getRandomBWMoonAndMusicImage()}
+                  />
+                </Link>
               </li>
             </HorizontalList>
           </HomeSection>
