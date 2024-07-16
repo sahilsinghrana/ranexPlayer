@@ -1,3 +1,5 @@
+import {memo} from "react";
+
 function MessageSignup() {
   return (
     <h2 className="text-2xl font-light tracking-wide text-right uppercase sm:text-3xl opacity-80 text-slate-100 ">
@@ -15,4 +17,4 @@ function MessageSignup() {
   );
 }
 
-export default MessageSignup;
+export default memo(MessageSignup);

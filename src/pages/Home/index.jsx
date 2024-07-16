@@ -1,7 +1,4 @@
-import {
-  getRandomBWMoonAndMusicImage,
-  getRandomMoonAndMusicImage,
-} from "../../assets/images/moonAndMusic/moonAndMusicImages";
+import {getRandomBWMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
 import MoonLoader from "../../components/Loaders/MoonLoader";
 // import fetcher from "../../helpers/fetcher";
 import {lazyWithRetry} from "../../utils/reactLazy";
@@ -12,7 +9,9 @@ import {Link} from "react-router-dom";
 
 const HomeSection = lazyWithRetry(() => import("./HomeSection"));
 const UserGreeting = lazyWithRetry(() => import("./UserGreeting"));
-const Card = lazyWithRetry(() => import("../../components/Card"));
+const PlaylistCard = lazyWithRetry(() =>
+  import("../../components/Card/PlaylistCard")
+);
 const HorizontalList = lazyWithRetry(() =>
   import("../../components/List/HorizontalList")
 );
@@ -29,19 +28,24 @@ const Home = () => {
           <HomeSection title="Lists Curated by YOU!">
             <HorizontalList>
               <li>
-                <PlaylistCard playlistName="Soothing" />
+                <Link to="/playlists/24">
+                  <PlaylistCard size="adaptive" playlistName="Soothing" />
+                </Link>
               </li>
-              <li>
-                <PlaylistCard playlistName="Soulful" />
-              </li>
+              <Link to="/playlists/24">
+                <li>
+                  <PlaylistCard size="adaptive" playlistName="Soulful" />
+                </li>
+              </Link>
               <Link to="/playlists/123">
                 <li>
-                  <PlaylistCard playlistName="Gold & Silver" />
+                  <PlaylistCard size="adaptive" playlistName="Gold & Silver" />
                 </li>
               </Link>
               <li>
                 <Link to="/playlists">
                   <PlaylistCard
+                    size="adaptive"
                     playlistName="View More"
                     backgroundImage={getRandomBWMoonAndMusicImage()}
                   />
@@ -49,7 +53,11 @@ const Home = () => {
               </li>
             </HorizontalList>
           </HomeSection>
-
+          <h2 className="py-2 text-xs italic font-light tracking-wide text-center text-white opacity-60">
+            Get <span className="font-normal">Dwelved</span> in the soul of the{" "}
+            <span className="font-bold">Sound</span>
+            <br />
+          </h2>
           <HomeSection title="Lists Curated by US!">
             <HorizontalList>
               <li>
@@ -70,18 +78,3 @@ const Home = () => {
 };
 
 export default Home;
-
-function PlaylistCard({playlistName, backgroundImage}) {
-  return (
-    <Card
-      className="max-w-40 w-[40vw] max-h-40  h-[40vw]"
-      backgroundImage={backgroundImage || getRandomMoonAndMusicImage()}
-    >
-      <div className="flex items-end h-full bg-gradient-to-t from-neutral-900 via-neutral-500/50 to-neutral-300/0">
-        <h5 className="w-full m-3 text-lg font-bold uppercase  text-wrap text-neutral-50/80  drop-shadow-[0_1.2px_1.2px_#00000080]">
-          {playlistName}
-        </h5>
-      </div>
-    </Card>
-  );
-}

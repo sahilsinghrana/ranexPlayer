@@ -42,10 +42,18 @@ const SeekTimeLabels = () => {
   const meta = currentSong?.meta || {};
   return (
     <div className="flex justify-between w-full px-2 pt-1 mt-1 text-xs text-neutral-100/70">
-      <p>{formatTimeStampForSongDuration(meta?.currentTime)}</p>
-      <p>{formatTimeStampForSongDuration(meta?.duration)}</p>
+      <CurrentTime currentTime={meta?.currentTime || 0} />
+      <TotalTime duration={meta?.duration || 0} />
     </div>
   );
 };
+
+function CurrentTime({currentTime}) {
+  return <p>{formatTimeStampForSongDuration(currentTime)}</p>;
+}
+
+function TotalTime({duration}) {
+  return <p>{formatTimeStampForSongDuration(duration)}</p>;
+}
 
 export default memo(SeekBar);

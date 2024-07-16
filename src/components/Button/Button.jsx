@@ -1,5 +1,6 @@
 import {cva} from "class-variance-authority";
 import clsx from "clsx";
+import {memo} from "react";
 import {twMerge} from "tailwind-merge";
 
 const button = cva(
@@ -9,9 +10,9 @@ const button = cva(
       type: {
         primary: [
           "text-neutral-100 hover:text-neutral-300 font-bold",
-          "hover:bg-orange-950 bg-red-900",
+          "hover:bg-red-950 bg-red-900",
         ],
-        secondary: ["text-gray-1", "bg-gray-9 hover:bg-gray-10"],
+        secondary: ["text-neutral-200", "bg-neutral-600 hover:bg-neutral-700"],
         danger: ["text-gray-1", "bg-danger-10 hover:bg-danger-11"],
         outline: [
           "outline-1  outline-double",
@@ -56,4 +57,4 @@ const BaseButton = ({children, className, type, size, rounded, ...props}) => {
   );
 };
 
-export default BaseButton;
+export default memo(BaseButton);
