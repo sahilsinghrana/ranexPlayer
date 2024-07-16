@@ -17,7 +17,7 @@ const playlistCard = cva("w-[40vw] h-[40vw]", {
     },
   },
   defaultVariants: {
-    size: "adaptive",
+    size: "medium",
   },
 });
 
