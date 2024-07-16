@@ -2,6 +2,7 @@ import logoRed from "../../assets/images/logo_red.png";
 import {getRandomRoundedLogoPath} from "../../assets/images/logos/roundedLogos";
 import {clsxWithMerge} from "../../utils/utils";
 
+import {memo} from "react";
 import {Link} from "react-router-dom";
 
 const randomLogoPath = getRandomRoundedLogoPath();
@@ -23,4 +24,4 @@ const Logo = ({className}) => {
   );
 };
 
-export default Logo;
+export default memo(Logo);

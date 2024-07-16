@@ -28,7 +28,7 @@ function NowPlaying() {
 
 export default NowPlaying;
 
-function NowPlayingList() {
+export function NowPlayingList() {
   return (
     <ul className="flex-col justify-center w-full h-[90%] sm:mx-2 sm:px-4 sm:pr-3 pb-4 overflow-y-auto">
       {Array.from({length: 20}, (_, idx) => (

@@ -31,7 +31,7 @@ function LoginPage() {
   }
 
   return (
-    <div className="flex flex-col h-full pb-10 overflow-auto backgroundStars scroll-auto bg-grayDark-1 ">
+    <div className="flex flex-col h-[100dvh] pb-10 overflow-auto backgroundStars scroll-auto bg-grayDark-1 ">
       <div className="flex flex-col items-center justify-between m-4 mb-3 ml-2 sm:items-start md:flex-row">
         <LogoBig />
         <div className="self-end mt-5 sm:mb-1 md:mt-16">

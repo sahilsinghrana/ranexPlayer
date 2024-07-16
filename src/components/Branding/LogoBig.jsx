@@ -1,6 +1,7 @@
 import logoRed from "../../assets/images/logo_red.png";
 import {getRandomRoundedLogoPath} from "../../assets/images/logos/roundedLogos";
 
+import {memo} from "react";
 import {Link} from "react-router-dom";
 
 const randomLogoPath = getRandomRoundedLogoPath();
@@ -22,4 +23,4 @@ const LogoBig = () => {
   );
 };
 
-export default LogoBig;
+export default memo(LogoBig);

@@ -23,13 +23,7 @@ const Header = () => {
         <Suspense fallback={<MoonLoader />}>
           <Logo className={"h-[60px] sm:h-[80px] md:h-[90px] "} />
         </Suspense>
-        <div>
-          <h2 className="text-[10px] font-light tracking-wide text-center text-white uppercase md:text-lg lg:text-xl sm:text-left sm:pl-1 sm:text-xs opacity-60">
-            Get <span className="font-normal">Dwelved</span> in the soul of the{" "}
-            <span className="font-bold">Sound</span>
-            <br />
-          </h2>
-        </div>
+        <div></div>
       </div>
       <div className="flex items-center justify-center mt-2 sm:mt-0 ">
         {session ? (
