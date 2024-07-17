@@ -13,7 +13,7 @@ const playlistCard = cva("w-[40vw] h-[40vw]", {
       medium: "max-w-40 max-h-40 text-lg",
       adaptive: "max-w-36 max-h-20 text-md sm:max-w-40 sm:max-h-40 sm:text-lg",
       mediumWide:
-        "max-w-full sm:max-w-80 w-[90vw] max-h-44 min-h-40 text-xl sm:text-2xl",
+        "max-w-full sm:max-w-80 w-[90vw] max-h-44 h-44 text-xl sm:text-2xl",
     },
   },
   defaultVariants: {
