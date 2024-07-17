@@ -11,46 +11,19 @@ import {Link} from "react-router-dom";
 const Logo = lazyWithRetry(() => import("../Branding/Logo"));
 
 const Header = () => {
-  const [session, setSession] = useAtom(sessionAtom);
-
   return (
     <header
       className={
-        "md:flex-row flex-col bg-neutral-950 py-1 border-neutral-800/20 border-b-2 border-opacity-5 flex flex-wrap justify-center sm:justify-between pr-5 pl-1 items-center backgroundStars"
+        "bg-neutral-950 py-1 border-neutral-800/20 border-b-2 border-opacity-5 flex flex-wrap justify-between pr-5 pl-1 items-center backgroundStars"
       }
     >
-      <div className="flex flex-col flex-wrap items-center justify-center m-0 md:flex-row">
-        <Suspense fallback={<MoonLoader />}>
-          <Logo className={"h-[60px] sm:h-[80px] md:h-[90px] "} />
-        </Suspense>
-        <div></div>
-      </div>
+      <Suspense fallback={<MoonLoader />}>
+        <Logo className={"h-[60px] sm:h-[80px] md:h-[90px] "} />
+      </Suspense>
       <div className="flex items-center justify-center mt-2 sm:mt-0 ">
-        {session ? (
-          <button
-            onClick={() => {
-              supabase.auth
-                .signOut()
-                .then(() => {
-                  setSession();
-                })
-                .catch(() => {
-                  localStorage.clear();
-                  sessionStorage.clear();
-                  window.location.reload();
-                });
-            }}
-          >
-            Logout
-          </button>
-        ) : (
-          <div className="flex items-center h-full">
-            <Link to="/login" className="text-white">
-              Login
-            </Link>
-            <ProfileDropdown />
-          </div>
-        )}
+        <div className="flex items-center h-full">
+          <ProfileDropdown />
+        </div>
       </div>
     </header>
   );
@@ -62,6 +35,7 @@ let outerClick;
 function ProfileDropdown() {
   const [open, setOpen] = useState(false);
   const ddRef = useRef();
+  const [session, setSession] = useAtom(sessionAtom);
 
   useEffect(() => {
     outerClick = function () {
@@ -93,6 +67,28 @@ function ProfileDropdown() {
           <DropDownLink onClick={() => setOpen(false)} to={"/settings"}>
             Settings
           </DropDownLink>
+          {session ? (
+            <button
+              onClick={() => {
+                supabase.auth
+                  .signOut()
+                  .then(() => {
+                    setSession();
+                  })
+                  .catch(() => {
+                    localStorage.clear();
+                    sessionStorage.clear();
+                    window.location.reload();
+                  });
+              }}
+            >
+              Logout
+            </button>
+          ) : (
+            <DropDownLink to="/login" className="text-white">
+              Login
+            </DropDownLink>
+          )}
         </ul>
       )}
     </div>
