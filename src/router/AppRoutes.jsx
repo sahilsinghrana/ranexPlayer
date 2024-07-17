@@ -22,6 +22,9 @@ const ProfileSettings = lazyWithRetry(() =>
   import("../pages/Settings/ProfileSettings.jsx")
 );
 const SignUPPage = lazyWithRetry(() => import("../pages/SignUp/index.jsx"));
+const FavoriteList = lazyWithRetry(() =>
+  import("../components/Favorites/FavoriteList.jsx")
+);
 
 function AppRoutes() {
   return (
@@ -33,6 +36,7 @@ function AppRoutes() {
           <Route path="/profile" Component={ProfilePage} />
           <Route path="/playlists">
             <Route index Component={PlaylistsPage} />
+            <Route path="favorites" Component={FavoriteList} />
             <Route path=":id" Component={PlaylistPage} />
           </Route>
         </Route>

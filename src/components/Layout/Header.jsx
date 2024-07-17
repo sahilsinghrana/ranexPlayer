@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <header
       className={
-        "bg-neutral-950 py-1 border-neutral-800/20 border-b-2 border-opacity-5 flex flex-wrap justify-between pr-5 pl-1 items-center backgroundStars"
+        "bg-black py-1  flex flex-wrap shadow-sm shadow-slate-300/50 justify-between pr-5 pl-1 items-center backgroundStars"
       }
     >
       <Suspense fallback={<MoonLoader />}>

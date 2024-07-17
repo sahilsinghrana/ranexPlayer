@@ -29,11 +29,12 @@ const Home = () => {
 
           <HomeSection>
             <HorizontalList>
-              <Link to="/playlists/123">
+              <Link to="/playlists/favorites">
                 <li>
                   <PlaylistCard
                     size="adaptive"
                     backgroundImage={favoritePlaylistImage}
+                    className="object-scale-down object-center"
                     playlistName="Favourites"
                   />
                 </li>
@@ -81,7 +82,7 @@ const Home = () => {
             </HorizontalList>
           </HomeSection>
           <HomeSection title="Recently Added!">
-            <HorizontalList className="gap-2">
+            <HorizontalList className="gap-3 mb-2 sm:px-3">
               <li>
                 <SongCard artist="Europe" title="In my time" />
               </li>
