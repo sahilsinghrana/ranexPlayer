@@ -1,4 +1,6 @@
+import favoritePlaylistImage from "../../assets/images/favoritePlaylist.webp";
 import {getRandomBWMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
+import SongCard from "../../components/Card/SongCard";
 import MoonLoader from "../../components/Loaders/MoonLoader";
 // import fetcher from "../../helpers/fetcher";
 import {lazyWithRetry} from "../../utils/reactLazy";
@@ -25,8 +27,17 @@ const Home = () => {
         <div className="h-full overflow-auto">
           <UserGreeting />
 
-          <HomeSection title="Lists Curated by YOU!">
+          <HomeSection>
             <HorizontalList>
+              <Link to="/playlists/123">
+                <li>
+                  <PlaylistCard
+                    size="adaptive"
+                    backgroundImage={favoritePlaylistImage}
+                    playlistName="Favourites"
+                  />
+                </li>
+              </Link>
               <li>
                 <Link to="/playlists/24">
                   <PlaylistCard size="adaptive" playlistName="Soothing" />
@@ -37,16 +48,11 @@ const Home = () => {
                   <PlaylistCard size="adaptive" playlistName="Soulful" />
                 </li>
               </Link>
-              <Link to="/playlists/123">
-                <li>
-                  <PlaylistCard size="adaptive" playlistName="Gold & Silver" />
-                </li>
-              </Link>
               <li>
                 <Link to="/playlists">
                   <PlaylistCard
                     size="adaptive"
-                    playlistName="View More"
+                    playlistName="View More+"
                     backgroundImage={getRandomBWMoonAndMusicImage()}
                   />
                 </Link>
@@ -68,6 +74,25 @@ const Home = () => {
               </li>
               <li>
                 <PlaylistCard playlistName="Gold & Silver" />
+              </li>
+              <li>
+                <PlaylistCard playlistName="Rock the Party!" />
+              </li>
+            </HorizontalList>
+          </HomeSection>
+          <HomeSection title="Recently Added!">
+            <HorizontalList className="gap-2">
+              <li>
+                <SongCard artist="Europe" title="In my time" />
+              </li>
+              <li>
+                <SongCard artist="Hardwell" title="Spaceman" />
+              </li>
+              <li>
+                <SongCard artist="AP Dhillon" title="Majhail" />
+              </li>
+              <li>
+                <SongCard artist="KK" title="Tujhe Sochta hu" />
               </li>
             </HorizontalList>
           </HomeSection>

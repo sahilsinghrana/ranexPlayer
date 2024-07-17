@@ -55,7 +55,7 @@ function ProfileDropdown() {
       <button onClick={() => setOpen((t) => !t)}>
         <img
           src={musicalSkull}
-          className="h-[35px] w-[35px] object-cover rounded-full bg-neutral-400 hue-rotate-30"
+          className="h-[35px] w-[35px] object-cover rounded-full bg-neutral-400 hue-rotate-30 outline outline-red-600/60 hover:outline-red-500/70"
           alt="profile"
         />
       </button>
