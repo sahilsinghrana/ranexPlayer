@@ -4,14 +4,19 @@ import SignInWithGoogleButton from "../../components/Button/SignInWithProvider/S
 import Input from "../../components/Form/Input";
 import MessageSignup from "../../components/MessageWalls/MessageSignup";
 import supabase from "../../config/supabase";
+import useIsUserLoggedIn from "../../hooks/useIsUserLoggedIn";
 
 import {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 
 const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 function SignUPPage() {
   const [formData, setFormData] = useState({});
+  const isUserLoggedIn = useIsUserLoggedIn();
+
+  if (isUserLoggedIn) return <Navigate to={"/"} />;
+
   function handleChange(e) {
     const inputName = e.target.name;
     const inputValue = e.target.value;

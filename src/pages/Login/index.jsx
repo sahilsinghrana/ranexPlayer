@@ -4,14 +4,17 @@ import SignInWithGoogleButton from "../../components/Button/SignInWithProvider/S
 import Input from "../../components/Form/Input";
 import MessageLogin from "../../components/MessageWalls/MessageLogin";
 import supabase from "../../config/supabase";
+import useIsUserLoggedIn from "../../hooks/useIsUserLoggedIn";
 
 import {useState} from "react";
-import {Link} from "react-router-dom";
-
-const serverUrl = import.meta.env.VITE_SERVER_URL;
+import {Link, Navigate} from "react-router-dom";
 
 function LoginPage() {
   const [formData, setFormData] = useState({});
+  const isUserLoggedIn = useIsUserLoggedIn();
+
+  if (isUserLoggedIn) return <Navigate to={"/"} />;
+
   function handleChange(e) {
     const inputName = e.target.name;
     const inputValue = e.target.value;
@@ -22,11 +25,10 @@ function LoginPage() {
   }
 
   function handleSignInWithGoogle() {
-    console.log({serverUrl});
     supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: serverUrl + `/auth/callback`,
+        redirectTo: window.location.origin,
       },
     });
   }

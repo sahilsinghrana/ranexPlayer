@@ -1,14 +1,15 @@
-import musicalSkull from "../../assets/images/musicalSkull.webp";
 import BaseButton from "../../components/Button/Button";
 import FormGroup from "../../components/Form/FormGroup";
 import Input from "../../components/Form/Input";
+import useUserProfilePic from "../../hooks/fetch/useUserProfilePic";
 
 function ProfileSettings() {
+  const profileSrc = useUserProfilePic();
   return (
     <div>
       <div>
         <img
-          src={musicalSkull}
+          src={profileSrc}
           alt="profilepic"
           className="bg-neutral-400 object-cover h-[70px] w-[70px] rounded-full border-2 border-neutral-950"
         />

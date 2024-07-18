@@ -1,9 +1,11 @@
 import RouterErrorBoundary from "../pages/NotFound/RouterErrorBounday.jsx";
 import PlaylistsPage from "../pages/Playlists/index.jsx";
 import PlaylistPage from "../pages/Playlists/PlaylistPage.jsx";
+import {sessionAtom} from "../store/atoms/authAtom.js";
 import {lazyWithRetry} from "../utils/reactLazy";
 
-import {Routes, Route} from "react-router-dom";
+import {useAtomValue} from "jotai";
+import {Routes, Route, Outlet} from "react-router-dom";
 
 const Layout = lazyWithRetry(() => import("../components/Layout"));
 const Home = lazyWithRetry(() => import("../pages/Home/index.jsx"));
@@ -33,20 +35,26 @@ function AppRoutes() {
         <Route Component={Layout}>
           <Route index={true} Component={Home} />
           <Route path="/now-playing" Component={NowPlaying} />
-          <Route path="/profile" Component={ProfilePage} />
           <Route path="/playlists">
             <Route index Component={PlaylistsPage} />
-            <Route path="favorites" Component={FavoriteList} />
             <Route path=":id" Component={PlaylistPage} />
+            <Route Component={PrivateRoute}>
+              <Route path="favorites" Component={FavoriteList} />
+            </Route>
+          </Route>
+          <Route Component={PrivateRoute}>
+            <Route path="/profile" Component={ProfilePage} />
           </Route>
         </Route>
         <Route path="/login" Component={LoginPage} />
         <Route path="/signup" Component={SignUPPage} />
-        <Route path="/settings" Component={SettingsPage}>
-          <Route index={true} Component={ProfileSettings} />
-          <Route path="profile" Component={ProfileSettings} />
-          <Route path="cloudIntegrations" Component={CloudIntegrations} />
-          <Route path="account" Component={AccountSettings} />
+        <Route Component={PrivateRoute}>
+          <Route path="/settings" Component={SettingsPage}>
+            <Route index={true} Component={ProfileSettings} />
+            <Route path="profile" Component={ProfileSettings} />
+            <Route path="cloudIntegrations" Component={CloudIntegrations} />
+            <Route path="account" Component={AccountSettings} />
+          </Route>
         </Route>
       </Route>
       <Route Component={Layout}>
@@ -54,6 +62,14 @@ function AppRoutes() {
       </Route>
     </Routes>
   );
+}
+
+function PrivateRoute() {
+  const session = useAtomValue(sessionAtom);
+  if (session) {
+    return <Outlet />;
+  }
+  return <NotFoundPage />;
 }
 
 export default AppRoutes;
