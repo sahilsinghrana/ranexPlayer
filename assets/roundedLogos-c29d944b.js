@@ -1,0 +1,1 @@
+import{v as r}from"./index-017e9f5f.js";const g="/ranexPlayer/assets/logo_red-c5f89074.png",n=Array.from({length:9},(e,t)=>`images/logos/logo${t+1}.webp`);let a;function o(){const e=r(0,n.length-1);return e===a?o():e}function l(){return"/ranexPlayer/"+n[o()]}export{l as g,g as l};
