@@ -1,5 +1,6 @@
 import musicalSkull from "../../assets/images/musicalSkull.webp";
 import supabase from "../../config/supabase";
+import fetcher from "../../helpers/fetcher";
 import {sessionAtom} from "../../store/atoms/authAtom";
 import {lazyWithRetry} from "../../utils/reactLazy";
 import MoonLoader from "../Loaders/MoonLoader";
@@ -47,6 +48,14 @@ function ProfileDropdown() {
     return () => document.removeEventListener("mousedown", outerClick);
   }, [ddRef]);
 
+  if (!session) {
+    return (
+      <Link to="/login" className="text-white">
+        Login
+      </Link>
+    );
+  }
+
   return (
     <div
       ref={ddRef}
@@ -61,9 +70,11 @@ function ProfileDropdown() {
       </button>
       {open && (
         <ul className="w-[160px] py-2 flex flex-col text-sm border border-neutral-400/30 mt-2  bg-neutral-900/70 rounded-lg absolute z-10 top-full left-auto right-[-150%] md:right-0">
-          <DropDownLink onClick={() => setOpen(false)} to={"/profile"}>
-            Profile
-          </DropDownLink>
+          {session && (
+            <DropDownLink onClick={() => setOpen(false)} to={"/profile"}>
+              Profile
+            </DropDownLink>
+          )}
           <DropDownLink onClick={() => setOpen(false)} to={"/settings"}>
             Settings
           </DropDownLink>
@@ -80,6 +91,7 @@ function ProfileDropdown() {
                     sessionStorage.clear();
                     window.location.reload();
                   });
+                fetcher.get("/logout");
               }}
             >
               Logout

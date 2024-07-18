@@ -22,6 +22,7 @@ function LoginPage() {
   }
 
   function handleSignInWithGoogle() {
+    console.log({serverUrl});
     supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
