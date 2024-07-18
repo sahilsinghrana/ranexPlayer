@@ -2,12 +2,12 @@ import favoritePlaylistImage from "../../assets/images/favoritePlaylist.webp";
 import {getRandomBWMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
 import SongCard from "../../components/Card/SongCard";
 import MoonLoader from "../../components/Loaders/MoonLoader";
-// import fetcher from "../../helpers/fetcher";
+import fetcher from "../../helpers/fetcher";
 import {lazyWithRetry} from "../../utils/reactLazy";
 
 import {Suspense} from "react";
 import {Link} from "react-router-dom";
-// import useSWR from "swr";
+import useSWR from "swr/immutable";
 
 const HomeSection = lazyWithRetry(() => import("./HomeSection"));
 const UserGreeting = lazyWithRetry(() => import("./UserGreeting"));
@@ -19,8 +19,10 @@ const HorizontalList = lazyWithRetry(() =>
 );
 
 const Home = () => {
-  // useSWR("/music/playlist", fetcher);
-
+  const playlistData = useSWR("/music/playlist", fetcher);
+  console.log(playlistData);
+  const userPlaylistData = useSWR("/user/playlist", fetcher);
+  console.log(userPlaylistData);
   return (
     <Suspense fallback={<MoonLoader />}>
       <div className="relative w-full">
