@@ -1,1 +1,0 @@
-import{W as e,u as s,j as t,B as o,y as i}from"./index-3e4e37fe.js";function r(){const a=e(),n=s();return t.jsx(o,{onClick:()=>{n(a.pathname.includes("/now-playing")?-1:"/now-playing")},className:"h-[30px] w-[30px] bg-neutral-200 hover:bg-neutral-300 text-red-950 hover:text-red-900",children:t.jsx(i,{})})}export{r as default};
