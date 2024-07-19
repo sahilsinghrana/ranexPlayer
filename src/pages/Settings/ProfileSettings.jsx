@@ -1,10 +1,12 @@
 import BaseButton from "../../components/Button/Button";
 import FormGroup from "../../components/Form/FormGroup";
 import Input from "../../components/Form/Input";
+import useUserProfile from "../../hooks/fetch/useUserProfile";
 import useUserProfilePic from "../../hooks/fetch/useUserProfilePic";
 
 function ProfileSettings() {
   const profileSrc = useUserProfilePic();
+  const {user} = useUserProfile();
   return (
     <div>
       <div>
@@ -18,20 +20,12 @@ function ProfileSettings() {
       <form className="my-4 ">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 ">
           <FormGroup>
-            <label>First Name</label>
-            <Input placeholder="First Name" />
-          </FormGroup>
-          <FormGroup>
-            <label>Last Name</label>
-            <Input placeholder="Last Name" />
-          </FormGroup>
-          <FormGroup>
-            <label>Username</label>
-            <Input placeholder="Last Name" />
+            <label>Full Name</label>
+            <Input value={user.name} placeholder="First Name" />
           </FormGroup>
           <FormGroup>
             <label>Email</label>
-            <Input placeholder="Last Name" />
+            <Input disabled value={user.email} placeholder="Last Name" />
           </FormGroup>
         </div>
 
