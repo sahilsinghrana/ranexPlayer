@@ -2,6 +2,7 @@ import HomeSectionLoader from "../../components/Loaders/HomeSectionLoader";
 import {lazyWithRetry} from "../../utils/reactLazy";
 
 import {Suspense} from "react";
+import useSWR from "swr";
 const HorizontalList = lazyWithRetry(() =>
   import("../../components/List/HorizontalList")
 );
@@ -13,22 +14,19 @@ const PlaylistCard = lazyWithRetry(() =>
 );
 
 function PublicPlaylists() {
+  const {data} = useSWR("/music/playlist");
+
   return (
-    <Suspense fallback={HomeSectionLoader}>
+    <Suspense fallback={<HomeSectionLoader />}>
       <HomeSection title="Breach the void!">
         <HorizontalList>
-          <li>
-            <PlaylistCard playlistName="Soothing" />
-          </li>
-          <li>
-            <PlaylistCard playlistName="Soulful" />
-          </li>
-          <li>
-            <PlaylistCard playlistName="Gold & Silver" />
-          </li>
-          <li>
-            <PlaylistCard playlistName="Rock the Party!" />
-          </li>
+          {data?.data?.map((playlist) => {
+            return (
+              <li key={playlist.id}>
+                <PlaylistCard playlistName={playlist.title} />
+              </li>
+            );
+          })}
         </HorizontalList>
       </HomeSection>
     </Suspense>

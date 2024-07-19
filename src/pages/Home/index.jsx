@@ -19,7 +19,7 @@ const Home = () => {
     <div className="relative w-full">
       <div className="h-full overflow-auto">
         {isLoggedIn && (
-          <Suspense fallback={HomeSectionLoader}>
+          <Suspense fallback={<HomeSectionLoader />}>
             <UserRecents />
           </Suspense>
         )}
@@ -27,12 +27,12 @@ const Home = () => {
           <span className="font-normal">Moon`s</span> gentle melody. A{" "}
           <span className="font-bold">Symphony</span> of wonder.
         </QuotePlaceholder>
-        <Suspense fallback={HomeSectionLoader}>
+        <Suspense fallback={<HomeSectionLoader />}>
           <RecentlyAdded />
         </Suspense>
 
         {!isLoggedIn && (
-          <Suspense fallback={HomeSectionLoader}>
+          <Suspense fallback={<HomeSectionLoader />}>
             <LoginAndUnlockTheSecrets />
           </Suspense>
         )}
@@ -41,7 +41,7 @@ const Home = () => {
           <span className="font-bold">Sound</span>
           <br />
         </QuotePlaceholder>
-        <Suspense fallback={HomeSectionLoader}>
+        <Suspense fallback={<HomeSectionLoader />}>
           <PublicPlaylists />
         </Suspense>
       </div>

@@ -1,6 +1,10 @@
+import "./HomeSectionLoader.css";
+
 const HomeSectionLoader = () => {
   return (
-    <section className="min-h-[180px] w-full bg-stone-900 backgroundStars" />
+    <div className="bg-stone-900 my-2 min-h-[180px] w-full  flex items-center justify-center">
+      <div className="homeSectionLoader"></div>
+    </div>
   );
 };
 
