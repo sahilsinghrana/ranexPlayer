@@ -42,10 +42,9 @@ function App() {
       <Suspense fallback={<FullAppLoader />}>
         <SWRConfig
           value={{
-            refreshInterval: 50000,
             fetcher: (resource, init) =>
               fetcher(resource, init).then((res) => res.data),
-            suspense: true,
+            // suspense: true,
             dedupingInterval: 100000,
             revalidateOnFocus: false,
             revalidateIfStale: false,

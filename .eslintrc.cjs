@@ -5,7 +5,6 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
-    "react-app",
     "google",
     "prettier",
   ],
