@@ -1,1 +1,0 @@
-import{j as t}from"./index-017e9f5f.js";const a=({children:s,title:e})=>t.jsxs("section",{className:"p-2 px-1 sm:p-4 bg-stone-900 backgroundStars",children:[t.jsx("h1",{className:"pl-2 mb-1 font-semibold tracking-wide text-md opacity-70 text-neutral-400",children:e}),t.jsx("div",{children:s})]});export{a as default};
