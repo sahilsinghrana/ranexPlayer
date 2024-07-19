@@ -1,12 +1,9 @@
-import fetcher from "../../helpers/fetcher";
-
-import useSWRImmutable from "swr/immutable";
+import useSWR from "swr";
 
 function useUserProfile() {
-  const {data, isLoading, error} = useSWRImmutable("/user/profile", fetcher);
-
+  const {data, isLoading, error} = useSWR("/user/profile");
   return {
-    user: data?.data?.data,
+    user: data?.data,
     isLoading,
     error,
   };

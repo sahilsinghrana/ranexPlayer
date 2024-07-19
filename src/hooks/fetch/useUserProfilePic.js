@@ -3,9 +3,9 @@ import useUserProfile from "./useUserProfile";
 import musicalSkull from "../../assets/images/musicalSkull.webp";
 
 function useUserProfilePic() {
-  const {user} = useUserProfile() || musicalSkull;
+  const {user} = useUserProfile();
   const image = user?.picture || user?.avatar;
-  return image;
+  return image || musicalSkull;
 }
 
 export default useUserProfilePic;
