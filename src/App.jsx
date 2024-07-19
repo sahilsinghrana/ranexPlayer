@@ -1,6 +1,7 @@
 import FullAppLoader from "./components/Loaders/FullAppLoader";
 import supabase from "./config/supabase";
-import fetcher, {addAccessTokenToFetchHeader} from "./helpers/fetcher";
+import {addAccessTokenToFetchHeader} from "./helpers/axiosInstance";
+import fetcher from "./helpers/fetcher";
 import player from "./lib/player";
 import AppRoutes from "./router/AppRoutes";
 import {sessionAtom} from "./store/atoms/authAtom";
@@ -23,10 +24,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({data: {session}}) => {
-      setSession(session);
-      addAccessTokenToFetchHeader(session?.access_token);
-    });
     const {
       data: {subscription},
     } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -39,20 +36,19 @@ function App() {
 
   return (
     <div className=" bg-neutral-800 text-neutral-100 backgroundStars">
-      <Suspense fallback={<FullAppLoader />}>
-        <SWRConfig
-          value={{
-            fetcher: (resource, init) =>
-              fetcher(resource, init).then((res) => res.data),
-            // suspense: true,
-            dedupingInterval: 100000,
-            revalidateOnFocus: false,
-            revalidateIfStale: false,
-          }}
-        >
+      <SWRConfig
+        value={{
+          fetcher,
+          dedupingInterval: 100000,
+          revalidateOnFocus: false,
+          revalidateIfStale: false,
+          refreshWhenOffline: true,
+        }}
+      >
+        <Suspense fallback={<FullAppLoader />}>
           <AppRoutes />
-        </SWRConfig>
-      </Suspense>
+        </Suspense>
+      </SWRConfig>
     </div>
   );
 }

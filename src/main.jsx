@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={globalStore}>
       <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
-        <Suspense fallback={FullAppLoader}>
+        <Suspense fallback={<FullAppLoader />}>
           <App />
         </Suspense>
       </BrowserRouter>

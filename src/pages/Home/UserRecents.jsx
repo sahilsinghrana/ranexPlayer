@@ -25,7 +25,7 @@ function UserRecents() {
     return null;
   }
   return (
-    <Suspense fallback={HomeSectionLoader}>
+    <Suspense fallback={<HomeSectionLoader />}>
       <UserList />
     </Suspense>
   );
@@ -34,11 +34,8 @@ function UserRecents() {
 export default UserRecents;
 
 function UserList() {
-  // const userPlaylistData = useSWR("/user/playlist", fetcher);
-  const {data} = useSWR("/music/playlist");
-  console.log({
-    playlistData: data?.data,
-  });
+  const {data} = useSWR("/user/playlist");
+
   return (
     <>
       <QuotePlaceholder>
