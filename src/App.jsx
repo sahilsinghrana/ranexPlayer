@@ -1,12 +1,13 @@
 import FullAppLoader from "./components/Loaders/FullAppLoader";
 import supabase from "./config/supabase";
-import {addAccessTokenToFetchHeader} from "./helpers/fetcher";
+import fetcher, {addAccessTokenToFetchHeader} from "./helpers/fetcher";
 import player from "./lib/player";
 import AppRoutes from "./router/AppRoutes";
 import {sessionAtom} from "./store/atoms/authAtom";
 
 import {useSetAtom} from "jotai";
 import {Suspense, useEffect} from "react";
+import {SWRConfig} from "swr";
 
 function App() {
   const setSession = useSetAtom(sessionAtom);
@@ -39,7 +40,19 @@ function App() {
   return (
     <div className=" bg-neutral-800 text-neutral-100 backgroundStars">
       <Suspense fallback={<FullAppLoader />}>
-        <AppRoutes />
+        <SWRConfig
+          value={{
+            refreshInterval: 50000,
+            fetcher: (resource, init) =>
+              fetcher(resource, init).then((res) => res.data),
+            suspense: true,
+            dedupingInterval: 100000,
+            revalidateOnFocus: false,
+            revalidateIfStale: false,
+          }}
+        >
+          <AppRoutes />
+        </SWRConfig>
       </Suspense>
     </div>
   );
