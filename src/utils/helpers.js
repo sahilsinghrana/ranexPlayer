@@ -28,3 +28,18 @@ export function generateRandomInteger(min = 0, max = 10) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+export function fileReaderPromise(file) {
+  return new Promise((resolve, reject) => {
+    const fr = new FileReader();
+
+    fr.readAsDataURL(file);
+    fr.onload = () => {
+      resolve(fr.result);
+    };
+
+    fr.onerror = () => {
+      resolve();
+    };
+  });
+}
