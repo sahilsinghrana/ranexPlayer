@@ -115,7 +115,7 @@ function DropDownLinks({setOpen}) {
                 sessionStorage.clear();
                 window.location.reload();
               });
-            fetcher.get("/logout");
+            fetcher("/logout");
           }}
         >
           Logout
