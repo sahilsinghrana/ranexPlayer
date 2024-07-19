@@ -1,0 +1,1 @@
+import{u as a}from"./App-686f1f6f.js";function i(){const{data:e,isLoading:r,error:s}=a("/user/profile");return{user:e==null?void 0:e.data,isLoading:r,error:s}}const o="/ranexPlayer/assets/musicalSkull-823a3f35.webp";function u(){const{user:e}=i();return(e==null?void 0:e.picture)||(e==null?void 0:e.avatar)||o}export{u as a,i as u};
