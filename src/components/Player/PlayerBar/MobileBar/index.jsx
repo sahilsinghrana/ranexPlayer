@@ -8,10 +8,14 @@ const MobileBarSmall = lazyWithRetry(() => import("./MobileBarSmall"));
 
 function MobilePlayerBar() {
   const [isFull, toggleFullView] = usePlayerFullView();
-  return isFull ? (
-    <MobilePlayerFull toggleFullView={toggleFullView} />
-  ) : (
-    <MobileBarSmall toggleFullView={toggleFullView} />
+  return (
+    <>
+      {isFull ? (
+        <MobilePlayerFull toggleFullView={toggleFullView} />
+      ) : (
+        <MobileBarSmall toggleFullView={toggleFullView} />
+      )}
+    </>
   );
 }
 

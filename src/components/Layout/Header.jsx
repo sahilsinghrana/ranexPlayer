@@ -2,14 +2,11 @@ import supabase from "../../config/supabase";
 import fetcher from "../../helpers/fetcher";
 import useUserProfilePic from "../../hooks/fetch/useUserProfilePic";
 import {sessionAtom} from "../../store/atoms/authAtom";
-import {lazyWithRetry} from "../../utils/reactLazy";
-import MoonLoader from "../Loaders/MoonLoader";
+import Logo from "../Branding/Logo";
 
 import {useAtom, useAtomValue} from "jotai";
-import {Suspense, useEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {Link} from "react-router-dom";
-
-const Logo = lazyWithRetry(() => import("../Branding/Logo"));
 
 const Header = () => {
   return (
@@ -18,9 +15,7 @@ const Header = () => {
         "bg-black py-1  flex flex-wrap shadow-sm shadow-slate-300/50 justify-between pr-5 pl-1 items-center backgroundStars"
       }
     >
-      <Suspense fallback={<MoonLoader />}>
-        <Logo className={"h-[60px] sm:h-[80px] md:h-[90px] "} />
-      </Suspense>
+      <Logo className={"h-[60px] sm:h-[80px] md:h-[90px] "} />
       <div className="flex items-center justify-center mt-2 sm:mt-0 ">
         <div className="flex items-center h-full">
           <ProfileDropdown />
