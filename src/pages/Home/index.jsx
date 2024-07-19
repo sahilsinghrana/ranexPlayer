@@ -24,9 +24,8 @@ const Home = () => {
           </Suspense>
         )}
         <QuotePlaceholder>
-          <span className="font-bold"> Moon`s</span> gentle melody, stirring the{" "}
-          <span className="font-bold">SOUL</span> with a{" "}
-          <span className="font-bold">Symphony</span> of longing and wonder.
+          <span className="font-normal">Moon`s</span> gentle melody. A{" "}
+          <span className="font-bold">Symphony</span> of wonder.
         </QuotePlaceholder>
         <Suspense fallback={HomeSectionLoader}>
           <RecentlyAdded />
