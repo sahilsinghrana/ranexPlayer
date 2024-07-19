@@ -1,9 +1,9 @@
-import {cva} from "class-variance-authority";
-import clsx from "clsx";
-import {memo} from "react";
-import {twMerge} from "tailwind-merge";
+import {clsxWithMerge} from "../../utils/utils";
 
-const button = cva(
+import {cva} from "class-variance-authority";
+import {memo} from "react";
+
+export const buttonVariants = cva(
   "flex items-center justify-center p-2 transition-colors duration-300",
   {
     variants: {
@@ -49,7 +49,10 @@ const button = cva(
 const BaseButton = ({children, className, type, size, rounded, ...props}) => {
   return (
     <button
-      className={twMerge(clsx(button({type, size, rounded}), className))}
+      className={clsxWithMerge(
+        buttonVariants({type, size, rounded}),
+        className
+      )}
       {...props}
     >
       {children}

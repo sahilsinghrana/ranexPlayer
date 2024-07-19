@@ -4,7 +4,7 @@ import {useSearchParams} from "react-router-dom";
 const PLAYER_VIEW_KEY = "playerView";
 
 function checkIsFullVIew(searchParam) {
-  return searchParam.has(PLAYER_VIEW_KEY);
+  return !!searchParam.has(PLAYER_VIEW_KEY);
 }
 
 function usePlayerFullView() {
