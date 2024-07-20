@@ -6,7 +6,6 @@ const accessToken = `Basic ${import.meta.env.VITE_ACCESS_TOKEN}`;
 
 const axiosInstance = axios.create({
   baseURL: baseServerUrl,
-  timeout: 1000,
   headers: {
     Authorization: accessToken,
   },
