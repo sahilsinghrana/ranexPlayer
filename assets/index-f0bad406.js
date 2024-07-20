@@ -1,0 +1,1 @@
+import{r as s,j as e}from"./index-3d697d2f.js";import{t as m,c}from"./App-dd0e0eb2.js";function a({className:r,src:t,alt:o="cover Art"}){return e.jsx("img",{className:m(c("bg-black h-14 w-14 rounded-md object-cover",r)),src:t,alt:o})}const x=s.memo(a);export{x as A};

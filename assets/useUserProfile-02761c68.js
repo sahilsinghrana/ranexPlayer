@@ -1,0 +1,1 @@
+import{u}from"./useIsUserLoggedIn-0de8978d.js";import{u as n}from"./App-dd0e0eb2.js";function f(){const s=u(),{data:r,isLoading:e,error:o}=n(s?"/user/profile":null);return{user:r==null?void 0:r.data,isLoading:e,error:o}}export{f as u};
