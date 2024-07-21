@@ -40,7 +40,7 @@ export const readTags = (file) =>
 
         console.log(frames);
 
-        // Extract text frames (TIT2: title, TPE1: artist, TALB: album, TYER: year)
+        // Extract text frames (TIT2: title, TPE1: artist, TALB: album, TYER: year, TBPM: BPM, TCON: genre)
         const getTextFrame = (frameID) => {
           if (!frames[frameID]) return "";
           const frame = frames[frameID];
@@ -60,6 +60,8 @@ export const readTags = (file) =>
         const artist = getTextFrame("TPE1");
         const album = getTextFrame("TALB");
         const year = getTextFrame("TYER");
+        const bpm = getTextFrame("TBPM");
+        const genre = getTextFrame("TCON");
 
         // Extract album art (APIC frame)
         let albumArt = null;
@@ -99,6 +101,8 @@ export const readTags = (file) =>
           artist,
           album,
           year,
+          bpm,
+          genre,
           albumArt,
         });
       } else if (getString(3, dv.byteLength - 128) === "TAG") {
@@ -108,13 +112,15 @@ export const readTags = (file) =>
         const artist = getString(30, tagOffset + 33);
         const album = getString(30, tagOffset + 63);
         const year = getString(4, tagOffset + 93);
+        const genre = getString(30, tagOffset + 97); // ID3v1 genre
 
-        // Resolve with ID3v1 data (no album art)
+        // Resolve with ID3v1 data (no album art, no bpm)
         resolve({
           title,
           artist,
           album,
           year,
+          genre,
         });
       } else {
         // No ID3 tag found

@@ -1,5 +1,6 @@
 import Button from "../../components/Button/Button";
 import axiosInstance from "../../helpers/axiosInstance.js";
+import {cleanSiteNamesFromString} from "../../helpers/song.js";
 import useUserProfile from "../../hooks/fetch/useUserProfile";
 import {fileReaderPromise} from "../../utils/helpers.js";
 import NotFoundPage from "../NotFound";
@@ -22,14 +23,16 @@ function AdminPage() {
         for (const file of files) {
           try {
             await readTags(file).then(
-              ({title, artist, album, year, albumArt}) => {
+              ({title, artist, album, year, albumArt, bpm, genre}) => {
                 const processedFile = {
-                  title,
-                  artist,
-                  album,
+                  title: cleanSiteNamesFromString(title),
+                  artist: cleanSiteNamesFromString(artist),
+                  album: cleanSiteNamesFromString(album),
                   year,
                   albumArt,
                   file,
+                  bpm,
+                  genre,
                 };
 
                 fileReaderPromise(albumArt.pictureData)
@@ -58,24 +61,36 @@ function AdminPage() {
 
   function handleUpload(e) {
     e.preventDefault();
+    const formData = new FormData();
+
+    songsAndMeta.forEach((song, idx) => {
+      const key = `song${idx}`;
+      function appendToForm(subKey, ...params) {
+        formData.append(key.concat(subKey ? "." : "", subKey), ...params);
+      }
+      appendToForm(
+        "meta",
+        JSON.stringify({
+          title: song.title,
+          artist: song.artist,
+          album: song.album,
+          year: song.year,
+          bpm: song.bpm,
+          genre: song.genre,
+        })
+      );
+      appendToForm("", song.albumArt.pictureData, song.title + ".jpg");
+      appendToForm("", song.file, song.file.name);
+    });
+    console.log({
+      formData,
+    });
     axiosInstance
-      .post(
-        "/music/song",
-        songsAndMeta.map((song) => {
-          return {
-            title: song.title,
-            artist: song.artist,
-            album: song.album,
-            year: song.year,
-            file: song.file,
-          };
-        }),
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      )
+      .post("/music/song", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then((res) => {
         console.log({
           res,
