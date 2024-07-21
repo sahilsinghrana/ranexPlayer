@@ -20,9 +20,16 @@ const getSongInfoFromCache = (artist, title) => {
 };
 
 // Function to get song info from MusicBrainz
-async function fetchSongInfo(artist, title) {
+export async function getSongInfo(artist, title) {
   const infoInCache = getSongInfoFromCache(artist, title);
   if (infoInCache) return infoInCache;
+  await (async () =>
+    new Promise((resolve) =>
+      setTimeout(() => {
+        resolve();
+      }, 500)
+    ))();
+
   try {
     // Search for recordings by artist and title
     const searchResponse = await axios.get(
@@ -67,10 +74,4 @@ async function fetchSongInfo(artist, title) {
   } catch (error) {
     console.error("Error fetching song info:", error);
   }
-}
-
-export async function getSongInfo(...params) {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(fetchSongInfo(...params)), 500);
-  });
 }
