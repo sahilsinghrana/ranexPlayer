@@ -53,7 +53,7 @@ export async function getSongInfo(artist, title) {
 
     // Get the cover art from the Cover Art Archive
     const coverArtResponse = await axios
-      .get(`http://coverartarchive.org/release/${releaseID}`)
+      .get(`https://coverartarchive.org/release/${releaseID}`)
       .catch((err) => {
         console.error("cover art not found", err);
       });
