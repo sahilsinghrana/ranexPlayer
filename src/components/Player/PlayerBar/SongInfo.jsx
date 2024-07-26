@@ -10,9 +10,6 @@ const NowPlayingAlbumArt = lazyWithRetry(() =>
 
 const SongInfo = () => {
   const currentSong = useAtomValue(currentSongAtom);
-  console.log({
-    currentSong,
-  });
   return (
     <div className="inline-flex items-center py-1 h-14 justify-self-start">
       <NowPlayingAlbumArt albumArtSrc={currentSong?.meta?.albumArtSrc} />
