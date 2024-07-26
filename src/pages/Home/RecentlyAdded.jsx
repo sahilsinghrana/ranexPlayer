@@ -52,6 +52,15 @@ function RecentlyAdded() {
               </li>
             );
           })}
+          <li>
+            <SongCard artist="Europe" title="In My Time" />
+          </li>
+          <li>
+            <SongCard artist="Hardwell" title="Spaceman" />
+          </li>
+          <li>
+            <SongCard artist="AP Dhillon" title="Majhail" />
+          </li>
         </HorizontalList>
       </HomeSection>
     </Suspense>
