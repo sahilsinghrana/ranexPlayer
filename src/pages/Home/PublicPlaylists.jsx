@@ -28,6 +28,18 @@ function PublicPlaylists() {
               </li>
             );
           })}
+          <li>
+            <PlaylistCard playlistName={"Soulful"} />
+          </li>
+          <li>
+            <PlaylistCard playlistName={"Rock & Roll"} />
+          </li>
+          <li>
+            <PlaylistCard playlistName={"Time Travel"} />
+          </li>
+          <li>
+            <PlaylistCard playlistName={"You & I"} />
+          </li>
         </HorizontalList>
       </HomeSection>
     </Suspense>
