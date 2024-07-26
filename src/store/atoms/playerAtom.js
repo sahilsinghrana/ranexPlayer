@@ -2,13 +2,14 @@ import {atom, createStore} from "jotai";
 
 export const playerStates = {
   INITIALIZED: "INITIALIZED",
+  LOADED: "LOADED",
   PLAYING: "PLAYING",
   STOPPED: "STOPPED",
   PAUSED: "PAUSED",
 };
 
 export const playerStateAtom = atom(playerStates.INITIALIZED);
-export const currentSongAtom = atom();
+export const currentSongAtom = atom({});
 export const currentPlaylistAtom = atom({id: ""});
 export const queueAtom = atom([]);
 export const playerVolumeAtom = atom();

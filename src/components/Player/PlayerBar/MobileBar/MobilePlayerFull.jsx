@@ -1,4 +1,7 @@
-import {currentPlayingAlbumArtColorsAtom} from "../../../../store/atoms/playerAtom";
+import {
+  currentPlayingAlbumArtColorsAtom,
+  currentSongAtom,
+} from "../../../../store/atoms/playerAtom";
 import {
   generateRgbCssString,
   topToBottomGradientCssGenerator,
@@ -18,6 +21,8 @@ const NowPlayingAlbumArt = lazyWithRetry(() =>
 
 function MobilePlayerFull({toggleFullView}) {
   const imageColors = useAtomValue(currentPlayingAlbumArtColorsAtom);
+  const currentSong = useAtomValue(currentSongAtom);
+
   return (
     <div
       style={{
@@ -38,8 +43,12 @@ function MobilePlayerFull({toggleFullView}) {
       <div className="flex flex-col items-center self-end w-full gap-6 p-4">
         <div className="flex justify-between w-full">
           <div>
-            <h2 className="pl-1 text-lg font-bold">Song Name</h2>
-            <h3 className="pl-1 text-md font-base">Artist</h3>
+            <h2 className="pl-1 text-lg font-bold">
+              {currentSong?.meta?.title}
+            </h2>
+            <h3 className="pl-1 text-md font-base">
+              {currentSong?.meta?.artist}
+            </h3>
           </div>
         </div>
         <SeekBar />
