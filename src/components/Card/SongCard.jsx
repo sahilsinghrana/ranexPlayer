@@ -1,4 +1,6 @@
 import {getRandomMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
+// import axiosInstance from "../../helpers/axiosInstance";
+import player from "../../lib/player";
 import {clsxWithMerge} from "../../utils/utils";
 import AlbumArt from "../AlbumArt";
 
@@ -9,11 +11,24 @@ function SongCard({
   artist,
   albumArtSrc = getRandomMoonAndMusicImage(),
   className,
+  songId,
+  path,
 }) {
   return (
     <div
+      onClick={() => {
+        // axiosInstance.get("/music/song/" + songId).then((res) => {
+        //   console.log(res);
+        // });
+        player.loadAndPlay(path, {
+          title,
+          artist,
+          albumArtSrc,
+          songId,
+        });
+      }}
       className={clsxWithMerge(
-        "flex w-[85vw] sm:w-full min-w-[200px] sm:min-w-[280px] h-[80px] gap-1 items-center bg-neutral-800 rounded-sm overflow-hidden",
+        "flex cursor-pointer w-[85vw] sm:w-full min-w-[200px] sm:min-w-[280px] h-[80px] gap-1 items-center bg-neutral-800 rounded-sm overflow-hidden",
         className
       )}
     >

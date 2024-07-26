@@ -1,12 +1,16 @@
 import MusicPlayer from "./MusicPlayer";
 
+import {getRandomMoonAndMusicImage} from "../assets/images/moonAndMusic/moonAndMusicImages";
 import {
+  currentPlayingAlbumArtColorsAtom,
+  currentPlayingAlbumArtImage,
   currentSongAtom,
   playerStateAtom,
   playerStates,
   playerStore,
   playerVolumeAtom,
 } from "../store/atoms/playerAtom";
+import {getAverageRGB} from "../utils/imageHelpers";
 
 const player = new MusicPlayer();
 
@@ -48,6 +52,28 @@ player.attachListener("timeupdate", () => {
 
 player.attachListener("onvolumechange", () => {
   playerStore.set(playerVolumeAtom, () => player.audioEl.volume);
+});
+
+player.attachListener("loadstart", () => {
+  playerStore.set(playerStateAtom, () => playerStates.LOADED);
+  const albumArtSrc = player.meta?.albumArtSrc || getRandomMoonAndMusicImage();
+  playerStore.set(currentPlayingAlbumArtImage, albumArtSrc);
+  if (albumArtSrc) {
+    const newImage = document.createElement("img");
+    newImage.src = albumArtSrc;
+    newImage.onload = () => {
+      const imageColors = getAverageRGB(newImage);
+      playerStore.set(currentPlayingAlbumArtColorsAtom, imageColors);
+    };
+  }
+  playerStore.set(currentSongAtom, (prev = {}) => {
+    return {
+      meta: {
+        ...(prev.meta || {}),
+        ...(player.meta || {}),
+      },
+    };
+  });
 });
 
 export default player;

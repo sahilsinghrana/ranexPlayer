@@ -15,7 +15,7 @@ const PlayerBar = () => {
     <Provider store={playerStore} min={0}>
       <Suspense
         fallback={
-          <div className="w-full h-full flex justify-center items-center px-3 py-2 bg-neutral-900">
+          <div className="flex items-center justify-center w-full h-full px-3 py-2 bg-neutral-900">
             <MoonLoader />
           </div>
         }

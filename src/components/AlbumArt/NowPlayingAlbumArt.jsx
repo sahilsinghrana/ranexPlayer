@@ -1,37 +1,30 @@
 import AlbumArt from "./index";
 
-import {getRandomMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
-import {
-  currentPlayingAlbumArtColorsAtom,
-  currentPlayingAlbumArtImage,
-} from "../../store/atoms/playerAtom";
-import {getAverageRGB} from "../../utils/imageHelpers";
+import {currentPlayingAlbumArtImage} from "../../store/atoms/playerAtom";
 
 import clsx from "clsx";
-import {useAtom, useSetAtom} from "jotai";
-import {memo, useEffect} from "react";
+import {useAtomValue} from "jotai";
+import {memo} from "react";
 import {twMerge} from "tailwind-merge";
 
 function NowPlayingAlbumArt({className}) {
-  const [albumArtImage, setAlbumArtImage] = useAtom(
-    currentPlayingAlbumArtImage
-  );
-  const setImageColors = useSetAtom(currentPlayingAlbumArtColorsAtom);
+  const albumArtImage = useAtomValue(currentPlayingAlbumArtImage);
+  // const setImageColors = useSetAtom(currentPlayingAlbumArtColorsAtom);
 
-  useEffect(() => {
-    if (!albumArtImage) {
-      const image = getRandomMoonAndMusicImage();
-      setAlbumArtImage(image);
-      if (image) {
-        const newImage = document.createElement("img");
-        newImage.src = image;
-        newImage.onload = () => {
-          const imageColors = getAverageRGB(newImage);
-          setImageColors(imageColors);
-        };
-      }
-    }
-  }, [setAlbumArtImage, albumArtImage, setImageColors]);
+  // useEffect(() => {
+  //   if (!albumArtImage) {
+  //     const image = albumArtSrc || getRandomMoonAndMusicImage();
+  //     setAlbumArtImage(image);
+  //     if (image) {
+  //       const newImage = document.createElement("img");
+  //       newImage.src = image;
+  //       newImage.onload = () => {
+  //         const imageColors = getAverageRGB(newImage);
+  //         setImageColors(imageColors);
+  //       };
+  //     }
+  //   }
+  // }, [setAlbumArtImage, albumArtImage, setImageColors, albumArtSrc]);
 
   return (
     <AlbumArt

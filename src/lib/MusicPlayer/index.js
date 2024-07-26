@@ -26,14 +26,22 @@ class MusicPlayer {
     this.audioEl.addEventListener(eventName, callback);
   }
 
-  load(song) {
+  load(song, meta = {}) {
     this.audioEl.src = song;
     this.audioEl.load();
+    this.meta = {
+      ...this.meta,
+      ...meta,
+    };
   }
 
-  loadAndPlay(songUrl) {
+  loadAndPlay(songUrl, meta = {}) {
     this.load(songUrl);
     this.audioEl.play();
+    this.meta = {
+      ...this.meta,
+      ...meta,
+    };
   }
 
   play() {
