@@ -1,0 +1,1 @@
+import{j as t}from"./index-11734c3f.js";function l(){return t.jsx("div",{className:"flex items-center justify-center w-full h-full",children:t.jsx("h1",{className:"font-extrabold tracking-widest text-9xl text-neutral-400",children:"404"})})}export{l as default};
