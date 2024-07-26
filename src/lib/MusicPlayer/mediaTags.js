@@ -13,14 +13,13 @@ export const readTags = (file) =>
 
       // Check for ID3v2 tag
       if (getString(3, 0) === "ID3") {
-        const version = dv.getUint8(3); // ID3 version
-        const flags = dv.getUint8(5); // ID3 flags
+        // const version = dv.getUint8(3); // ID3 version
+        // const flags = dv.getUint8(5); // ID3 flags
         const size =
           ((dv.getUint8(6) & 0x7f) << 21) |
           ((dv.getUint8(7) & 0x7f) << 14) |
           ((dv.getUint8(8) & 0x7f) << 7) |
           (dv.getUint8(9) & 0x7f); // ID3 size
-        console.log({version, flags, size});
 
         // Read frames
         let offset = 10; // Initial offset after ID3 header
@@ -37,8 +36,6 @@ export const readTags = (file) =>
 
           offset += 10 + frameSize;
         }
-
-        console.log(frames);
 
         // Extract text frames (TIT2: title, TPE1: artist, TALB: album, TYER: year, TBPM: BPM, TCON: genre)
         const getTextFrame = (frameID) => {

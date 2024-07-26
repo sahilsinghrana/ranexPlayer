@@ -13,30 +13,24 @@ const HorizontalList = lazyWithRetry(() =>
 
 function RecentlyAdded() {
   const {data} = useSWR("/music/song");
-
   return (
     <Suspense fallback={<HomeSectionLoader />}>
       <HomeSection title="Celestial catalog!">
         <HorizontalList className="gap-3 mb-2 sm:px-3">
           {data?.data?.songs?.map((song) => {
             return (
-              <li key={song?.fileName}>
+              <li key={song?.songId}>
                 <SongCard
-                  artist="work in progress"
-                  title={song?.originalFilename?.split(".")[0]}
+                  albumArtSrc={
+                    song.coverArt.thumbnails.small ||
+                    song.coverArt.thumbnails.large
+                  }
+                  artist={song?.artist}
+                  title={song?.title}
                 />
               </li>
             );
           })}
-          <li>
-            <SongCard artist="Hardwell" title="Spaceman" />
-          </li>
-          <li>
-            <SongCard artist="AP Dhillon" title="Majhail" />
-          </li>
-          <li>
-            <SongCard artist="KK" title="Tujhe Sochta hu" />
-          </li>
         </HorizontalList>
       </HomeSection>
     </Suspense>
