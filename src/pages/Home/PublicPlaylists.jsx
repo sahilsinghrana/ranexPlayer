@@ -14,12 +14,13 @@ const PlaylistCard = lazyWithRetry(() =>
 );
 
 function PublicPlaylists() {
-  const {data} = useSWR("/music/playlist");
+  const {data, isLoading} = useSWR("/music/playlist");
 
   return (
     <Suspense fallback={<HomeSectionLoader />}>
       <HomeSection title="Breach the void!">
         <HorizontalList>
+          {isLoading && <HomeSectionLoader />}
           {data?.data?.map((playlist) => {
             return (
               <li key={playlist.id}>

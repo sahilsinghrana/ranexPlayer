@@ -2,7 +2,7 @@ import FullAppLoader from "./components/Loaders/FullAppLoader";
 import supabase from "./config/supabase";
 import {addAccessTokenToFetchHeader} from "./helpers/axiosInstance";
 import fetcher from "./helpers/fetcher";
-import player from "./lib/player";
+// import player from "./lib/player";
 import AppRoutes from "./router/AppRoutes";
 import {sessionAtom} from "./store/atoms/authAtom";
 
@@ -13,22 +13,26 @@ import {SWRConfig} from "swr";
 function App() {
   const setSession = useSetAtom(sessionAtom);
 
-  useEffect(() => {
-    import("./assets/music/yrym.mp3")
-      .then((song) => {
-        player.load(song.default);
-      })
-      .catch((err) => {
-        console.log("Failed to load song", err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   import("./assets/music/yrym.mp3")
+  //     .then((song) => {
+  //       player.load(song.default);
+  //     })
+  //     .catch((err) => {
+  //       console.log("Failed to load song", err);
+  //     });
+  // }, []);
 
   useEffect(() => {
     const {
       data: {subscription},
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      addAccessTokenToFetchHeader(session?.access_token);
-      setSession(session);
+      if (session) {
+        addAccessTokenToFetchHeader(session?.access_token);
+        setSession(session);
+        return;
+      }
+      setSession();
     });
 
     return () => subscription.unsubscribe();

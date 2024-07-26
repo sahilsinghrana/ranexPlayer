@@ -6,7 +6,7 @@ function useUserProfile() {
   const isLoggedIn = useIsUserLoggedIn();
   const {data, isLoading, error} = useSWR(isLoggedIn ? "/user/profile" : null);
   return {
-    user: data?.data,
+    user: data?.data || {},
     isLoading,
     error,
   };
