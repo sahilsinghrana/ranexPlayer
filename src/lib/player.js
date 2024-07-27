@@ -56,8 +56,15 @@ player.attachListener("onvolumechange", () => {
 
 player.attachListener("loadstart", () => {
   playerStore.set(playerStateAtom, () => playerStates.LOADED);
-  const albumArtSrc = player.meta?.albumArtSrc || getRandomMoonAndMusicImage();
-  playerStore.set(currentPlayingAlbumArtImage, albumArtSrc);
+  const randImage = getRandomMoonAndMusicImage();
+  const albumArtSrc =
+    player.meta?.coverArt?.thumbnails?.small ||
+    player.meta?.coverArt?.thumbnails?.large ||
+    randImage;
+  playerStore.set(currentPlayingAlbumArtImage, {
+    image: player.meta?.coverArt?.image || albumArtSrc || randImage,
+    thumbnail: albumArtSrc || player.meta?.coverArt?.image || randImage,
+  });
   if (albumArtSrc) {
     const newImage = new Image();
     newImage.src = albumArtSrc;
@@ -68,6 +75,9 @@ player.attachListener("loadstart", () => {
     };
   }
   playerStore.set(currentSongAtom, (prev = {}) => {
+    console.log({
+      player,
+    });
     return {
       meta: {
         ...(prev.meta || {}),

@@ -21,14 +21,7 @@ function RecentlyAdded() {
   useEffect(() => {
     if (playerState === playerStates.INITIALIZED && songs?.length) {
       const firstSong = songs[0];
-      player.load(firstSong?.path, {
-        title: firstSong.title,
-        artist: firstSong.artist,
-        albumArtSrc:
-          firstSong.coverArt.thumbnails.small ||
-          firstSong.coverArt.thumbnails.large,
-        songId: firstSong.songId,
-      });
+      player.load(firstSong?.path, firstSong);
     }
   }, [playerState, songs]);
   return (
@@ -39,27 +32,33 @@ function RecentlyAdded() {
           {data?.data?.songs?.map((song) => {
             return (
               <li key={song?.songId}>
-                <SongCard
-                  albumArtSrc={
-                    song.coverArt.thumbnails.small ||
-                    song.coverArt.thumbnails.large
-                  }
-                  songId={song?.songId}
-                  path={song?.path}
-                  artist={song?.artist}
-                  title={song?.title}
-                />
+                <SongCard song={song} />
               </li>
             );
           })}
           <li>
-            <SongCard artist="Europe" title="In My Time" />
+            <SongCard
+              song={{
+                artist: "Europe",
+                title: "In My Time",
+              }}
+            />
           </li>
           <li>
-            <SongCard artist="Hardwell" title="Spaceman" />
+            <SongCard
+              song={{
+                artist: "Hardwell",
+                title: "Spaceman",
+              }}
+            />
           </li>
           <li>
-            <SongCard artist="AP Dhillon" title="Majhail" />
+            <SongCard
+              song={{
+                artist: "AP Dhillon",
+                title: "Majhail",
+              }}
+            />
           </li>
         </HorizontalList>
       </HomeSection>

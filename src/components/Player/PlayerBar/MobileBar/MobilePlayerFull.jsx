@@ -38,7 +38,7 @@ function MobilePlayerFull({toggleFullView}) {
         </BaseButton>
       </div>
       <div className="h-[45vh] flex justify-center items-center">
-        <NowPlayingAlbumArt className="w-[42vh] h-[42vh] bg-black" />
+        <NowPlayingAlbumArt size="lg" className="w-[42vh] h-[42vh] bg-black" />
       </div>
       <div className="flex flex-col items-center self-end w-full gap-6 p-4">
         <div className="flex justify-between w-full">

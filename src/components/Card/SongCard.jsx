@@ -6,26 +6,29 @@ import AlbumArt from "../AlbumArt";
 
 import {memo} from "react";
 
-function SongCard({
-  title,
-  artist,
-  albumArtSrc = getRandomMoonAndMusicImage(),
-  className,
-  songId,
-  path,
-}) {
+function SongCard({song = {}}) {
+  const {
+    title,
+    artist,
+    coverArt,
+    className,
+    // songId,
+    path,
+  } = song;
+  const albumArtSrc =
+    coverArt?.thumbnails?.small ||
+    coverArt?.thumbnails?.large ||
+    getRandomMoonAndMusicImage();
+  console.log({
+    song,
+  });
   return (
     <div
       onClick={() => {
         // axiosInstance.get("/music/song/" + songId).then((res) => {
         //   console.log(res);
         // });
-        player.loadAndPlay(path, {
-          title,
-          artist,
-          albumArtSrc,
-          songId,
-        });
+        player.loadAndPlay(path, song);
       }}
       className={clsxWithMerge(
         "flex cursor-pointer w-[85vw] sm:w-full min-w-[200px] sm:min-w-[280px] h-[80px] gap-1 items-center bg-neutral-800 rounded-sm overflow-hidden",
