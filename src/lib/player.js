@@ -75,9 +75,6 @@ player.attachListener("loadstart", () => {
     };
   }
   playerStore.set(currentSongAtom, (prev = {}) => {
-    console.log({
-      player,
-    });
     return {
       meta: {
         ...(prev.meta || {}),

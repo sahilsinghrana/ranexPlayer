@@ -19,9 +19,6 @@ function SongCard({song = {}}) {
     coverArt?.thumbnails?.small ||
     coverArt?.thumbnails?.large ||
     getRandomMoonAndMusicImage();
-  console.log({
-    song,
-  });
   return (
     <div
       onClick={() => {
