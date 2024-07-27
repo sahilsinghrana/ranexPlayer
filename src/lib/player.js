@@ -59,9 +59,6 @@ player.attachListener("loadstart", () => {
   const albumArtSrc = player.meta?.albumArtSrc || getRandomMoonAndMusicImage();
   playerStore.set(currentPlayingAlbumArtImage, albumArtSrc);
   if (albumArtSrc) {
-    console.log({
-      albumArtSrc,
-    });
     const newImage = new Image();
     newImage.src = albumArtSrc;
     newImage.crossOrigin = "anonymous";
