@@ -1,1 +1,0 @@
-import{n as e,b as t}from"./index-b9b0afd5.js";const a={INITIALIZED:"INITIALIZED",LOADED:"LOADED",PLAYING:"PLAYING",STOPPED:"STOPPED",PAUSED:"PAUSED"},o=t(a.INITIALIZED),r=t({}),s=t({id:""}),n=t([]),c=t();t(!1);const l=t({}),I=t();t({playerState:o,currentSong:r,currentPlaylist:s,queue:n});const m=e();export{a,o as b,l as c,r as d,c as e,I as f,m as p};
