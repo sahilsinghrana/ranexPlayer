@@ -10,18 +10,21 @@ import {useSetAtom} from "jotai";
 import {Suspense, useEffect} from "react";
 import {SWRConfig} from "swr";
 
+const swrOptions = {
+  fetcher,
+  dedupingInterval: 100000,
+  revalidateOnFocus: false,
+  revalidateIfStale: false,
+  refreshWhenOffline: true,
+  errorRetryCount: 30,
+  loadingTimeout: 4000,
+  revalidateOnReconnect: true,
+  shouldRetryOnError: true,
+  errorRetryInterval: 1000,
+};
+
 function App() {
   const setSession = useSetAtom(sessionAtom);
-
-  // useEffect(() => {
-  //   import("./assets/music/yrym.mp3")
-  //     .then((song) => {
-  //       player.load(song.default);
-  //     })
-  //     .catch((err) => {
-  //       console.log("Failed to load song", err);
-  //     });
-  // }, []);
 
   useEffect(() => {
     const {
@@ -40,15 +43,7 @@ function App() {
 
   return (
     <div className=" bg-neutral-800 text-neutral-100 backgroundStars">
-      <SWRConfig
-        value={{
-          fetcher,
-          dedupingInterval: 100000,
-          revalidateOnFocus: false,
-          revalidateIfStale: false,
-          refreshWhenOffline: true,
-        }}
-      >
+      <SWRConfig value={swrOptions}>
         <Suspense fallback={<FullAppLoader />}>
           <AppRoutes />
         </Suspense>

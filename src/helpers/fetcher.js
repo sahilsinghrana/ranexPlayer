@@ -1,16 +1,13 @@
 import axiosInstance from "./axiosInstance";
 
-const fetcher = (url, config = {}) => {
+const fetcher = async (url, config = {}) => {
   axiosInstance.get;
   return axiosInstance
     .get(url, {
       ...config,
       timeout: 3000,
     })
-    .then((res) => res.data)
-    .catch((err) => {
-      return err;
-    });
+    .then((res) => res.data);
 };
 
 export default fetcher;
