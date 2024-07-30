@@ -1,1 +1,0 @@
-import{j as e}from"./index-63d32132.js";import{B as s,d as t}from"./App-102249ba.js";import{e as o}from"./react-icons.esm-535a0ff7.js";const m=({className:r})=>e.jsx(s,{size:"sm",rounded:"full",className:t("w-8 h-8 p-2 bg-neutral-200 hover:bg-neutral-100 text-red-950 hover:text-red-800",r),children:e.jsx(o,{className:"w-full h-full"})});export{m as default};
