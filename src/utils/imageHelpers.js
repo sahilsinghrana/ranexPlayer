@@ -68,7 +68,7 @@ function rgbToHsl(r, g, b) {
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
 
     // Calculate hue
-    // eslint-disable-next-line default-case
+
     switch (max) {
       case r:
         h = (g - b) / d + (g < b ? 6 : 0);
