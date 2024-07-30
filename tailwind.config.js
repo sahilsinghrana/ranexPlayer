@@ -16,7 +16,7 @@ export default {
         ],
       },
       animation: {
-        marquee: "marquee 10s ease infinite",
+        marquee: "marquee 10s cubic-bezier(0.4,-0.06, 0.98, 0.32) infinite",
       },
       keyframes: {
         marquee: {
