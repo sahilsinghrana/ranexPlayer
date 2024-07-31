@@ -1,0 +1,1 @@
+import{r,j as e}from"./index-b39e3f42.js";import{c as o}from"./App-a5bad594.js";const a=({children:t,className:s})=>e.jsx("ul",{className:o("flex flex-wrap items-center justify-center sm:justify-start whitespace-nowrap",s),children:t}),c=r.memo(a);export{c as default};
