@@ -1,5 +1,5 @@
-import Organizer from "./Organizer.jsx";
-import PlaylistOrganizer from "./Playlists.jsx";
+import PlaylistOrganizer from "./PlaylistsOrganizer.jsx";
+import Organizer from "./SongOrganizer.jsx";
 import Uploader from "./Uploader.jsx";
 
 import TabLink from "../../../components/TabLink/index.jsx";

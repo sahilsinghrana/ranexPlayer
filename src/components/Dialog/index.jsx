@@ -8,7 +8,7 @@ function Dialog({children, className, ...props}, ref) {
   return (
     <dialog
       ref={ref}
-      className={clsxWithMerge("h-64 w-80 ", className)}
+      className={clsxWithMerge("min-h-64 min-w-80 ", className)}
       {...props}
     >
       {children}
