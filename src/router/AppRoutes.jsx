@@ -16,7 +16,9 @@ const ProfilePage = lazyWithRetry(() => import("../pages/Profile/index.jsx"));
 const AccountSettings = lazyWithRetry(() =>
   import("../pages/Settings/AccountSettings.jsx")
 );
-const AdminPage = lazyWithRetry(() => import("../pages/Settings/Admin.jsx"));
+const AdminPage = lazyWithRetry(() =>
+  import("../pages/Settings/Admin/index.jsx")
+);
 const CloudIntegrations = lazyWithRetry(() =>
   import("../pages/Settings/CloudIntegrations.jsx")
 );
@@ -58,12 +60,12 @@ function AppRoutes() {
           <Route path="/login" Component={LoginPage} />
           <Route path="/signup" Component={SignUPPage} />
           <Route Component={PrivateRoute}>
-            <Route path="/settings" Component={SettingsPage}>
+            <Route path="/settings/*" Component={SettingsPage}>
               <Route index={true} Component={ProfileSettings} />
               <Route path="profile" Component={ProfileSettings} />
               <Route path="cloudIntegrations" Component={CloudIntegrations} />
               <Route path="account" Component={AccountSettings} />
-              <Route path="admin" Component={AdminPage} />
+              <Route path="admin/*" Component={AdminPage} />
             </Route>
           </Route>
         </Route>

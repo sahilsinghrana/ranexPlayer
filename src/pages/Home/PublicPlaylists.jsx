@@ -1,4 +1,5 @@
 import HomeSectionLoader from "../../components/Loaders/HomeSectionLoader";
+import FETCH_KEYS from "../../utils/constants/fetchKeys";
 import {lazyWithRetry} from "../../utils/reactLazy";
 
 import {Suspense} from "react";
@@ -14,7 +15,7 @@ const PlaylistCard = lazyWithRetry(() =>
 );
 
 function PublicPlaylists() {
-  const {data, isLoading} = useSWR("/music/playlist");
+  const {data, isLoading} = useSWR(FETCH_KEYS.publicPlaylists);
 
   return (
     <Suspense fallback={<HomeSectionLoader />}>

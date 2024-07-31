@@ -2,6 +2,7 @@ import SongCard from "../../components/Card/SongCard";
 import HomeSectionLoader from "../../components/Loaders/HomeSectionLoader";
 import player from "../../lib/player";
 import {playerStateAtom, playerStates} from "../../store/atoms/playerAtom";
+import FETCH_KEYS from "../../utils/constants/fetchKeys";
 import {lazyWithRetry} from "../../utils/reactLazy";
 
 import {useAtomValue} from "jotai";
@@ -15,7 +16,7 @@ const HorizontalList = lazyWithRetry(() =>
 );
 
 function RecentlyAdded() {
-  const {data, isLoading} = useSWR("/music/song");
+  const {data, isLoading} = useSWR(FETCH_KEYS.publicSongs);
   const songs = data?.data?.songs;
   const playerState = useAtomValue(playerStateAtom);
   useEffect(() => {
