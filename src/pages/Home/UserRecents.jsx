@@ -4,6 +4,7 @@ import favoritePlaylistImage from "../../assets/images/favoritePlaylist.webp";
 import {getRandomBWMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
 import HomeSectionLoader from "../../components/Loaders/HomeSectionLoader";
 import useIsUserLoggedIn from "../../hooks/useIsUserLoggedIn";
+import FETCH_KEYS from "../../utils/constants/fetchKeys";
 import {lazyWithRetry} from "../../utils/reactLazy";
 
 import {Suspense} from "react";
@@ -34,7 +35,7 @@ function UserRecents() {
 export default UserRecents;
 
 function UserList() {
-  const {data} = useSWR("/user/playlist");
+  const {data} = useSWR(FETCH_KEYS.userPlaylists);
 
   return (
     <>

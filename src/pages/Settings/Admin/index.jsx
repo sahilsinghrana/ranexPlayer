@@ -1,4 +1,4 @@
-import PlaylistOrganizer from "./PlaylistsOrganizer.jsx";
+import PlaylistOrganizer from "./PlaylistOrganizer/index.jsx";
 import Organizer from "./SongOrganizer.jsx";
 import Uploader from "./Uploader.jsx";
 

@@ -1,13 +1,14 @@
-import Button from "../../../components/Button/Button";
-import DialogWithTitle from "../../../components/Dialog/DialogWithTitle";
-import Input from "../../../components/Form/Input";
-import MoonLoader from "../../../components/Loaders/MoonLoader";
-import axiosInstance from "../../../helpers/axiosInstance";
+import Button from "../../../../components/Button/Button";
+import DialogWithTitle from "../../../../components/Dialog/DialogWithTitle";
+import Input from "../../../../components/Form/Input";
+import MoonLoader from "../../../../components/Loaders/MoonLoader";
+import axiosInstance from "../../../../helpers/axiosInstance";
+import FETCH_KEYS from "../../../../utils/constants/fetchKeys";
 
 import {PlusIcon, TrashIcon} from "@radix-ui/react-icons";
 import clsx from "clsx";
 import {useRef, useState} from "react";
-import useSWR from "swr";
+import useSWR, {mutate} from "swr";
 
 function PlaylistOrganizer() {
   const dialogRef = useRef();
@@ -64,9 +65,9 @@ function AddPlaylist({onSubmit}) {
         playlistName: formData.playlistName,
       })
       .then((res) => {
-        console.log(res);
         if (res.data?.responseCode !== 1) throw new Error(res.data?.message);
         setFormData(INITIAL_ADD_PLAYLIST_STATE);
+        mutate(FETCH_KEYS.publicPlaylists);
         setError();
         onSubmit && onSubmit(res);
       })
@@ -78,10 +79,6 @@ function AddPlaylist({onSubmit}) {
       });
   }
 
-  console.log({
-    error,
-    loading,
-  });
   return (
     <form
       onSubmit={handleSubmit}
@@ -109,17 +106,17 @@ function AddPlaylist({onSubmit}) {
 }
 
 function PlaylistList() {
-  const {data, isLoading} = useSWR("/music/playlist");
-  console.log({
-    data,
-    isLoading,
-  });
+  const {data: playlists, isLoading: playlistsLoading} = useSWR(
+    FETCH_KEYS.publicPlaylists
+  );
   return (
     <div>
-      {isLoading && <MoonLoader />}
+      {playlistsLoading && <MoonLoader />}
       <ul>
-        {Array.isArray(data?.data) &&
-          data.data.map((pl) => <PlaylistCard key={pl.id} playlist={pl} />)}
+        {Array.isArray(playlists?.data) &&
+          playlists.data.map((pl) => (
+            <PlaylistCard key={pl.id} playlist={pl} />
+          ))}
       </ul>
     </div>
   );
@@ -140,9 +137,14 @@ function DeletePlaylistButton({playlistId}) {
   function handleDelete(e) {
     e.preventDefault();
     setLoading(true);
-    axiosInstance.delete(`/music/playlist/${playlistId}`).finally(() => {
-      setLoading(false);
-    });
+    axiosInstance
+      .delete(`/music/playlist/${playlistId}`)
+      .then(() => {
+        mutate(FETCH_KEYS.publicPlaylists);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }
 
   return (
