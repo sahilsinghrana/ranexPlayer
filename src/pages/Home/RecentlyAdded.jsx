@@ -29,7 +29,6 @@ function RecentlyAdded() {
     <Suspense fallback={<HomeSectionLoader />}>
       <HomeSection title="Celestial catalog!">
         <HorizontalList className="gap-3 mb-2 sm:px-3">
-          {isLoading && <HomeSectionLoader />}
           {data?.data?.songs?.map((song) => {
             return (
               <li key={song?.songId}>
@@ -61,6 +60,7 @@ function RecentlyAdded() {
               }}
             />
           </li>
+          {isLoading && <HomeSectionLoader />}
         </HorizontalList>
       </HomeSection>
     </Suspense>

@@ -21,7 +21,6 @@ function PublicPlaylists() {
     <Suspense fallback={<HomeSectionLoader />}>
       <HomeSection title="Breach the void!">
         <HorizontalList>
-          {isLoading && <HomeSectionLoader />}
           {data?.data?.map((playlist) => {
             return (
               <li key={playlist.id}>
@@ -29,6 +28,7 @@ function PublicPlaylists() {
               </li>
             );
           })}
+
           <li>
             <PlaylistCard playlistName={"Soulful"} />
           </li>
@@ -41,6 +41,7 @@ function PublicPlaylists() {
           <li>
             <PlaylistCard playlistName={"You & I"} />
           </li>
+          {isLoading && <HomeSectionLoader />}
         </HorizontalList>
       </HomeSection>
     </Suspense>

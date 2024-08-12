@@ -2,7 +2,6 @@ import FullAppLoader from "./components/Loaders/FullAppLoader";
 import supabase from "./config/supabase";
 import {addAccessTokenToFetchHeader} from "./helpers/axiosInstance";
 import fetcher from "./helpers/fetcher";
-// import player from "./lib/player";
 import AppRoutes from "./router/AppRoutes";
 import {sessionAtom} from "./store/atoms/authAtom";
 
@@ -17,10 +16,10 @@ const swrOptions = {
   revalidateIfStale: false,
   refreshWhenOffline: true,
   errorRetryCount: 30,
-  loadingTimeout: 4000,
+  loadingTimeout: 30000,
   revalidateOnReconnect: true,
   shouldRetryOnError: true,
-  errorRetryInterval: 1000,
+  errorRetryInterval: 3000,
 };
 
 function App() {
