@@ -97,6 +97,7 @@ function DropDownLinks({setOpen}) {
             Settings
           </DropDownLink>
           <button
+            className="h-[30px] transition duration-75 flex items-center w-full hover:bg-neutral-600/90 py-3 px-2 font-bold text-red-600  text-center"
             onClick={() => {
               supabase.auth
                 .signOut()
@@ -122,7 +123,7 @@ function DropDownLinks({setOpen}) {
           </DropDownLink>
         </>
       )}
-      
+
       <DropDownLink to="/about" className="text-white">
         About
       </DropDownLink>
