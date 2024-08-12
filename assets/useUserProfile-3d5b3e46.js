@@ -1,1 +1,0 @@
-import{F as u}from"./fetchKeys-14f763aa.js";import{u as i}from"./useIsUserLoggedIn-3e8486f3.js";import{u as n}from"./App-1e7827cc.js";function a(){const o=i(),{data:r,isLoading:s,error:e}=n(o?u.userProfile:null);return{user:(r==null?void 0:r.data)||{},isLoading:s,error:e}}export{a as u};
