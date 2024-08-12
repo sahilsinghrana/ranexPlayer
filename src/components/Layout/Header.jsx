@@ -4,7 +4,7 @@ import useUserProfilePic from "../../hooks/fetch/useUserProfilePic";
 import {sessionAtom} from "../../store/atoms/authAtom";
 import Logo from "../Branding/Logo";
 
-import {useAtom, useAtomValue} from "jotai";
+import {useAtom} from "jotai";
 import {useEffect, useRef, useState} from "react";
 import {Link} from "react-router-dom";
 
@@ -31,7 +31,6 @@ let outerClick;
 function ProfileDropdown() {
   const [open, setOpen] = useState(false);
   const ddRef = useRef();
-  const session = useAtomValue(sessionAtom);
 
   useEffect(() => {
     outerClick = function () {
@@ -42,14 +41,6 @@ function ProfileDropdown() {
     outerClick();
     return () => document.removeEventListener("mousedown", outerClick);
   }, [ddRef]);
-
-  if (!session) {
-    return (
-      <Link to="/login" className="text-white">
-        Login
-      </Link>
-    );
-  }
 
   return (
     <div
@@ -95,35 +86,41 @@ function DropDownLinks({setOpen}) {
   return (
     <ul className="w-[160px] py-2 flex flex-col text-sm border border-neutral-400/30 mt-2  bg-neutral-900/70 rounded-lg absolute z-10 top-full left-auto right-[-150%] md:right-0">
       {session && (
-        <DropDownLink onClick={() => setOpen(false)} to={"/profile"}>
-          Profile
-        </DropDownLink>
+        <>
+          <DropDownLink onClick={() => setOpen(false)} to={"/profile"}>
+            Profile
+          </DropDownLink>
+          <DropDownLink onClick={() => setOpen(false)} to={"/settings"}>
+            Settings
+          </DropDownLink>
+          <button
+            onClick={() => {
+              supabase.auth
+                .signOut()
+                .then(() => {
+                  setSession();
+                })
+                .catch(() => {
+                  localStorage.clear();
+                  sessionStorage.clear();
+                  window.location.reload();
+                });
+              fetcher("/logout");
+            }}
+          >
+            Logout
+          </button>
+        </>
       )}
-      <DropDownLink onClick={() => setOpen(false)} to={"/settings"}>
-        Settings
-      </DropDownLink>
-      {session ? (
-        <button
-          onClick={() => {
-            supabase.auth
-              .signOut()
-              .then(() => {
-                setSession();
-              })
-              .catch(() => {
-                localStorage.clear();
-                sessionStorage.clear();
-                window.location.reload();
-              });
-            fetcher("/logout");
-          }}
-        >
-          Logout
-        </button>
-      ) : (
-        <DropDownLink to="/login" className="text-white">
-          Login
-        </DropDownLink>
+      {!session && (
+        <>
+          <DropDownLink to="/login" className="text-white">
+            Login
+          </DropDownLink>
+          <DropDownLink to="/about" className="text-white">
+            About
+          </DropDownLink>
+        </>
       )}
     </ul>
   );
