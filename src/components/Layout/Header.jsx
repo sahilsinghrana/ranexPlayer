@@ -120,11 +120,12 @@ function DropDownLinks({setOpen}) {
           <DropDownLink to="/login" className="text-white">
             Login
           </DropDownLink>
-          <DropDownLink to="/about" className="text-white">
-            About
-          </DropDownLink>
         </>
       )}
+      
+      <DropDownLink to="/about" className="text-white">
+        About
+      </DropDownLink>
     </ul>
   );
 }
