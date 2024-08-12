@@ -1,1 +1,0 @@
-import{r as t,j as s}from"./index-28736834.js";import{A as a}from"./index-3fa4d02c.js";import{g as e}from"./moonAndMusicImages-40a4352e.js";import"./App-76830bfb.js";import"./helpers-510d46ea.js";function n(){const[m,o]=t.useState();return t.useEffect(()=>{const r=e();o(r)},[]),s.jsx(a,{src:m})}const f=t.memo(n);export{f as default};
