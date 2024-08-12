@@ -15,7 +15,10 @@ const Header = () => {
         "bg-black py-1  flex flex-wrap shadow-sm shadow-slate-300/50 justify-between pr-5 pl-1 items-center backgroundStars"
       }
     >
-      <Logo className={"h-[60px] sm:h-[80px] md:h-[90px] "} />
+      <div className="flex items-center">
+        <Logo className={"h-[60px] sm:h-[80px] md:h-[90px] "} />
+        <p className="px-1 mt-2 text-xs bg-red-600">Work In Progress!</p>
+      </div>
       <div className="flex items-center justify-center mt-2 sm:mt-0 ">
         <div className="flex items-center h-full">
           <ProfileDropdown />
