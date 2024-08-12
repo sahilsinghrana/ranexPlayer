@@ -1,0 +1,1 @@
+.moonLoader{border-radius:50%;height:4em;width:4em;animation:moon 1s alternate infinite linear}@keyframes moon{0%{box-shadow:-.5em 0 #ffffff92;background-color:transparent}50%{background-color:#ffffff06}to{box-shadow:.5em 0 #ffffff92;background-color:transparent}}
