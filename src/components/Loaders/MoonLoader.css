@@ -3,12 +3,19 @@
   height: 4em;
   width: 4em;
 
-  box-shadow: -0.5em 0;
   animation: moon 1s alternate infinite linear;
 }
 
 @keyframes moon {
-  to {
-    box-shadow: 0.5em 0;
+  0% {
+    box-shadow: -0.5em 0 #ffffff92;
+    background-color: transparent;
+  }
+  50% {
+    background-color: #ffffff06;
+  }
+  100% {
+    box-shadow: 0.5em 0 #ffffff92;
+    background-color: transparent;
   }
 }

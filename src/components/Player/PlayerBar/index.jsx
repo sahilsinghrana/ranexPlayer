@@ -1,9 +1,9 @@
 import {useIsMobile} from "../../../hooks/useMediaQuery";
-import {playerStore} from "../../../store/atoms/playerAtom";
+import {playerStateAtom, playerStates} from "../../../store/atoms/playerAtom";
 import {lazyWithRetry} from "../../../utils/reactLazy";
-import MoonLoader from "../../Loaders/MoonLoader";
+import PlayerLoader from "../../Loaders/PlayerLoader";
 
-import {Provider} from "jotai";
+import {useAtomValue} from "jotai/react";
 import {Suspense} from "react";
 
 const MobilePlayerBar = lazyWithRetry(() => import("./MobileBar"));
@@ -11,22 +11,18 @@ const DesktopPlayerBar = lazyWithRetry(() => import("./DesktopPlayerBar"));
 
 const PlayerBar = () => {
   const isMobile = useIsMobile();
+  const playerState = useAtomValue(playerStateAtom);
+
+  if (playerState < playerStates.LOADING) return null;
+
   return (
-    <Provider store={playerStore} min={0}>
-      <Suspense
-        fallback={
-          <div className="flex items-center justify-center w-full h-full px-3 py-2 bg-neutral-900">
-            <MoonLoader />
-          </div>
-        }
-      >
-        {isMobile ? (
-          <MobilePlayerBar key={isMobile} />
-        ) : (
-          <DesktopPlayerBar key={isMobile} />
-        )}
-      </Suspense>
-    </Provider>
+    <Suspense fallback={<PlayerLoader />}>
+      {isMobile ? (
+        <MobilePlayerBar key={isMobile} />
+      ) : (
+        <DesktopPlayerBar key={isMobile} />
+      )}
+    </Suspense>
   );
 };
 
