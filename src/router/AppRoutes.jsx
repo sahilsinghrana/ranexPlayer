@@ -27,6 +27,7 @@ const ProfileSettings = lazyWithRetry(() =>
   import("../pages/Settings/ProfileSettings.jsx")
 );
 const SignUPPage = lazyWithRetry(() => import("../pages/SignUp/index.jsx"));
+const AboutPage = lazyWithRetry(() => import("../pages/About/index.jsx"));
 const FavoriteList = lazyWithRetry(() =>
   import("../components/Favorites/FavoriteList.jsx")
 );
@@ -43,6 +44,9 @@ function AppRoutes() {
     <Suspense fallback={<FullAppLoader />}>
       <Routes>
         <Route errorElement={<RouterErrorBoundary />}>
+          <Route path="/login" Component={LoginPage} />
+          <Route path="/signup" Component={SignUPPage} />
+          <Route path="/about" Component={AboutPage} />
           <Route Component={Layout}>
             <Route index={true} Component={Home} />
             <Route path="/now-playing" Component={NowPlaying} />
@@ -57,8 +61,6 @@ function AppRoutes() {
               <Route path="/profile" Component={ProfilePage} />
             </Route>
           </Route>
-          <Route path="/login" Component={LoginPage} />
-          <Route path="/signup" Component={SignUPPage} />
           <Route Component={PrivateRoute}>
             <Route path="/settings/*" Component={SettingsPage}>
               <Route index={true} Component={ProfileSettings} />
