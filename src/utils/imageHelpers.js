@@ -116,3 +116,8 @@ export function leftToRightGradientCssGenerator(
 ) {
   return `linear-gradient(90deg, ${rightColor} ${cutOff}, ${leftColor} 100%)`;
 }
+
+export function preloadImage(src) {
+  const img = new Image();
+  img.src = src;
+}
