@@ -14,7 +14,10 @@ import {getAverageRGB} from "../utils/imageHelpers";
 
 const player = new MusicPlayer();
 
-// attachEventListenersToAudio(this.audioEl, this);
+player.attachListener("loadeddata", () => {
+  playerStore.set(playerStateAtom, () => playerStates.LOADED);
+});
+
 player.attachListener("playing", () => {
   playerStore.set(playerStateAtom, () => playerStates.PLAYING);
 });
@@ -55,7 +58,8 @@ player.attachListener("onvolumechange", () => {
 });
 
 player.attachListener("loadstart", () => {
-  playerStore.set(playerStateAtom, () => playerStates.LOADED);
+  console.log("Load Start");
+  playerStore.set(playerStateAtom, () => playerStates.LOADING);
   const randImage = getRandomMoonAndMusicImage();
   const albumArtSrc =
     player.meta?.coverArt?.thumbnails?.small ||

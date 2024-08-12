@@ -11,6 +11,7 @@ function AlbumArt({className, src, alt = "cover Art", style}) {
       style={style}
       src={src}
       alt={alt}
+      loading="eager"
     />
   );
 }

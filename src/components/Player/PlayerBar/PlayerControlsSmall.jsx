@@ -12,7 +12,6 @@ const NextButton = lazyWithRetry(() => import("../../Button/music/NextButton"));
 
 const PlayerControlsSmall = () => {
   const [playerState] = useAtom(playerStateAtom);
-
   return (
     <div className="flex items-center gap-1 text-white">
       <PreviousButton className="w-8 h-8" />

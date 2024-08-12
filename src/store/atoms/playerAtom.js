@@ -1,11 +1,12 @@
 import {atom, createStore} from "jotai";
 
 export const playerStates = {
-  INITIALIZED: "INITIALIZED",
-  LOADED: "LOADED",
-  PLAYING: "PLAYING",
-  STOPPED: "STOPPED",
-  PAUSED: "PAUSED",
+  INITIALIZED: -1,
+  STOPPED: 0,
+  LOADING: 1,
+  LOADED: 2,
+  PAUSED: 3,
+  PLAYING: 4,
 };
 
 export const playerStateAtom = atom(playerStates.INITIALIZED);
