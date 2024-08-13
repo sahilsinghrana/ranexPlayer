@@ -70,7 +70,7 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
-  console.log(event.request.url, url);
+  // console.log(event.request.url, url);
   if (url.origin.includes("coverartarchive")) {
     event.respondWith(
       cacheFirst({

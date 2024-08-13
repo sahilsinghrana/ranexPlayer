@@ -1,6 +1,7 @@
 import {getRandomMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
 // import axiosInstance from "../../helpers/axiosInstance";
 import player from "../../lib/player";
+import {convertToHttps} from "../../utils/helpers";
 import {clsxWithMerge} from "../../utils/utils";
 import AlbumArt from "../AlbumArt";
 
@@ -33,7 +34,7 @@ function SongCard({song = {}}) {
         className
       )}
     >
-      <AlbumArt className="h-full w-[80px]" src={albumArtSrc} />
+      <AlbumArt className="h-full w-[80px]" src={convertToHttps(albumArtSrc)} />
       <div className="flex flex-col justify-center h-full ml-2 overflow-hidden">
         <h5
           className={clsx(
