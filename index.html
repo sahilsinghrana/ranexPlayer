@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then(function () {})
+          .catch(function (_) {});
+      }
+    </script>
     <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
@@ -92,7 +100,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/ranexPlayer/assets/index-6fca45f1.js"></script>
+    <script type="module" crossorigin src="/ranexPlayer/assets/index-24725e1a.js"></script>
     <link rel="stylesheet" href="/ranexPlayer/assets/index-cac46060.css">
   </head>
   <body>
