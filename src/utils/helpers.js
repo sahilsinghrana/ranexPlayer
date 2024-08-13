@@ -43,3 +43,18 @@ export function fileReaderPromise(file) {
     };
   });
 }
+
+export function convertToHttps(url) {
+  try {
+    const urlObject = new URL(url);
+
+    if (urlObject.protocol === "http:") {
+      urlObject.protocol = "https:";
+      return urlObject.href;
+    }
+
+    return url;
+  } catch (error) {
+    return url;
+  }
+}

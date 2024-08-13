@@ -17,26 +17,31 @@ const setMediaSessionPlayback = (state) => {
 };
 
 class MusicPlayer {
+  listenSongChange;
+
   constructor() {
     this.audioEl = new Audio();
     this.meta = {};
   }
 
   attachListener(eventName, callback) {
+    if (eventName === "songchange") {
+      this.listenSongChange = callback;
+      return;
+    }
+
     this.audioEl.addEventListener(eventName, callback);
   }
 
   load(song, meta = {}) {
+    this.listenSongChange(song, meta);
     this.audioEl.src = song;
     this.audioEl.load();
-    this.meta = {
-      ...this.meta,
-      ...meta,
-    };
+    this.meta = meta;
   }
 
   loadAndPlay(songUrl, meta = {}) {
-    this.load(songUrl);
+    this.load(songUrl, meta);
     this.audioEl.play();
     this.meta = {
       ...this.meta,

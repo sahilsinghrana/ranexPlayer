@@ -10,7 +10,7 @@ export const playerStates = {
 };
 
 export const playerStateAtom = atom(playerStates.INITIALIZED);
-export const currentSongAtom = atom({});
+export const currentSongAtom = atom({meta: {}});
 export const currentPlaylistAtom = atom({id: ""});
 export const queueAtom = atom([]);
 export const playerVolumeAtom = atom();
