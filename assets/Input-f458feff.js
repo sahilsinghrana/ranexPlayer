@@ -1,0 +1,1 @@
+import{j as o}from"./index-01d3fae8.js";import{b as u}from"./App-195ebf9c.js";function s({children:t,className:n,...r}){return o.jsx("input",{className:u("rounded-md p-3 bg-neutral-600 duration-300 focus:bg-neutral-700 active:bg-neutral-700 outline-none",n),...r,children:t})}export{s as I};
