@@ -1,8 +1,6 @@
-import {playerStore} from "../../store/atoms/playerAtom";
 import {lazyWithRetry} from "../../utils/reactLazy";
 import FullAppLoader from "../Loaders/FullAppLoader";
 
-import {Provider} from "jotai";
 import {Suspense} from "react";
 import {Outlet} from "react-router-dom";
 
@@ -19,9 +17,7 @@ const Layout = () => {
           <Outlet />
         </div>
         <div>
-          <Provider store={playerStore} min={0}>
-            <PlayerBar />
-          </Provider>
+          <PlayerBar />
         </div>
         <Footer />
       </div>

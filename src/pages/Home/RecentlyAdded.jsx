@@ -19,12 +19,14 @@ function RecentlyAdded() {
   const {data, isLoading} = useSWR(FETCH_KEYS.publicSongs);
   const songs = data?.data?.songs;
   const playerState = useAtomValue(playerStateAtom);
+
   useEffect(() => {
     if (playerState === playerStates.INITIALIZED && songs?.length) {
       const firstSong = songs[0];
       player.load(firstSong?.path, firstSong);
     }
   }, [playerState, songs]);
+
   return (
     <Suspense fallback={<HomeSectionLoader />}>
       <HomeSection title="Celestial catalog!">
