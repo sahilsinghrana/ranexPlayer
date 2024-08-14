@@ -1,4 +1,4 @@
-import {atom, createStore} from "jotai";
+import {atom} from "jotai";
 
 export const playerStates = {
   INITIALIZED: -1,
@@ -25,7 +25,5 @@ const playerAtom = atom({
   currentPlaylist: currentPlaylistAtom,
   queue: queueAtom,
 });
-
-export const playerStore = createStore();
 
 export default playerAtom;
