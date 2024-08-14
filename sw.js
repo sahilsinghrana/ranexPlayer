@@ -63,6 +63,15 @@ const enableNavigationPreload = async () => {
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(enableNavigationPreload());
+  event.waitUntil(
+    caches.keys().then((keyList) =>
+      Promise.all(
+        keyList.map((key) => {
+          return caches.delete(key);
+        })
+      )
+    )
+  );
 });
 
 self.addEventListener("install", (event) => {
