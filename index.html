@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("/sw.js?v1.1")
-          .then(function () {})
-          .catch(function (_) {});
-      }
-    </script>
+    <script src="/sw.js"></script>
 
     <script defer src="/scripts/spaGithub.js" type="text/javascript"></script>
 

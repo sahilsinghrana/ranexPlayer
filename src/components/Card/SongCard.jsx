@@ -24,9 +24,6 @@ function SongCard({song = {}}) {
   return (
     <div
       onClick={() => {
-        // axiosInstance.get("/music/song/" + songId).then((res) => {
-        //   console.log(res);
-        // });
         player.loadAndPlay(path, song);
       }}
       className={clsxWithMerge(

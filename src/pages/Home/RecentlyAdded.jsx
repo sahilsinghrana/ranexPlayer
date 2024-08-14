@@ -22,8 +22,7 @@ function RecentlyAdded() {
 
   useEffect(() => {
     if (playerState === playerStates.INITIALIZED && songs?.length) {
-      const firstSong = songs[0];
-      player.load(firstSong?.path, firstSong);
+      player.load(songs.map((s) => ({song: s?.path, meta: s})));
     }
   }, [playerState, songs]);
 
