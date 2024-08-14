@@ -85,7 +85,6 @@ class MusicPlayer {
 
   loadAndPlay(songUrl, meta = {}) {
     this.loadSong(songUrl, meta);
-    this.resetQueue();
     this.play();
   }
 
