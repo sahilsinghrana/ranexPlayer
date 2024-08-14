@@ -3,50 +3,50 @@
     "file": "assets/MoonLoader-25229e9e.css",
     "src": "MoonLoader.css"
   },
-  "_Input-3379583c.js": {
-    "file": "assets/Input-3379583c.js",
+  "_Input-7d72c842.js": {
+    "file": "assets/Input-7d72c842.js",
     "imports": [
       "index.html"
     ]
   },
-  "_List-9eebe4ee.js": {
-    "file": "assets/List-9eebe4ee.js",
+  "_List-16452989.js": {
+    "file": "assets/List-16452989.js",
     "imports": [
       "index.html",
       "src/components/AlbumArt/RandomAlbumArt.jsx"
     ]
   },
-  "_LogoBig-45775383.js": {
-    "file": "assets/LogoBig-45775383.js",
+  "_LogoBig-9d39fe25.js": {
+    "file": "assets/LogoBig-9d39fe25.js",
     "imports": [
       "index.html",
       "_roundedLogos-5ef49220.js"
     ]
   },
-  "_MoonLoader-d46fbfb3.js": {
+  "_MoonLoader-c1b394fd.js": {
     "css": [
       "assets/MoonLoader-25229e9e.css"
     ],
-    "file": "assets/MoonLoader-d46fbfb3.js",
+    "file": "assets/MoonLoader-c1b394fd.js",
     "imports": [
       "index.html"
     ]
   },
-  "_PlayButton-c07317f0.js": {
-    "file": "assets/PlayButton-c07317f0.js",
+  "_PlayButton-1294843a.js": {
+    "file": "assets/PlayButton-1294843a.js",
     "imports": [
       "index.html",
-      "_player-d98067e1.js"
+      "_player-c7037eaf.js"
     ]
   },
-  "_SignInWithGoogle-f48374cf.js": {
-    "file": "assets/SignInWithGoogle-f48374cf.js",
+  "_SignInWithGoogle-9342168a.js": {
+    "file": "assets/SignInWithGoogle-9342168a.js",
     "imports": [
       "index.html"
     ]
   },
-  "_browser-14133a69.js": {
-    "file": "assets/browser-14133a69.js",
+  "_browser-0fb16570.js": {
+    "file": "assets/browser-0fb16570.js",
     "imports": [
       "index.html"
     ],
@@ -67,7 +67,7 @@
   "_imageHelpers-8dffa84a.js": {
     "file": "assets/imageHelpers-8dffa84a.js"
   },
-  "_index-20121dba.js": {
+  "_index-03d660db.js": {
     "css": [
       "assets/index-246c74e8.css"
     ],
@@ -77,15 +77,15 @@
       "src/pages/Home/RecentlyAdded.jsx",
       "src/pages/Home/UserRecents.jsx"
     ],
-    "file": "assets/index-20121dba.js",
+    "file": "assets/index-03d660db.js",
     "imports": [
       "index.html",
-      "_useIsUserLoggedIn-6e1c819f.js"
+      "_useIsUserLoggedIn-78c27713.js"
     ],
     "isDynamicEntry": true
   },
-  "_index-c1909e9c.js": {
-    "file": "assets/index-c1909e9c.js",
+  "_index-545beb76.js": {
+    "file": "assets/index-545beb76.js",
     "imports": [
       "index.html"
     ]
@@ -96,18 +96,18 @@
       "_helpers-b6ef1e89.js"
     ]
   },
-  "_player-d98067e1.js": {
-    "file": "assets/player-d98067e1.js",
+  "_player-c7037eaf.js": {
+    "file": "assets/player-c7037eaf.js",
     "imports": [
       "_moonAndMusicImages-ee3f4190.js",
       "index.html",
-      "_playerAtom-eae7ceca.js",
+      "_playerAtom-0df5ae54.js",
       "_helpers-b6ef1e89.js",
       "_imageHelpers-8dffa84a.js"
     ]
   },
-  "_playerAtom-eae7ceca.js": {
-    "file": "assets/playerAtom-eae7ceca.js",
+  "_playerAtom-0df5ae54.js": {
+    "file": "assets/playerAtom-0df5ae54.js",
     "imports": [
       "index.html"
     ]
@@ -121,27 +121,27 @@
       "_helpers-b6ef1e89.js"
     ]
   },
-  "_useIsUserLoggedIn-6e1c819f.js": {
-    "file": "assets/useIsUserLoggedIn-6e1c819f.js",
+  "_useIsUserLoggedIn-78c27713.js": {
+    "file": "assets/useIsUserLoggedIn-78c27713.js",
     "imports": [
       "index.html"
     ]
   },
-  "_useUserProfile-b4680c6c.js": {
-    "file": "assets/useUserProfile-b4680c6c.js",
+  "_useUserProfile-06baff68.js": {
+    "file": "assets/useUserProfile-06baff68.js",
     "imports": [
       "_fetchKeys-14f763aa.js",
-      "_useIsUserLoggedIn-6e1c819f.js",
+      "_useIsUserLoggedIn-78c27713.js",
       "index.html"
     ]
   },
-  "_useUserProfilePic-dc3d6623.js": {
+  "_useUserProfilePic-241bd2c4.js": {
     "assets": [
       "assets/musicalSkull-823a3f35.webp"
     ],
-    "file": "assets/useUserProfilePic-dc3d6623.js",
+    "file": "assets/useUserProfilePic-241bd2c4.js",
     "imports": [
-      "_useUserProfile-b4680c6c.js"
+      "_useUserProfile-06baff68.js"
     ]
   },
   "index.css": {
@@ -153,9 +153,9 @@
       "assets/index-cac46060.css"
     ],
     "dynamicImports": [
-      "_browser-14133a69.js",
+      "_browser-0fb16570.js",
       "src/components/Layout/index.jsx",
-      "_index-20121dba.js",
+      "_index-03d660db.js",
       "src/pages/Login/index.jsx",
       "src/pages/NotFound/index.jsx",
       "src/pages/NowPlaying/index.jsx",
@@ -171,7 +171,7 @@
       "src/pages/Playlists/index.jsx",
       "src/pages/Playlists/PlaylistPage.jsx"
     ],
-    "file": "assets/index-13ed8e83.js",
+    "file": "assets/index-83851eea.js",
     "isEntry": true,
     "src": "index.html"
   },
@@ -188,20 +188,20 @@
     "src": "src/assets/images/musicalSkull.webp"
   },
   "src/components/AlbumArt/NowPlayingAlbumArt.jsx": {
-    "file": "assets/NowPlayingAlbumArt-94726ee3.js",
+    "file": "assets/NowPlayingAlbumArt-9a974fa3.js",
     "imports": [
       "index.html",
-      "_index-c1909e9c.js",
-      "_playerAtom-eae7ceca.js"
+      "_index-545beb76.js",
+      "_playerAtom-0df5ae54.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/AlbumArt/NowPlayingAlbumArt.jsx"
   },
   "src/components/AlbumArt/RandomAlbumArt.jsx": {
-    "file": "assets/RandomAlbumArt-5607eead.js",
+    "file": "assets/RandomAlbumArt-bae792df.js",
     "imports": [
       "index.html",
-      "_index-c1909e9c.js",
+      "_index-545beb76.js",
       "_moonAndMusicImages-ee3f4190.js",
       "_helpers-b6ef1e89.js"
     ],
@@ -209,33 +209,33 @@
     "src": "src/components/AlbumArt/RandomAlbumArt.jsx"
   },
   "src/components/Button/music/NextButton.jsx": {
-    "file": "assets/NextButton-d83d9f43.js",
+    "file": "assets/NextButton-c9a78c08.js",
     "imports": [
       "index.html",
-      "_player-d98067e1.js",
+      "_player-c7037eaf.js",
       "_moonAndMusicImages-ee3f4190.js",
       "_helpers-b6ef1e89.js",
-      "_playerAtom-eae7ceca.js",
+      "_playerAtom-0df5ae54.js",
       "_imageHelpers-8dffa84a.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Button/music/NextButton.jsx"
   },
   "src/components/Button/music/PreviousButton.jsx": {
-    "file": "assets/PreviousButton-29ffda7b.js",
+    "file": "assets/PreviousButton-b5d457f7.js",
     "imports": [
       "index.html",
-      "_player-d98067e1.js",
+      "_player-c7037eaf.js",
       "_moonAndMusicImages-ee3f4190.js",
       "_helpers-b6ef1e89.js",
-      "_playerAtom-eae7ceca.js",
+      "_playerAtom-0df5ae54.js",
       "_imageHelpers-8dffa84a.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Button/music/PreviousButton.jsx"
   },
   "src/components/Card/PlaylistCard.jsx": {
-    "file": "assets/PlaylistCard-875d33cf.js",
+    "file": "assets/PlaylistCard-4da163dd.js",
     "imports": [
       "index.html",
       "_moonAndMusicImages-ee3f4190.js",
@@ -245,14 +245,14 @@
     "src": "src/components/Card/PlaylistCard.jsx"
   },
   "src/components/Favorites/FavoriteList.jsx": {
-    "file": "assets/FavoriteList-1a3559da.js",
+    "file": "assets/FavoriteList-3ef40852.js",
     "imports": [
       "index.html",
       "_favoritePlaylist-4cd647fb.js",
-      "_List-9eebe4ee.js",
+      "_List-16452989.js",
       "src/components/Card/PlaylistCard.jsx",
       "src/components/AlbumArt/RandomAlbumArt.jsx",
-      "_index-c1909e9c.js",
+      "_index-545beb76.js",
       "_moonAndMusicImages-ee3f4190.js",
       "_helpers-b6ef1e89.js"
     ],
@@ -260,7 +260,7 @@
     "src": "src/components/Favorites/FavoriteList.jsx"
   },
   "src/components/Layout/Footer.jsx": {
-    "file": "assets/Footer-d6332f50.js",
+    "file": "assets/Footer-fa916c23.js",
     "imports": [
       "index.html"
     ],
@@ -268,14 +268,14 @@
     "src": "src/components/Layout/Footer.jsx"
   },
   "src/components/Layout/Header.jsx": {
-    "file": "assets/Header-65011209.js",
+    "file": "assets/Header-0421f12d.js",
     "imports": [
       "index.html",
-      "_useUserProfilePic-dc3d6623.js",
+      "_useUserProfilePic-241bd2c4.js",
       "_roundedLogos-5ef49220.js",
-      "_useUserProfile-b4680c6c.js",
+      "_useUserProfile-06baff68.js",
       "_fetchKeys-14f763aa.js",
-      "_useIsUserLoggedIn-6e1c819f.js",
+      "_useIsUserLoggedIn-78c27713.js",
       "_helpers-b6ef1e89.js"
     ],
     "isDynamicEntry": true,
@@ -287,7 +287,7 @@
       "src/components/Layout/Header.jsx",
       "src/components/Player/PlayerBar/index.jsx"
     ],
-    "file": "assets/index-5869ed3b.js",
+    "file": "assets/index-34d61b21.js",
     "imports": [
       "index.html"
     ],
@@ -295,7 +295,7 @@
     "src": "src/components/Layout/index.jsx"
   },
   "src/components/List/HorizontalList.jsx": {
-    "file": "assets/HorizontalList-3ce48ab3.js",
+    "file": "assets/HorizontalList-c1958792.js",
     "imports": [
       "index.html"
     ],
@@ -308,13 +308,13 @@
       "src/components/Player/PlayerBar/PlayerControls.jsx",
       "src/components/Player/PlayerBar/MediaOptions.jsx"
     ],
-    "file": "assets/DesktopPlayerBar-403e48b6.js",
+    "file": "assets/DesktopPlayerBar-779b1381.js",
     "imports": [
       "index.html",
       "src/components/Player/PlayerBar/SeekBar.jsx",
-      "_playerAtom-eae7ceca.js",
+      "_playerAtom-0df5ae54.js",
       "_imageHelpers-8dffa84a.js",
-      "_player-d98067e1.js",
+      "_player-c7037eaf.js",
       "_moonAndMusicImages-ee3f4190.js",
       "_helpers-b6ef1e89.js"
     ],
@@ -326,7 +326,7 @@
       "src/components/Player/PlayerBar/PlaylistLinkButton.jsx",
       "src/components/Player/PlayerBar/VolumeButton.jsx"
     ],
-    "file": "assets/MediaOptions-7f26ad16.js",
+    "file": "assets/MediaOptions-2221e776.js",
     "imports": [
       "index.html"
     ],
@@ -338,10 +338,10 @@
       "src/components/Player/PlayerBar/SongInfo.jsx",
       "src/components/Player/PlayerBar/PlayerControlsSmall.jsx"
     ],
-    "file": "assets/MobileBarSmall-e46db6f0.js",
+    "file": "assets/MobileBarSmall-d24f6603.js",
     "imports": [
       "index.html",
-      "_playerAtom-eae7ceca.js",
+      "_playerAtom-0df5ae54.js",
       "_imageHelpers-8dffa84a.js"
     ],
     "isDynamicEntry": true,
@@ -353,10 +353,10 @@
       "src/components/Player/PlayerBar/SeekBar.jsx",
       "src/components/AlbumArt/NowPlayingAlbumArt.jsx"
     ],
-    "file": "assets/MobilePlayerFull-b1b38e56.js",
+    "file": "assets/MobilePlayerFull-8374faad.js",
     "imports": [
       "index.html",
-      "_playerAtom-eae7ceca.js",
+      "_playerAtom-0df5ae54.js",
       "_imageHelpers-8dffa84a.js"
     ],
     "isDynamicEntry": true,
@@ -367,7 +367,7 @@
       "src/components/Player/PlayerBar/MobileBar/MobilePlayerFull.jsx",
       "src/components/Player/PlayerBar/MobileBar/MobileBarSmall.jsx"
     ],
-    "file": "assets/index-d40a4bc8.js",
+    "file": "assets/index-6a579048.js",
     "imports": [
       "index.html"
     ],
@@ -379,12 +379,12 @@
       "src/components/Button/music/PreviousButton.jsx",
       "src/components/Button/music/NextButton.jsx"
     ],
-    "file": "assets/PlayerControls-d8a06c39.js",
+    "file": "assets/PlayerControls-f65c44f5.js",
     "imports": [
       "index.html",
-      "_playerAtom-eae7ceca.js",
-      "_PlayButton-c07317f0.js",
-      "_player-d98067e1.js",
+      "_playerAtom-0df5ae54.js",
+      "_PlayButton-1294843a.js",
+      "_player-c7037eaf.js",
       "_moonAndMusicImages-ee3f4190.js",
       "_helpers-b6ef1e89.js",
       "_imageHelpers-8dffa84a.js"
@@ -397,12 +397,12 @@
       "src/components/Button/music/PreviousButton.jsx",
       "src/components/Button/music/NextButton.jsx"
     ],
-    "file": "assets/PlayerControlsSmall-22529ba0.js",
+    "file": "assets/PlayerControlsSmall-32824ab1.js",
     "imports": [
       "index.html",
-      "_playerAtom-eae7ceca.js",
-      "_PlayButton-c07317f0.js",
-      "_player-d98067e1.js",
+      "_playerAtom-0df5ae54.js",
+      "_PlayButton-1294843a.js",
+      "_player-c7037eaf.js",
       "_moonAndMusicImages-ee3f4190.js",
       "_helpers-b6ef1e89.js",
       "_imageHelpers-8dffa84a.js"
@@ -411,7 +411,7 @@
     "src": "src/components/Player/PlayerBar/PlayerControlsSmall.jsx"
   },
   "src/components/Player/PlayerBar/PlaylistLinkButton.jsx": {
-    "file": "assets/PlaylistLinkButton-eecfc1f2.js",
+    "file": "assets/PlaylistLinkButton-3df4c7cf.js",
     "imports": [
       "index.html"
     ],
@@ -419,11 +419,11 @@
     "src": "src/components/Player/PlayerBar/PlaylistLinkButton.jsx"
   },
   "src/components/Player/PlayerBar/SeekBar.jsx": {
-    "file": "assets/SeekBar-9254422c.js",
+    "file": "assets/SeekBar-58acb79a.js",
     "imports": [
       "index.html",
-      "_player-d98067e1.js",
-      "_playerAtom-eae7ceca.js",
+      "_player-c7037eaf.js",
+      "_playerAtom-0df5ae54.js",
       "_helpers-b6ef1e89.js",
       "_moonAndMusicImages-ee3f4190.js",
       "_imageHelpers-8dffa84a.js"
@@ -435,20 +435,20 @@
     "dynamicImports": [
       "src/components/AlbumArt/NowPlayingAlbumArt.jsx"
     ],
-    "file": "assets/SongInfo-7585de98.js",
+    "file": "assets/SongInfo-a4ce0634.js",
     "imports": [
       "index.html",
-      "_playerAtom-eae7ceca.js"
+      "_playerAtom-0df5ae54.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Player/PlayerBar/SongInfo.jsx"
   },
   "src/components/Player/PlayerBar/VolumeButton.jsx": {
-    "file": "assets/VolumeButton-57c0958d.js",
+    "file": "assets/VolumeButton-83dd2688.js",
     "imports": [
       "index.html",
-      "_player-d98067e1.js",
-      "_playerAtom-eae7ceca.js",
+      "_player-c7037eaf.js",
+      "_playerAtom-0df5ae54.js",
       "_moonAndMusicImages-ee3f4190.js",
       "_helpers-b6ef1e89.js",
       "_imageHelpers-8dffa84a.js"
@@ -461,11 +461,11 @@
       "src/components/Player/PlayerBar/MobileBar/index.jsx",
       "src/components/Player/PlayerBar/DesktopPlayerBar.jsx"
     ],
-    "file": "assets/index-78b46369.js",
+    "file": "assets/index-85ea02d5.js",
     "imports": [
       "index.html",
-      "_playerAtom-eae7ceca.js",
-      "_MoonLoader-d46fbfb3.js"
+      "_playerAtom-0df5ae54.js",
+      "_MoonLoader-c1b394fd.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/Player/PlayerBar/index.jsx"
@@ -479,10 +479,10 @@
     "assets": [
       "assets/moon1-9b11b118.webp"
     ],
-    "file": "assets/index-cf427feb.js",
+    "file": "assets/index-26520208.js",
     "imports": [
       "index.html",
-      "_LogoBig-45775383.js",
+      "_LogoBig-9d39fe25.js",
       "_roundedLogos-5ef49220.js",
       "_helpers-b6ef1e89.js"
     ],
@@ -494,7 +494,7 @@
     "src": "src/pages/About/moon1.webp"
   },
   "src/pages/Home/HomeSection.jsx": {
-    "file": "assets/HomeSection-cc306af7.js",
+    "file": "assets/HomeSection-1424a0aa.js",
     "imports": [
       "index.html"
     ],
@@ -505,7 +505,7 @@
     "dynamicImports": [
       "src/pages/Home/HomeSection.jsx"
     ],
-    "file": "assets/LoginAndUnlockTheSecrets-e58a7627.js",
+    "file": "assets/LoginAndUnlockTheSecrets-7eac7452.js",
     "imports": [
       "index.html"
     ],
@@ -518,12 +518,12 @@
       "src/pages/Home/HomeSection.jsx",
       "src/components/Card/PlaylistCard.jsx"
     ],
-    "file": "assets/PublicPlaylists-155034d0.js",
+    "file": "assets/PublicPlaylists-f7d05393.js",
     "imports": [
       "index.html",
-      "_index-20121dba.js",
+      "_index-03d660db.js",
       "_fetchKeys-14f763aa.js",
-      "_useIsUserLoggedIn-6e1c819f.js"
+      "_useIsUserLoggedIn-78c27713.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Home/PublicPlaylists.jsx"
@@ -533,18 +533,18 @@
       "src/pages/Home/HomeSection.jsx",
       "src/components/List/HorizontalList.jsx"
     ],
-    "file": "assets/RecentlyAdded-9d2d42e4.js",
+    "file": "assets/RecentlyAdded-8d81b6d3.js",
     "imports": [
       "index.html",
       "_moonAndMusicImages-ee3f4190.js",
-      "_player-d98067e1.js",
+      "_player-c7037eaf.js",
       "_helpers-b6ef1e89.js",
-      "_index-c1909e9c.js",
-      "_index-20121dba.js",
-      "_playerAtom-eae7ceca.js",
+      "_index-545beb76.js",
+      "_index-03d660db.js",
+      "_playerAtom-0df5ae54.js",
       "_fetchKeys-14f763aa.js",
       "_imageHelpers-8dffa84a.js",
-      "_useIsUserLoggedIn-6e1c819f.js"
+      "_useIsUserLoggedIn-78c27713.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Home/RecentlyAdded.jsx"
@@ -555,13 +555,13 @@
       "src/components/Card/PlaylistCard.jsx",
       "src/components/List/HorizontalList.jsx"
     ],
-    "file": "assets/UserRecents-3f02c129.js",
+    "file": "assets/UserRecents-b37ca9c6.js",
     "imports": [
       "index.html",
-      "_index-20121dba.js",
+      "_index-03d660db.js",
       "_favoritePlaylist-4cd647fb.js",
       "_moonAndMusicImages-ee3f4190.js",
-      "_useIsUserLoggedIn-6e1c819f.js",
+      "_useIsUserLoggedIn-78c27713.js",
       "_fetchKeys-14f763aa.js",
       "_helpers-b6ef1e89.js"
     ],
@@ -569,13 +569,13 @@
     "src": "src/pages/Home/UserRecents.jsx"
   },
   "src/pages/Login/index.jsx": {
-    "file": "assets/index-5b5d5645.js",
+    "file": "assets/index-811e1a09.js",
     "imports": [
       "index.html",
-      "_LogoBig-45775383.js",
-      "_SignInWithGoogle-f48374cf.js",
-      "_Input-3379583c.js",
-      "_useIsUserLoggedIn-6e1c819f.js",
+      "_LogoBig-9d39fe25.js",
+      "_SignInWithGoogle-9342168a.js",
+      "_Input-7d72c842.js",
+      "_useIsUserLoggedIn-78c27713.js",
       "_roundedLogos-5ef49220.js",
       "_helpers-b6ef1e89.js"
     ],
@@ -583,7 +583,7 @@
     "src": "src/pages/Login/index.jsx"
   },
   "src/pages/NotFound/index.jsx": {
-    "file": "assets/index-62a83fa2.js",
+    "file": "assets/index-b4f6960b.js",
     "imports": [
       "index.html"
     ],
@@ -594,7 +594,7 @@
     "dynamicImports": [
       "src/components/AlbumArt/RandomAlbumArt.jsx"
     ],
-    "file": "assets/index-07396d50.js",
+    "file": "assets/index-4cb1dfa5.js",
     "imports": [
       "index.html"
     ],
@@ -602,13 +602,13 @@
     "src": "src/pages/NowPlaying/index.jsx"
   },
   "src/pages/Playlists/PlaylistPage.jsx": {
-    "file": "assets/PlaylistPage-8ff50690.js",
+    "file": "assets/PlaylistPage-0c0ab27f.js",
     "imports": [
       "index.html",
-      "_List-9eebe4ee.js",
+      "_List-16452989.js",
       "src/components/Card/PlaylistCard.jsx",
       "src/components/AlbumArt/RandomAlbumArt.jsx",
-      "_index-c1909e9c.js",
+      "_index-545beb76.js",
       "_moonAndMusicImages-ee3f4190.js",
       "_helpers-b6ef1e89.js"
     ],
@@ -616,7 +616,7 @@
     "src": "src/pages/Playlists/PlaylistPage.jsx"
   },
   "src/pages/Playlists/index.jsx": {
-    "file": "assets/index-ded7a0d0.js",
+    "file": "assets/index-dc5fce48.js",
     "imports": [
       "index.html"
     ],
@@ -624,20 +624,20 @@
     "src": "src/pages/Playlists/index.jsx"
   },
   "src/pages/Profile/index.jsx": {
-    "file": "assets/index-792e3148.js",
+    "file": "assets/index-6356e308.js",
     "imports": [
       "index.html",
-      "_MoonLoader-d46fbfb3.js",
-      "_useUserProfile-b4680c6c.js",
-      "_useUserProfilePic-dc3d6623.js",
+      "_MoonLoader-c1b394fd.js",
+      "_useUserProfile-06baff68.js",
+      "_useUserProfilePic-241bd2c4.js",
       "_fetchKeys-14f763aa.js",
-      "_useIsUserLoggedIn-6e1c819f.js"
+      "_useIsUserLoggedIn-78c27713.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Profile/index.jsx"
   },
   "src/pages/Settings/AccountSettings.jsx": {
-    "file": "assets/AccountSettings-121a8d25.js",
+    "file": "assets/AccountSettings-74897513.js",
     "imports": [
       "index.html"
     ],
@@ -655,21 +655,21 @@
     "dynamicImports": [
       "src/lib/MusicPlayer/mediaTags.js"
     ],
-    "file": "assets/index-e1c69f80.js",
+    "file": "assets/index-76ebc9c7.js",
     "imports": [
       "index.html",
-      "_Input-3379583c.js",
-      "_MoonLoader-d46fbfb3.js",
+      "_Input-7d72c842.js",
+      "_MoonLoader-c1b394fd.js",
       "_fetchKeys-14f763aa.js",
-      "_useUserProfile-b4680c6c.js",
+      "_useUserProfile-06baff68.js",
       "src/pages/NotFound/index.jsx",
-      "_useIsUserLoggedIn-6e1c819f.js"
+      "_useIsUserLoggedIn-78c27713.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Settings/Admin/index.jsx"
   },
   "src/pages/Settings/CloudIntegrations.jsx": {
-    "file": "assets/CloudIntegrations-5c06e8c1.js",
+    "file": "assets/CloudIntegrations-97f7ee9f.js",
     "imports": [
       "index.html"
     ],
@@ -677,41 +677,41 @@
     "src": "src/pages/Settings/CloudIntegrations.jsx"
   },
   "src/pages/Settings/ProfileSettings.jsx": {
-    "file": "assets/ProfileSettings-69399276.js",
+    "file": "assets/ProfileSettings-15395405.js",
     "imports": [
       "index.html",
-      "_Input-3379583c.js",
-      "_useUserProfile-b4680c6c.js",
-      "_useUserProfilePic-dc3d6623.js",
+      "_Input-7d72c842.js",
+      "_useUserProfile-06baff68.js",
+      "_useUserProfilePic-241bd2c4.js",
       "_fetchKeys-14f763aa.js",
-      "_useIsUserLoggedIn-6e1c819f.js"
+      "_useIsUserLoggedIn-78c27713.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Settings/ProfileSettings.jsx"
   },
   "src/pages/Settings/index.jsx": {
-    "file": "assets/index-4c20744c.js",
+    "file": "assets/index-df34a47e.js",
     "imports": [
       "index.html",
       "src/components/Layout/Header.jsx",
-      "_useUserProfile-b4680c6c.js",
-      "_useUserProfilePic-dc3d6623.js",
+      "_useUserProfile-06baff68.js",
+      "_useUserProfilePic-241bd2c4.js",
       "_roundedLogos-5ef49220.js",
       "_helpers-b6ef1e89.js",
       "_fetchKeys-14f763aa.js",
-      "_useIsUserLoggedIn-6e1c819f.js"
+      "_useIsUserLoggedIn-78c27713.js"
     ],
     "isDynamicEntry": true,
     "src": "src/pages/Settings/index.jsx"
   },
   "src/pages/SignUp/index.jsx": {
-    "file": "assets/index-797e9bec.js",
+    "file": "assets/index-3a68715b.js",
     "imports": [
       "index.html",
-      "_LogoBig-45775383.js",
-      "_SignInWithGoogle-f48374cf.js",
-      "_Input-3379583c.js",
-      "_useIsUserLoggedIn-6e1c819f.js",
+      "_LogoBig-9d39fe25.js",
+      "_SignInWithGoogle-9342168a.js",
+      "_Input-7d72c842.js",
+      "_useIsUserLoggedIn-78c27713.js",
       "_roundedLogos-5ef49220.js",
       "_helpers-b6ef1e89.js"
     ],
