@@ -9,8 +9,7 @@ import {useState, memo, useEffect, useRef} from "react";
 let outerClick;
 const VolumeButton = () => {
   const [showInput, setShowInput] = useState(false);
-  const [currentVol] = useAtom(playerVolumeAtom);
-
+  const [currentVol, setCurrentVolume] = useAtom(playerVolumeAtom);
   const buttonRef = useRef();
 
   useEffect(() => {
@@ -43,6 +42,7 @@ const VolumeButton = () => {
           }}
           onChange={(e) => {
             player.changeVolume(e.target.value);
+            setCurrentVolume(e.target.value);
           }}
           autoFocus
         />

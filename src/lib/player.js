@@ -15,6 +15,8 @@ import {getAverageRGB} from "../utils/imageHelpers";
 
 const player = new MusicPlayer();
 
+globalStore.set(playerVolumeAtom, () => player.audioEl.volume);
+
 player.attachListener("loadeddata", () => {
   globalStore.set(playerStateAtom, () => playerStates.LOADED);
 });
