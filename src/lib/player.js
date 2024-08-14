@@ -84,15 +84,19 @@ player.attachListener("songchange", (song, meta = {}) => {
     thumbnail: thumbnailSmall || thumbnailLarge || mainImage || randImage,
   });
 
+  setImageColors(albumArtSrc);
+});
+
+export default player;
+
+async function setImageColors(albumArtSrc) {
   if (albumArtSrc) {
     const newImage = new Image();
     newImage.src = albumArtSrc;
-    newImage.crossOrigin = "anonymous";
-    newImage.onload = () => {
+    newImage.crossOrigin = "Anonymous";
+    newImage.onload = (e) => {
       const imageColors = getAverageRGB(newImage);
       playerStore.set(currentPlayingAlbumArtColorsAtom, imageColors);
     };
   }
-});
-
-export default player;
+}
