@@ -1,0 +1,1 @@
+import{j as e,B as s,c as r,Q as a}from"./index-46666a37.js";const o=({className:t})=>e.jsx(s,{size:"sm",rounded:"full",className:r("w-8 h-8 p-2 bg-neutral-200 hover:bg-neutral-100 text-red-950 hover:text-red-800",t),children:e.jsx(a,{className:"w-full h-full"})});export{o as default};
