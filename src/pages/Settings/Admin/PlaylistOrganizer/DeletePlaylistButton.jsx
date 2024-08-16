@@ -22,7 +22,7 @@ function DeletePlaylistButton({playlistId}) {
   }
 
   return (
-    <button disabled={loading} onClick={handleDelete} className="h-full m-2">
+    <button disabled={loading} onClick={handleDelete} className="h-full p-2">
       <TrashIcon
         className={clsx("text-slate-200", {"animate-pulse": loading})}
       />

@@ -1,5 +1,5 @@
 import PlaylistOrganizer from "./PlaylistOrganizer/index.jsx";
-import PlaylistDetails from "./PlaylistOrganizer/PlaylistDetails.jsx";
+import PlaylistDetails from "./PlaylistOrganizer/PlaylistDetails/index.jsx";
 import Organizer from "./SongOrganizer.jsx";
 import Uploader from "./Uploader.jsx";
 
