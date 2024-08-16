@@ -1,8 +1,8 @@
+import SettingsSidebar from "../../components/Admin/SettingsSidebar";
 import Header from "../../components/Layout/Header";
-import useUserProfile from "../../hooks/fetch/useUserProfile";
 
 import {GearIcon} from "@radix-ui/react-icons";
-import {NavLink, Outlet} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 
 function SettingsPage() {
   return (
@@ -26,35 +26,3 @@ function SettingsPage() {
 }
 
 export default SettingsPage;
-
-function SettingsSidebar() {
-  const {user} = useUserProfile();
-  return (
-    <div
-      className="py-1 min-h-[300px] text-sm md:px-2"
-      style={{
-        borderRight: "1px solid #ffffff50",
-      }}
-    >
-      <ul>
-        <SidebarLink to="/settings/profile">Profile</SidebarLink>
-        <SidebarLink to="/settings/account">Account</SidebarLink>
-        <SidebarLink to="/settings/cloudIntegrations">Integrations</SidebarLink>
-        {!!user?.iam && <SidebarLink to="/settings/admin">Admin</SidebarLink>}
-      </ul>
-    </div>
-  );
-}
-
-function SidebarLink({children, to}) {
-  return (
-    <li className="mb-3 hover:text-white">
-      <NavLink
-        className={({isActive}) => (isActive ? "text-white" : "text-slate-400")}
-        to={to}
-      >
-        {children}
-      </NavLink>
-    </li>
-  );
-}
