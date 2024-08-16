@@ -1,28 +1,17 @@
+import LoginForm from "./LoginForm";
+
 import LogoBig from "../../components/Branding/LogoBig";
-import BaseButton from "../../components/Button/Button";
 import SignInWithGoogleButton from "../../components/Button/SignInWithProvider/SignInWithGoogle";
-import Input from "../../components/Form/Input";
 import MessageLogin from "../../components/MessageWalls/MessageLogin";
 import supabase from "../../config/supabase";
 import useIsUserLoggedIn from "../../hooks/useIsUserLoggedIn";
 
-import {useState} from "react";
 import {Link, Navigate} from "react-router-dom";
 
 function LoginPage() {
-  const [formData, setFormData] = useState({});
   const isUserLoggedIn = useIsUserLoggedIn();
 
   if (isUserLoggedIn) return <Navigate to={"/"} />;
-
-  function handleChange(e) {
-    const inputName = e.target.name;
-    const inputValue = e.target.value;
-    setFormData((prev) => ({
-      ...prev,
-      [inputName]: inputValue,
-    }));
-  }
 
   function handleSignInWithGoogle() {
     supabase.auth.signInWithOAuth({
@@ -52,32 +41,7 @@ function LoginPage() {
           <div className="flex flex-col items-center justify-center mb-4">
             <SignInWithGoogleButton onClick={handleSignInWithGoogle} />
           </div>
-          <form className="flex flex-col justify-center items-center max-w-[320px] w-[80%]  min-w-[280px]">
-            <Input
-              required
-              placeholder="Email"
-              value={formData.email}
-              name="email"
-              type="email"
-              onChange={handleChange}
-              className={"m-3 w-full"}
-              pattern="[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}"
-              autoComplete="email webauthn"
-            />
-            <Input
-              autoComplete="current-password webauthn"
-              required
-              name="Password"
-              placeholder="password"
-              type="password"
-              value={formData.password}
-              onChange={handleChange}
-              className={"m-3  w-full"}
-              minLength={6}
-            />
-            <BaseButton className={" my-4 w-[200px]"}>Submit</BaseButton>
-          </form>
-
+          <LoginForm />
           <div className="text-white">
             New to the space ?{" "}
             <Link to={"/signup"} className="text-red-500">
