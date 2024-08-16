@@ -1,4 +1,5 @@
 import PlaylistOrganizer from "./PlaylistOrganizer/index.jsx";
+import PlaylistDetails from "./PlaylistOrganizer/PlaylistDetails.jsx";
 import Organizer from "./SongOrganizer.jsx";
 import Uploader from "./Uploader.jsx";
 
@@ -35,7 +36,10 @@ function AdminPage() {
         />
         <Route path="/uploader" Component={Uploader} />
         <Route path="/organizer" Component={Organizer} />
-        <Route path="/playlists" Component={PlaylistOrganizer} />
+        <Route path="/playlists">
+          <Route Component={PlaylistOrganizer} index />
+          <Route Component={PlaylistDetails} path=":playlistId" />
+        </Route>
       </Routes>
     </div>
   );
