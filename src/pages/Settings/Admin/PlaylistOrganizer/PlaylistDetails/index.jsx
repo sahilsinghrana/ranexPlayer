@@ -17,16 +17,10 @@ function PlaylistDetails() {
   const {data = {}, error, isLoading} = useSWR(`/music/playlist/${playlistId}`);
   if (isLoading) return <MoonLoader />;
 
-  console.log({
-    data,
-    error,
-    isLoading,
-  });
-
   const {title} = data.data || {};
   return (
     <div className="mt-4">
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center">
         <h2 className="text-sm text-gray-400">
           Playlist: <b className="text-xl text-gray-100">{title}</b>{" "}
           <span className="text-xs">({playlistId}</span>)
@@ -41,6 +35,9 @@ function PlaylistDetails() {
           </ActionItem>
         </ul>
       </div>
+      {error && (
+        <pre className="text-red-500">{JSON.stringify(error, null, 2)}</pre>
+      )}
     </div>
   );
 }
