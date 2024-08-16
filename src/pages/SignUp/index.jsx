@@ -1,30 +1,19 @@
+import SignupForm from "./SignupForm";
+
 import LogoBig from "../../components/Branding/LogoBig";
-import BaseButton from "../../components/Button/Button";
 import SignInWithGoogleButton from "../../components/Button/SignInWithProvider/SignInWithGoogle";
-import Input from "../../components/Form/Input";
 import MessageSignup from "../../components/MessageWalls/MessageSignup";
 import supabase from "../../config/supabase";
 import useIsUserLoggedIn from "../../hooks/useIsUserLoggedIn";
 
-import {useState} from "react";
 import {Link, Navigate} from "react-router-dom";
 
 const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 function SignUPPage() {
-  const [formData, setFormData] = useState({});
   const isUserLoggedIn = useIsUserLoggedIn();
 
   if (isUserLoggedIn) return <Navigate to={"/"} />;
-
-  function handleChange(e) {
-    const inputName = e.target.name;
-    const inputValue = e.target.value;
-    setFormData((prev) => ({
-      ...prev,
-      [inputName]: inputValue,
-    }));
-  }
 
   function handleSignInWithGoogle() {
     supabase.auth.signInWithOAuth({
@@ -54,31 +43,7 @@ function SignUPPage() {
           <div className="flex flex-col items-center justify-center mb-4">
             <SignInWithGoogleButton onClick={handleSignInWithGoogle} />
           </div>
-          <form className="flex flex-col justify-center items-center max-w-[320px] w-[80%]  min-w-[280px]">
-            <Input
-              required
-              placeholder="Email"
-              value={formData.email}
-              name="email"
-              type="email"
-              onChange={handleChange}
-              className={"m-3 w-full"}
-              pattern="[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}"
-              autoComplete="email webauthn"
-            />
-            <Input
-              required
-              name="Password"
-              placeholder="password"
-              type="password"
-              value={formData.password}
-              onChange={handleChange}
-              className={"m-3  w-full"}
-              minLength={6}
-              autoComplete="new-password webauthn"
-            />
-            <BaseButton className={" my-4 w-[200px]"}>Submit</BaseButton>
-          </form>
+          <SignupForm />
 
           <div className="text-white">
             Already been to the moon ?{" "}
