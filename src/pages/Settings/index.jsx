@@ -16,7 +16,7 @@ function SettingsPage() {
         </div>
         <div className="m-3  mt-6 my-3 grid flex-grow grid-cols-[minmax(100px,_1fr)_5fr]">
           <SettingsSidebar />
-          <div className="w-full px-7">
+          <div className="w-full overflow-auto">
             <Outlet />
           </div>
         </div>

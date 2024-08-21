@@ -100,21 +100,21 @@ function Uploader() {
     });
   }
   return (
-    <div className="p-4 m-4 rounded-lg bg-neutral-600/40 ">
-      <h1 className="text-xl font-bold text-neutral-300">Upload Song</h1>
+    <div className="m-4 text-sm rounded-lg bg-neutral-600/40">
+      <h1 className="p-4 text-lg font-bold text-neutral-300">Upload Song</h1>
       <form
         onSubmit={handleUpload}
-        className="flex flex-col items-center justify-center m-2"
+        className="flex flex-col items-center justify-center"
       >
         <input
           type="file"
-          className="px-2 py-4 text-center rounded-md bg-neutral-600"
+          className="my-4 text-xs text-center rounded-md bg-neutral-600 max-w-40"
           onChange={onSongChoose}
           multiple
           accept=".mp3, .aac,.flac,.wav"
         />
 
-        <ul className="overflow-y-auto max-h-[400px] my-4 w-full">
+        <ul className="overflow-y-auto max-h-[400px] my-4">
           {songsAndMeta.map((song, idx) => {
             return (
               <UploadedSongCard

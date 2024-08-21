@@ -18,7 +18,7 @@ function AdminPage() {
 
   return (
     <div>
-      <div className="flex">
+      <div className="flex flex-wrap sm:m-0 m-2">
         <TabLink to="/settings/admin/uploader">Uploader</TabLink>
         <TabLink to="/settings/admin/organizer">Organizer</TabLink>
         <TabLink to="/settings/admin/playlists">Playlists</TabLink>
