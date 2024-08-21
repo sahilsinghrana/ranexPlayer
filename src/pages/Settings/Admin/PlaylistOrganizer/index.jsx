@@ -11,8 +11,8 @@ function PlaylistOrganizer() {
   const dialogRef = useRef();
   return (
     <div className="mt-4">
-      <div className="flex justify-between flex-wrap ">
-        <Input type="search" placeholder="🔎 search" />
+      <div className="flex flex-wrap justify-between ">
+        <Input type="search" placeholder="🔎 search" className="text-sm" />
         <div className="justify-self-end ">
           <AddPlaylistButton
             onClick={() => {

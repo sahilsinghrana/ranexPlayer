@@ -22,11 +22,11 @@ function SettingsSidebar() {
 
   return (
     <div
-      className={clsx("py-1 text-sm pr-2 min-h-[300px]", {
+      className={clsx("py-1 text-sm pr-2 mr-2 min-h-[300px]", {
         "": !collapsed,
       })}
       style={{
-        borderRight: "1px solid #ffffff50",
+        borderRight: "1px solid #ffffff30",
       }}
     >
       <button
