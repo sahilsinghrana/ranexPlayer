@@ -4,7 +4,7 @@ function Input({children, className, ...rest}) {
   return (
     <input
       className={clsx(
-        "rounded-md px-2 bg-neutral-600 duration-300 focus:bg-neutral-700 active:bg-neutral-700 outline-none",
+        "rounded-md px-2 py-3 bg-neutral-600 duration-300 focus:bg-neutral-700 active:bg-neutral-700 outline-none",
         className
       )}
       {...rest}
