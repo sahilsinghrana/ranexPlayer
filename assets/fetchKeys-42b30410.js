@@ -1,0 +1,1 @@
+const s={publicPlaylists:"/music/playlist",publicSongs:"/music/song",userProfile:"/user/profile",userPlaylists:"/user/playlist",searchSong:"/music/song/search",linkSongWithPlaylist:"/music/playlist",playlistSongs:"/music/playlist/songs"};export{s as F};
