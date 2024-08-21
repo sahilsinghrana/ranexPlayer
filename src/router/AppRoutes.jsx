@@ -32,8 +32,8 @@ const FavoriteList = lazyWithRetry(() =>
   import("../components/Favorites/FavoriteList.jsx")
 );
 
-const PlaylistsPage = lazyWithRetry(() =>
-  import("../pages/Playlists/index.jsx")
+const UserPlaylists = lazyWithRetry(() =>
+  import("../pages/Playlists/UserPlaylists.jsx")
 );
 const PlaylistPage = lazyWithRetry(() =>
   import("../pages/Playlists/PlaylistPage.jsx")
@@ -51,7 +51,7 @@ function AppRoutes() {
             <Route index={true} Component={Home} />
             <Route path="/now-playing" Component={NowPlaying} />
             <Route path="/playlists">
-              <Route index Component={PlaylistsPage} />
+              <Route index Component={UserPlaylists} />
               <Route path=":id" Component={PlaylistPage} />
               <Route Component={PrivateRoute}>
                 <Route path="favorites" Component={FavoriteList} />

@@ -1,10 +1,10 @@
 import QuotePlaceholder from "./QuotePlaceholder";
 
-import favoritePlaylistImage from "../../assets/images/favoritePlaylist.webp";
 import {getRandomBWMoonAndMusicImage} from "../../assets/images/moonAndMusic/moonAndMusicImages";
 import HomeSectionLoader from "../../components/Loaders/HomeSectionLoader";
 import useIsUserLoggedIn from "../../hooks/useIsUserLoggedIn";
 import FETCH_KEYS from "../../utils/constants/fetchKeys";
+import {favoritesPlaylistCardImage} from "../../utils/constants/images";
 import {lazyWithRetry} from "../../utils/reactLazy";
 
 import {Suspense} from "react";
@@ -50,7 +50,7 @@ function UserList() {
             <li>
               <PlaylistCard
                 size="smallWide"
-                backgroundImage={favoritePlaylistImage}
+                backgroundImage={favoritesPlaylistCardImage}
                 className="object-scale-down object-center"
                 playlistName="Favourites"
               />
