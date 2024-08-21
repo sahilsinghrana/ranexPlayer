@@ -30,6 +30,7 @@
   max-height: 400px;
   margin: 0 auto;
   overflow: hidden;
+  padding: 30px;
 }
 
 .moon {
@@ -53,9 +54,9 @@
   box-shadow: 0px 0px 50px var(--moonColor);
   opacity: 0;
   animation-name: halo;
-  animation-duration: 7s;
+  animation-duration: 5s;
   animation-timing-function: linear;
-  animation-delay: 1s;
+  animation-delay: 2s;
   animation-iteration-count: infinite;
 }
 
@@ -68,6 +69,7 @@
   left: -140px;
   width: 110px;
   height: 110px;
+  will-change: transform;
   background-color: #262626;
   border-radius: 50%;
   animation-name: eclipse;

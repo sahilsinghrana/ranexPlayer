@@ -1,7 +1,9 @@
 import SettingsSidebar from "../../components/Admin/SettingsSidebar";
 import Header from "../../components/Layout/Header";
+import MoonEclipseLoader from "../../components/Loaders/MoonEclipseLoader";
 
 import {GearIcon} from "@radix-ui/react-icons";
+import {Suspense} from "react";
 import {Outlet} from "react-router-dom";
 
 function SettingsPage() {
@@ -14,10 +16,12 @@ function SettingsPage() {
             <GearIcon /> Settings
           </h1>
         </div>
-        <div className="m-3  mt-6 my-3 grid flex-grow grid-cols-[minmax(100px,_1fr)_5fr]">
+        <div className="flex my-3 mt-6 ">
           <SettingsSidebar />
-          <div className="w-full px-7">
-            <Outlet />
+          <div className="w-full overflow-auto">
+            <Suspense fallback={<MoonEclipseLoader />}>
+              <Outlet />
+            </Suspense>
           </div>
         </div>
       </div>

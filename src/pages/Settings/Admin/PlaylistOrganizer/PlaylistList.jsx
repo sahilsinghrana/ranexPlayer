@@ -10,7 +10,7 @@ function PlaylistList() {
     FETCH_KEYS.publicPlaylists
   );
   return (
-    <div>
+    <div className="my-4 mt-6">
       {playlistsLoading && <MoonLoader />}
       <ul>
         {Array.isArray(playlists?.data) &&

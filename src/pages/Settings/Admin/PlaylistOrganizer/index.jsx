@@ -11,13 +11,15 @@ function PlaylistOrganizer() {
   const dialogRef = useRef();
   return (
     <div className="mt-4">
-      <div className="w-full m-3">
-        <Input type="search" placeholder="🔎 search" />
-        <AddPlaylistButton
-          onClick={() => {
-            dialogRef.current.showModal();
-          }}
-        />
+      <div className="flex flex-wrap justify-between ">
+        <Input type="search" placeholder="🔎 search" className="text-sm" />
+        <div className="justify-self-end ">
+          <AddPlaylistButton
+            onClick={() => {
+              dialogRef.current.showModal();
+            }}
+          />
+        </div>
       </div>
       <DialogWithTitle
         className="p-5 bg-zinc-950"

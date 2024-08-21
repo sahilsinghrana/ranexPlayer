@@ -1,5 +1,6 @@
 import {lazyWithRetry} from "../../utils/reactLazy";
 import FullAppLoader from "../Loaders/FullAppLoader";
+import MoonEclipseLoader from "../Loaders/MoonEclipseLoader";
 
 import {Suspense} from "react";
 import {Outlet} from "react-router-dom";
@@ -14,7 +15,9 @@ const Layout = () => {
       <div className="flex flex-col justify-between w-screen h-[100dvh]">
         <Header />
         <div className="flex flex-grow overflow-auto justify-self-start">
-          <Outlet />
+          <Suspense fallback={<MoonEclipseLoader />}>
+            <Outlet />
+          </Suspense>
         </div>
         <div>
           <PlayerBar />

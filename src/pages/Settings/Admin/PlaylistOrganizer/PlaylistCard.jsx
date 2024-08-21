@@ -8,7 +8,7 @@ function PlaylistCard({playlist = {}}) {
   return (
     <li>
       <Link
-        className="flex items-center justify-between w-full my-1 duration-75 cursor-pointer hover:bg-slate-950/75 bg-neutral-900/50"
+        className="flex items-center justify-between w-full my-2 duration-75 cursor-pointer hover:bg-slate-950/75 bg-neutral-900/50"
         to={String(id)}
       >
         <p className="m-2">{title}</p>
