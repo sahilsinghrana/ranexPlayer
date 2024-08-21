@@ -1,1 +1,0 @@
-import{j as e,c as r}from"./index-1342f784.js";function o({children:n,className:t,...u}){return e.jsx("input",{className:r("rounded-md px-2 bg-neutral-600 duration-300 focus:bg-neutral-700 active:bg-neutral-700 outline-none",t),...u,children:n})}export{o as I};

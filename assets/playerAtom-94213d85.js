@@ -1,1 +1,0 @@
-import{I as t}from"./index-1342f784.js";const a={INITIALIZED:-1,STOPPED:0,LOADING:1,LOADED:2,PAUSED:3,PLAYING:4},e=t(a.INITIALIZED),o=t({meta:{}}),r=t({id:""}),s=t([]),A=t();t(!1);const c=t({}),l=t();t({playerState:e,currentSong:o,currentPlaylist:r,queue:s});export{e as a,A as b,c,o as d,l as e,a as p};
