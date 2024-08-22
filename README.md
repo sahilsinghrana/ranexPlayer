@@ -2,7 +2,7 @@
 
 Dizi, meaning flute in ancient tongues, is more than just a music player; it’s your personal universe of sound. Experience a celestial journey where your music becomes the stars.
 
-[Preview](https://diziplayer.netlify.app/)
+[Preview](https://diziplayer.sahilrana.in/)
 
 ## Mission
 
