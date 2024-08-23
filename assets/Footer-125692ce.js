@@ -1,0 +1,1 @@
+import{j as e}from"./index-077007ab.js";const r=()=>e.jsxs("footer",{className:"flex items-center justify-center w-full pt-1 pb-1 font-mono text-xs text-center border-t border-neutral-400/40 text-neutral-400/70 ",children:["Made With ❣️ by ",e.jsx("a",{href:"https://sahilrana.in",target:"_blank",rel:"noreferrer",children:"Sahil Rana"})]});export{r as default};
