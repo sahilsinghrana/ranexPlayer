@@ -1,6 +1,7 @@
 # Dizi Player/ Ranex Player: Your Cosmic Music Companion
 
 Dizi, meaning flute in ancient tongues, is more than just a music player; it’s your personal universe of sound. Experience a celestial journey where your music becomes the stars.
+It is a music player that turns your cloud storage into a personal streaming service. It organizes and manages your tunes, so you can enjoy your music anytime, anywhere!
 
 [Preview](https://dizi.sahilrana.in/)
 
